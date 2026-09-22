@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کاویان — سند راهبردی عمومی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050914;
+  --surface: #0d1526;
+  --surface-2: #111d33;
+  --text: #e6eefc;
+  --muted: #9eb0d0;
+  --line: #273a5f;
+  --accent: #06b6d4;
+  --accent-soft: #0d2234;
+  --ink: #f8fbff;
+  --warn: #f59e0b;
+  --danger: #fb7185;
+  --ok: #34d399;
+  --blue: #60a5fa;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Vazirmatn', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 12% 12%, #12355d 0, transparent 32%),
+    radial-gradient(circle at 85% 10%, #1f2f57 0, transparent 36%),
+    radial-gradient(circle at 50% 100%, #102640 0, transparent 40%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.95;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 252px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2.2rem 1.2rem;
+  background: rgba(7, 12, 24, 0.93);
+  backdrop-filter: blur(6px);
+  border-left: 1px solid var(--line);
+  z-index: 10;
+}
+nav .brand {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 1.4rem;
+}
+nav .tag {
+  font-size: 0.7rem;
+  color: #7f94b8;
+  margin-bottom: 1.4rem;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #9fb0ce;
+  font-size: 0.79rem;
+  padding: 0.4rem 0.6rem;
+  border-right: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+nav a:hover,
+nav a.active {
+  color: #f8fbff;
+  border-right-color: var(--accent);
+  background: #0f1e39;
+}
+
+main {
+  max-width: 860px;
+  margin-right: 252px;
+  padding: 2.4rem 2rem 5rem;
+}
+
+.hero {
+  background:
+    linear-gradient(140deg, #090f1f 0%, #0b1630 45%, #0f3c50 100%);
+  color: #f8fafc;
+  border-radius: 18px;
+  padding: 2.2rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  opacity: 0.22;
+}
+.hero::before {
+  width: 360px;
+  height: 360px;
+  background: #34d399;
+  top: -220px;
+  left: -80px;
+}
+.hero::after {
+  width: 280px;
+  height: 280px;
+  background: #60a5fa;
+  bottom: -180px;
+  right: -40px;
+}
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+.hero .subtitle {
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  opacity: 0.92;
+  margin-bottom: 0.7rem;
+}
+.hero .motto {
+  position: relative;
+  z-index: 1;
+  color: #99f6e4;
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+}
+.hero .meta {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-size: 0.72rem;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 0.22rem 0.76rem;
+  color: #cbd5e1;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-top: 1.2rem;
+}
+.hero-box {
+  background: rgba(8, 18, 36, 0.58);
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 0.7rem;
+}
+.hero-box .k {
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+.hero-box .v {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ecfeff;
+}
+
+section {
+  margin-top: 2.5rem;
+  background: linear-gradient(160deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.25rem 1.15rem;
+  box-shadow: 0 14px 34px rgba(2, 8, 23, 0.35);
+}
+h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.9rem;
+  color: var(--ink);
+}
+h3 {
+  font-size: 1.01rem;
+  margin: 1.1rem 0 0.5rem;
+}
+p { margin-bottom: 0.8rem; }
+strong { font-weight: 700; }
+ul, ol {
+  margin: 0.55rem 0 0.95rem;
+  padding-right: 1.3rem;
+}
+li { margin-bottom: 0.32rem; }
+li::marker { color: #88a0c9; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.card {
+  background: #0f1a30;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.82rem;
+}
+.card h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+.card p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-bottom: 0;
+  line-height: 1.75;
+}
+
+.callout {
+  border-right: 3px solid var(--accent);
+  background: var(--accent-soft);
+  color: #d7e9ff;
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 0.85rem;
+  margin: 1rem 0;
+  font-size: 0.89rem;
+}
+.callout-dark {
+  border-right: 3px solid #22d3ee;
+  background: #071327;
+  color: #dbeafe;
+  border-radius: 8px;
+  padding: 0.85rem 0.95rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+.callout-dark strong { color: #7dd3fc; }
+
+.diagram {
+  margin: 1rem 0 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.45rem;
+  background: #0a1428;
+  overflow: hidden;
+}
+.diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.caption {
+  font-size: 0.73rem;
+  color: #9eb4da;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+.badge {
+  border: 1px solid var(--line);
+  background: #0f1d34;
+  color: #dce8ff;
+  border-radius: 999px;
+  padding: 0.18rem 0.65rem;
+  font-size: 0.74rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.65rem;
+  font-size: 0.84rem;
+}
+th, td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.52rem 0.42rem;
+  text-align: right;
+  vertical-align: top;
+}
+th {
+  color: #b8c9e8;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+tr:last-child td { border-bottom: none; }
+
+.timeline {
+  border-right: 2px solid var(--line);
+  padding-right: 1rem;
+  margin-top: 0.4rem;
+}
+.step {
+  position: relative;
+  margin-bottom: 1.05rem;
+  padding-right: 0.4rem;
+}
+.step::before {
+  content: "";
+  position: absolute;
+  right: -1.42rem;
+  top: 0.52rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.step .t {
+  font-weight: 700;
+  font-size: 0.93rem;
+}
+.step .m {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+.step p {
+  margin-top: 0.25rem;
+  font-size: 0.86rem;
+  color: #c7d6f3;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.74rem;
+  color: #8ea2c7;
+  text-align: center;
+}
+
+.sep {
+  width: 64px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #14b8a6, #60a5fa);
+  margin: 2rem auto 0.5rem;
+}
+
+@media (max-width: 980px) {
+  nav { display: none; }
+  main { margin-right: 0; max-width: 100%; padding: 1.2rem 0.9rem 3.5rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+@media print {
+  nav { display: none; }
+  main { margin-right: 0; padding: 0; }
+  section, .hero { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">کاویان</div>
+  <div class="tag">سند راهبردی عمومی</div>
+  <a href="#why">مسئله عمومی</a>
+  <a href="#logic">استدلال اصلی</a>
+  <a href="#model">تعریف پلتفرم</a>
+  <a href="#arch">معماری اجرایی</a>
+  <a href="#tech-arch">معماری فنی سیستم</a>
+  <a href="#domains">کار موازی در حوزه‌ها</a>
+  <a href="#participation">مشارکت مردم</a>
+  <a href="#governance">حکمرانی ضدتصاحب</a>
+  <a href="#transparency">حقیقت‌سنجی و شفافیت</a>
+  <a href="#safety">ایمنی و ریسک</a>
+  <a href="#roadmap">نقشه راه</a>
+  <a href="#closing">جمع‌بندی</a>
+</nav>
+
+<main>
+
+<header class="hero">
+  <h1>کاویان</h1>
+  <div class="subtitle">پلتفرم نظارت مردمی مبتنی بر هوش مصنوعی و بازبینی انسانی</div>
+  <div class="motto">قدرت نمی‌خواهد؛ حقیقت مستند، حافظه عمومی، و پاسخگویی می‌خواهد.</div>
+  <div class="meta">نسخه ۱.۱ — فوریه ۲۰۲۶</div>
+  <div class="hero-grid">
+    <div class="hero-box"><div class="k">کارکرد</div><div class="v">نظارت مستقل + تحلیل قابل اقدام</div></div>
+    <div class="hero-box"><div class="k">مخاطب</div><div class="v">مردم، رسانه‌ها، نهادهای مدنی، تصمیم‌سازان</div></div>
+    <div class="hero-box"><div class="k">دامنه</div><div class="v">چندحوزه‌ای و موازی، نه تک‌موضوعی</div></div>
+  </div>
+</header>
+
+<div class="sep"></div>
+
+<section id="why">
+  <h2>مسئله عمومی: چرا این پلتفرم برای زندگی روزمره مهم است؟</h2>
+  <p>برای مخاطب عمومی، موضوع فقط سیاست نیست. موضوع این است که تصمیم‌های پنهان یا بی‌پاسخ، مستقیم روی کیفیت زندگی اثر می‌گذارد: از هزینه خانواده و سلامت تا آموزش و خدمات شهری. وقتی اطلاعات معتبر و قابل پیگیری نباشد، مطالبه‌گری به حدس و شایعه تبدیل می‌شود.</p>
+
+  <div class="grid-2">
+    <div class="card"><h4>هزینه خانواده</h4><p>بودجه‌ها و اولویت‌های غلط، به شکل تورم خدمات، پروژه‌های نیمه‌تمام، و فشار مستقیم بر معاش مردم برمی‌گردد.</p></div>
+    <div class="card"><h4>سلامت عمومی</h4><p>وقتی داده یا عملکرد نهادها روشن نباشد، جامعه دیرتر متوجه بحران می‌شود و هزینه انسانی بالا می‌رود.</p></div>
+    <div class="card"><h4>آموزش و فرصت</h4><p>بی‌پاسخگویی نهادی، به نابرابری در دسترسی به کیفیت آموزش، پژوهش، و فرصت شغلی منجر می‌شود.</p></div>
+    <div class="card"><h4>اعتماد اجتماعی</h4><p>وقتی حقیقت قابل راستی‌آزمایی نباشد، اعتماد عمومی فرسوده می‌شود و همکاری جمعی سخت‌تر می‌شود.</p></div>
+  </div>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 280" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <defs>
+        <marker id="arr1" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#22d3ee"/></marker>
+      </defs>
+
+      <rect x="20" y="38" width="150" height="78" rx="12" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="95" y="67" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#7f1d1d">داده مبهم</text>
+      <text x="95" y="88" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#991b1b">یا گزارش غیرقابل راستی‌آزمایی</text>
+
+      <line x1="170" y1="78" x2="200" y2="78" stroke="#22d3ee" stroke-width="2" marker-end="url(#arr1)"/>
+
+      <rect x="200" y="38" width="150" height="78" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+      <text x="275" y="67" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#78350f">تصمیم‌گیری کور</text>
+      <text x="275" y="88" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#92400e">برای مردم و رسانه</text>
+
+      <line x1="350" y1="78" x2="380" y2="78" stroke="#22d3ee" stroke-width="2" marker-end="url(#arr1)"/>
+
+      <rect x="380" y="38" width="150" height="78" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="455" y="67" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#1e3a8a">فشار اجتماعی ضعیف</text>
+      <text x="455" y="88" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#1e40af">و کاهش پاسخگویی</text>
+
+      <line x1="530" y1="78" x2="560" y2="78" stroke="#22d3ee" stroke-width="2" marker-end="url(#arr1)"/>
+
+      <rect x="560" y="38" width="160" height="78" rx="12" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+      <text x="640" y="67" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#831843">تکرار خطا</text>
+      <text x="640" y="88" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#9d174d">و فرسایش اعتماد عمومی</text>
+
+      <rect x="30" y="152" width="680" height="104" rx="14" fill="#0c1d36" stroke="#1d4ed8" stroke-width="1.2"/>
+      <text x="370" y="177" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#dbeafe">مداخله کاویان برای شکستن این چرخه</text>
+
+      <rect x="56" y="192" width="190" height="50" rx="9" fill="#ecfeff" stroke="#0f766e"/>
+      <text x="151" y="221" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700" fill="#0f172a">راستی‌آزمایی و سندپذیری</text>
+
+      <rect x="275" y="192" width="190" height="50" rx="9" fill="#eff6ff" stroke="#2563eb"/>
+      <text x="370" y="221" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700" fill="#0f172a">ترجمه عمومی و قابل فهم</text>
+
+      <rect x="494" y="192" width="190" height="50" rx="9" fill="#f0fdf4" stroke="#059669"/>
+      <text x="589" y="221" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700" fill="#0f172a">مطالبه نهادی و پیگیری نتیجه</text>
+    </svg>
+    <div class="caption">شماتیک اثر پنهان‌کاری بر زندگی عمومی و نقطه مداخله کاویان</div>
+  </div>
+
+  <div class="callout-dark"><strong>پیام ساده برای مخاطب عمومی:</strong> اگر نتوانیم تصمیم‌ها را ببینیم، نمی‌توانیم اصلاحشان کنیم. کاویان ابزار دیدن، فهمیدن، و پیگیری است.</div>
+</section>
+
+<section id="logic">
+  <h2>استدلال اصلی: چرا این ایده عملی است؟</h2>
+  <p>کاویان روی یک منطق قابل دفاع ساخته شده است: «اطلاعات معتبر» اگر با «ترجمه قابل فهم» و «مسیر اقدام» ترکیب شود، به فشار اجتماعی موثر تبدیل می‌شود. مشکل اکثر پروژه‌ها این است که فقط یکی از این سه را دارند. کاویان هر سه را همزمان می‌سازد.</p>
+
+  <div class="grid-3">
+    <div class="card"><h4>۱) اعتبار</h4><p>هر ادعا برچسب نوع گزاره، منبع، و سطح اطمینان دارد؛ یعنی مخاطب می‌فهمد چه چیزی قطعی است و چه چیزی تحلیل.</p></div>
+    <div class="card"><h4>۲) فهم عمومی</h4><p>گزارش فنی به زبان ساده، اینفوگرافیک، و نسخه کوتاه تبدیل می‌شود تا برای غیرمتخصص هم قابل استفاده باشد.</p></div>
+    <div class="card"><h4>۳) مسیر اقدام</h4><p>هر مسئله به نهاد متناظر، مطالبه مشخص، و گام اجرایی ترجمه می‌شود تا خروجی فقط «اطلاع‌رسانی» نباشد.</p></div>
+  </div>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 250" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <defs>
+        <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#dff7f4"/>
+          <stop offset="100%" stop-color="#dbeafe"/>
+        </linearGradient>
+        <marker id="arr2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#0f766e"/></marker>
+      </defs>
+      <rect x="55" y="78" width="180" height="90" rx="14" fill="url(#gA)" stroke="#0f766e"/>
+      <text x="145" y="112" text-anchor="middle" font-family="Vazirmatn" font-size="12" font-weight="700" fill="#0f172a">اطلاعات معتبر</text>
+      <text x="145" y="134" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#334155">داده + سند + منبع</text>
+
+      <line x1="235" y1="123" x2="322" y2="123" stroke="#0f766e" stroke-width="2" marker-end="url(#arr2)"/>
+
+      <rect x="322" y="78" width="180" height="90" rx="14" fill="url(#gA)" stroke="#1d4ed8"/>
+      <text x="412" y="112" text-anchor="middle" font-family="Vazirmatn" font-size="12" font-weight="700" fill="#0f172a">ترجمه عمومی</text>
+      <text x="412" y="134" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#334155">قابل فهم برای همه</text>
+
+      <line x1="502" y1="123" x2="589" y2="123" stroke="#0f766e" stroke-width="2" marker-end="url(#arr2)"/>
+
+      <rect x="589" y="78" width="96" height="90" rx="14" fill="url(#gA)" stroke="#b45309"/>
+      <text x="637" y="112" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#0f172a">اقدام</text>
+      <text x="637" y="132" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">پاسخگویی</text>
+
+      <path d="M 637 168 Q 637 223 412 223 Q 145 223 145 168" fill="none" stroke="#0f766e" stroke-dasharray="5 4" stroke-width="1.5" marker-end="url(#arr2)"/>
+      <text x="388" y="243" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#0f766e">بازخورد اجتماعی و اصلاح مداوم</text>
+    </svg>
+    <div class="caption">مدل علی کاویان: اعتبار + فهم عمومی + اقدام = فشار پاسخگوکننده</div>
+  </div>
+</section>
+
+<section id="model">
+  <h2>تعریف پلتفرم: کاویان دقیقا چیست و چیست نیست؟</h2>
+  <p>کاویان یک ابزار عمومی است که تحلیل و کنشگری مستند را امکان‌پذیر می‌کند. هدفش گرفتن قدرت نیست؛ هدفش ساختن توان اجتماعی برای نظارت مداوم است.</p>
+
+  <div class="grid-2">
+    <div class="card"><h4>کاویان چیست</h4><p>زیرساخت نظارت مردمی، تولید دانش قابل راستی‌آزمایی، و حافظه عمومی برای پیگیری وعده‌ها و تصمیم‌ها.</p></div>
+    <div class="card"><h4>کاویان چیست نیست</h4><p>حزب سیاسی، ماشین تبلیغات، یا سازمانی با رهبری غیرقابل پاسخگویی. ساختار آن عمدا ضدتصاحب طراحی می‌شود.</p></div>
+  </div>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 220" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <circle cx="370" cy="110" r="88" fill="#ecfeff" stroke="#0f766e" stroke-width="2"/>
+      <text x="370" y="100" text-anchor="middle" font-family="Vazirmatn" font-size="14" font-weight="800" fill="#0b1220">کاویان</text>
+      <text x="370" y="121" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#334155">پلتفرم نظارت مردمی</text>
+
+      <rect x="44" y="40" width="170" height="62" rx="10" fill="#f0f9ff" stroke="#1d4ed8"/>
+      <text x="129" y="67" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#1e3a8a">تحلیل مستند</text>
+      <text x="129" y="84" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">داده، سند، منبع</text>
+
+      <rect x="527" y="40" width="170" height="62" rx="10" fill="#fef3c7" stroke="#b45309"/>
+      <text x="612" y="67" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#78350f">کنشگری نهادی</text>
+      <text x="612" y="84" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">مطالبه مشخص</text>
+
+      <rect x="44" y="125" width="170" height="62" rx="10" fill="#fdf2f8" stroke="#be123c"/>
+      <text x="129" y="152" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#881337">حافظه عمومی</text>
+      <text x="129" y="169" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">کارنامه و آرشیو</text>
+
+      <rect x="527" y="125" width="170" height="62" rx="10" fill="#ecfdf5" stroke="#047857"/>
+      <text x="612" y="152" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#065f46">آموزش و ابزار</text>
+      <text x="612" y="169" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">برای جامعه و رسانه</text>
+
+      <line x1="214" y1="71" x2="282" y2="98" stroke="#94a3b8"/>
+      <line x1="527" y1="71" x2="458" y2="98" stroke="#94a3b8"/>
+      <line x1="214" y1="156" x2="282" y2="125" stroke="#94a3b8"/>
+      <line x1="527" y1="156" x2="458" y2="125" stroke="#94a3b8"/>
+    </svg>
+    <div class="caption">چهار کارکرد اصلی که همزمان عمل می‌کنند و همدیگر را تقویت می‌کنند</div>
+  </div>
+</section>
+
+<section id="arch">
+  <h2>معماری اجرایی: سیستم چطور کار می‌کند؟</h2>
+  <p>طراحی عملیاتی کاویان از چهار لایه تشکیل می‌شود: داده، موتور تحلیل، بازبینی انسانی، و انتشار/پیگیری. این ساختار باعث می‌شود سرعت و دقت همزمان حفظ شود.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 330" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <defs>
+        <marker id="arr3" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#0f766e"/></marker>
+      </defs>
+      <rect x="40" y="18" width="660" height="58" rx="10" fill="#ecfeff" stroke="#0f766e"/>
+      <text x="370" y="42" text-anchor="middle" font-family="Vazirmatn" font-size="12" font-weight="700" fill="#0b1220">لایه داده</text>
+      <text x="370" y="62" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#334155">منابع رسمی، گزارش‌های میدانی، داده باز، اسناد رسانه‌ای و پژوهشی</text>
+
+      <line x1="370" y1="76" x2="370" y2="104" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr3)"/>
+
+      <rect x="40" y="104" width="660" height="74" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+      <text x="370" y="129" text-anchor="middle" font-family="Vazirmatn" font-size="12" font-weight="700" fill="#0b1220">موتور تحلیل چندعاملی</text>
+      <text x="370" y="149" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#475569">جمع‌آور | عارضه‌یاب | تحلیلگر تطبیقی | منتقد | مسیرساز | تولیدگر محتوا</text>
+      <text x="370" y="165" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#64748b">هر خروجی همراه با ارجاع، سطح اطمینان، و منطق استدلال</text>
+
+      <line x1="370" y1="178" x2="370" y2="206" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr3)"/>
+
+      <rect x="40" y="206" width="660" height="58" rx="10" fill="#fff7ed" stroke="#d97706"/>
+      <text x="370" y="231" text-anchor="middle" font-family="Vazirmatn" font-size="12" font-weight="700" fill="#7c2d12">بازبینی انسانی</text>
+      <text x="370" y="250" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#9a3412">حقیقت‌سنجی، بررسی سوگیری، کنترل ریسک امنیتی، تایید نهایی</text>
+
+      <line x1="370" y1="264" x2="370" y2="292" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr3)"/>
+
+      <rect x="40" y="292" width="660" height="24" rx="8" fill="#0f172a"/>
+      <text x="370" y="309" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#cbd5e1">انتشار عمومی + کارنامه نهادی + ثبت بازخورد + اصلاح نسخه</text>
+    </svg>
+    <div class="caption">چرخه اجرایی: از داده خام تا خروجی قابل اقدام و قابل ممیزی</div>
+  </div>
+
+  <table>
+    <thead><tr><th>عامل</th><th>مسئولیت</th><th>خروجی قابل مصرف عمومی</th></tr></thead>
+    <tbody>
+      <tr><td>جمع‌آور</td><td>استخراج و ساختاردهی داده</td><td>پایگاه گزاره‌های ارجاع‌دار</td></tr>
+      <tr><td>عارضه‌یاب</td><td>شناسایی ریشه مسئله</td><td>نقشه مسئله و مسئولیت نهادی</td></tr>
+      <tr><td>تحلیلگر تطبیقی</td><td>بررسی تجربه‌های قابل انتقال</td><td>گزینه‌های سیاستی ممکن</td></tr>
+      <tr><td>منتقد</td><td>شناسایی سوگیری و حفره استدلال</td><td>لیست ایرادهای روش‌شناختی</td></tr>
+      <tr><td>مسیرساز</td><td>ترجمه تحلیل به اقدام</td><td>برنامه کوتاه/میان/بلندمدت</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="tech-arch">
+  <h2>معماری فنی سیستم: داخل کاویان چه اتفاقی می‌افتد؟</h2>
+  <p>در سطح فنی، کاویان یک خط پردازش چندمرحله‌ای دارد: ورودی داده وارد لایه جذب می‌شود، در لایه ذخیره‌سازی و نمایه‌سازی استاندارد می‌شود، سپس عامل‌ها روی آن تحلیل انجام می‌دهند، خروجی از گاردریل‌ها و بازبینی انسانی عبور می‌کند، و در نهایت با لاگ ممیزی منتشر می‌شود.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 430" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <defs>
+        <marker id="arr6" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#22d3ee"/></marker>
+      </defs>
+
+      <rect x="18" y="16" width="704" height="62" rx="12" fill="#0c1d36" stroke="#2563eb"/>
+      <text x="370" y="40" text-anchor="middle" font-family="Vazirmatn" font-size="12" font-weight="700" fill="#dbeafe">لایه جذب داده (Ingestion)</text>
+      <text x="370" y="60" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#bfdbfe">Crawler/API/Upload Queue · پاکسازی اولیه · حذف داده حساس</text>
+
+      <rect x="38" y="94" width="156" height="62" rx="10" fill="#ecfeff" stroke="#0f766e"/>
+      <text x="116" y="120" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700" fill="#0f172a">Object Storage</text>
+      <text x="116" y="138" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">فایل خام و نسخه‌ها</text>
+
+      <rect x="206" y="94" width="156" height="62" rx="10" fill="#eff6ff" stroke="#2563eb"/>
+      <text x="284" y="120" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700" fill="#0f172a">Relational DB</text>
+      <text x="284" y="138" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">موجودیت‌ها و متادیتا</text>
+
+      <rect x="374" y="94" width="156" height="62" rx="10" fill="#dbeafe" stroke="#1d4ed8"/>
+      <text x="452" y="120" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700" fill="#0f172a">Vector Index</text>
+      <text x="452" y="138" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">بازیابی معنایی RAG</text>
+
+      <rect x="542" y="94" width="156" height="62" rx="10" fill="#f0fdf4" stroke="#16a34a"/>
+      <text x="620" y="120" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700" fill="#0f172a">Graph Store</text>
+      <text x="620" y="138" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">رابطه نهاد/مسئله/تصمیم</text>
+
+      <line x1="370" y1="78" x2="370" y2="92" stroke="#22d3ee" stroke-width="1.6" marker-end="url(#arr6)"/>
+      <line x1="370" y1="156" x2="370" y2="180" stroke="#22d3ee" stroke-width="1.6" marker-end="url(#arr6)"/>
+
+      <rect x="18" y="180" width="704" height="78" rx="12" fill="#081426" stroke="#334155"/>
+      <text x="370" y="206" text-anchor="middle" font-family="Vazirmatn" font-size="12" font-weight="700" fill="#e2e8f0">Agent Runtime + Orchestrator</text>
+      <text x="370" y="224" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#cbd5e1">Task Router · Diagnostician · Analyst · Critic · Pathfinder · Content Generator</text>
+      <text x="370" y="240" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#94a3b8">هر کار با شناسه یکتا، لاگ کامل، و وضعیت قابل پیگیری اجرا می‌شود</text>
+
+      <line x1="370" y1="258" x2="370" y2="280" stroke="#22d3ee" stroke-width="1.6" marker-end="url(#arr6)"/>
+
+      <rect x="18" y="280" width="342" height="64" rx="12" fill="#fff7ed" stroke="#d97706"/>
+      <text x="189" y="306" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#7c2d12">Policy & Guardrail Engine</text>
+      <text x="189" y="324" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#9a3412">تشخیص ریسک، حذف داده حساس، کنترل داکسینگ/اتهام بی‌سند</text>
+
+      <rect x="380" y="280" width="342" height="64" rx="12" fill="#fef2f2" stroke="#ef4444"/>
+      <text x="551" y="306" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#7f1d1d">Human Review Queue</text>
+      <text x="551" y="324" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#991b1b">حقیقت‌سنجی نهایی، حق پاسخ، تایید انتشار یا ارجاع به اصلاح</text>
+
+      <line x1="189" y1="344" x2="189" y2="366" stroke="#22d3ee" stroke-width="1.6" marker-end="url(#arr6)"/>
+      <line x1="551" y1="344" x2="551" y2="366" stroke="#22d3ee" stroke-width="1.6" marker-end="url(#arr6)"/>
+
+      <rect x="18" y="366" width="704" height="48" rx="12" fill="#0f172a" stroke="#1d4ed8"/>
+      <text x="370" y="386" text-anchor="middle" font-family="Vazirmatn" font-size="10" font-weight="700" fill="#dbeafe">Delivery Layer + Audit Log</text>
+      <text x="370" y="404" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#bfdbfe">Web/API/PDF/Social Cards + نسخه‌بندی + ChangeLog + رسید ممیزی عمومی</text>
+    </svg>
+    <div class="caption">نقشه فنی سیستم: از ورودی خام تا خروجی منتشرشده همراه با ممیزی</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4>کنترل کیفیت فنی</h4><p>هر پردازش باید از سه کنترل عبور کند: صحت منبع، سازگاری استدلال، و کنترل ریسک امنیتی. خروجی بدون این سه کنترل منتشر نمی‌شود.</p></div>
+    <div class="card"><h4>قابلیت ممیزی</h4><p>هر گزارش به شناسه پردازش، نسخه محتوا، و لاگ تصمیم متصل است؛ بنابراین مسیر تولید هر ادعا قابل بازبینی عمومی است.</p></div>
+  </div>
+</section>
+
+<section id="domains">
+  <h2>کار موازی در حوزه‌ها: سیستم تک‌موضوعی نیست</h2>
+  <p>کاویان برای یک مسئله خاص طراحی نشده است. معماری آن طوری است که چند حوزه به صورت همزمان و مستقل پیش برود، بدون اینکه یک موضوع بقیه را متوقف کند.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 330" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <defs>
+        <marker id="arr4" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1d4ed8"/></marker>
+      </defs>
+      <circle cx="370" cy="165" r="66" fill="#0f172a"/>
+      <text x="370" y="156" text-anchor="middle" font-family="Vazirmatn" font-size="14" font-weight="800" fill="#f8fafc">هسته کاویان</text>
+      <text x="370" y="176" text-anchor="middle" font-family="Vazirmatn" font-size="9" fill="#cbd5e1">استاندارد مشترک</text>
+
+      <g font-family="Vazirmatn" font-size="9" fill="#0b1220" text-anchor="middle">
+        <rect x="80" y="40" width="132" height="44" rx="9" fill="#ecfeff" stroke="#0f766e"/>
+        <text x="146" y="67">اقتصاد و فساد مالی</text>
+
+        <rect x="302" y="20" width="132" height="44" rx="9" fill="#eff6ff" stroke="#1d4ed8"/>
+        <text x="368" y="47">سلامت و بهداشت</text>
+
+        <rect x="530" y="40" width="132" height="44" rx="9" fill="#fefce8" stroke="#ca8a04"/>
+        <text x="596" y="67">آموزش و علم</text>
+
+        <rect x="566" y="142" width="132" height="44" rx="9" fill="#f0fdf4" stroke="#16a34a"/>
+        <text x="632" y="169">حقوق شهروندی</text>
+
+        <rect x="530" y="246" width="132" height="44" rx="9" fill="#fdf2f8" stroke="#be123c"/>
+        <text x="596" y="273">زیرساخت و عمران</text>
+
+        <rect x="302" y="270" width="132" height="44" rx="9" fill="#fff7ed" stroke="#c2410c"/>
+        <text x="368" y="297">محیط‌زیست</text>
+
+        <rect x="80" y="246" width="132" height="44" rx="9" fill="#f8fafc" stroke="#64748b"/>
+        <text x="146" y="273">انرژی و صنعت</text>
+
+        <rect x="44" y="142" width="132" height="44" rx="9" fill="#f1f5f9" stroke="#475569"/>
+        <text x="110" y="169">عدالت و خدمات عمومی</text>
+      </g>
+
+      <line x1="304" y1="124" x2="212" y2="82" stroke="#93c5fd" marker-end="url(#arr4)"/>
+      <line x1="370" y1="99" x2="370" y2="64" stroke="#93c5fd" marker-end="url(#arr4)"/>
+      <line x1="435" y1="124" x2="530" y2="82" stroke="#93c5fd" marker-end="url(#arr4)"/>
+      <line x1="437" y1="165" x2="566" y2="165" stroke="#93c5fd" marker-end="url(#arr4)"/>
+      <line x1="436" y1="206" x2="530" y2="248" stroke="#93c5fd" marker-end="url(#arr4)"/>
+      <line x1="370" y1="232" x2="370" y2="270" stroke="#93c5fd" marker-end="url(#arr4)"/>
+      <line x1="304" y1="206" x2="212" y2="248" stroke="#93c5fd" marker-end="url(#arr4)"/>
+      <line x1="303" y1="165" x2="176" y2="165" stroke="#93c5fd" marker-end="url(#arr4)"/>
+    </svg>
+    <div class="caption">هسته مشترک + حوزه‌های موازی: مقیاس‌پذیری بدون قفل شدن روی یک موضوع</div>
+  </div>
+
+  <div class="badges">
+    <span class="badge">ساختار مشترک حقیقت‌سنجی</span>
+    <span class="badge">تیم‌های حوزه‌ای مستقل</span>
+    <span class="badge">انتقال یادگیری بین حوزه‌ها</span>
+    <span class="badge">اولویت‌بندی پویا</span>
+  </div>
+</section>
+
+<section id="participation">
+  <h2>مشارکت مردم: از مشاهده تا پیگیری نتیجه</h2>
+  <p>برای مخاطب عمومی، مهم‌ترین سوال این است: «من چطور وارد این فرآیند می‌شوم؟» پاسخ کاویان یک مسیر روشن و قابل فهم است.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 150" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <defs>
+        <marker id="arr5" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#0f766e"/></marker>
+      </defs>
+      <rect x="15" y="45" width="108" height="58" rx="8" fill="#ecfeff" stroke="#0f766e"/>
+      <text x="69" y="73" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700">ثبت مسئله</text>
+      <line x1="123" y1="74" x2="149" y2="74" stroke="#0f766e" marker-end="url(#arr5)"/>
+
+      <rect x="149" y="45" width="108" height="58" rx="8" fill="#eff6ff" stroke="#1d4ed8"/>
+      <text x="203" y="73" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700">راستی‌آزمایی</text>
+      <line x1="257" y1="74" x2="283" y2="74" stroke="#0f766e" marker-end="url(#arr5)"/>
+
+      <rect x="283" y="45" width="108" height="58" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+      <text x="337" y="73" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700">تحلیل و سند</text>
+      <line x1="391" y1="74" x2="417" y2="74" stroke="#0f766e" marker-end="url(#arr5)"/>
+
+      <rect x="417" y="45" width="108" height="58" rx="8" fill="#fff7ed" stroke="#d97706"/>
+      <text x="471" y="73" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700">انتشار عمومی</text>
+      <line x1="525" y1="74" x2="551" y2="74" stroke="#0f766e" marker-end="url(#arr5)"/>
+
+      <rect x="551" y="45" width="108" height="58" rx="8" fill="#f0fdf4" stroke="#16a34a"/>
+      <text x="605" y="73" text-anchor="middle" font-family="Vazirmatn" font-size="9" font-weight="700">مطالبه نهادی</text>
+      <line x1="659" y1="74" x2="685" y2="74" stroke="#0f766e" marker-end="url(#arr5)"/>
+
+      <rect x="685" y="45" width="40" height="58" rx="8" fill="#0f172a"/>
+      <text x="705" y="74" text-anchor="middle" font-family="Vazirmatn" font-size="7" fill="#cbd5e1">پیگیری</text>
+    </svg>
+    <div class="caption">سفر کاربر عمومی در کاویان: مسیر واضح، نه فرآیند مبهم</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card"><h4>شهروند</h4><p>مسئله را گزارش می‌کند، پاسخ مستند می‌گیرد، و روند پیگیری را می‌بیند.</p></div>
+    <div class="card"><h4>رسانه/کنشگر</h4><p>به خروجی قابل استناد و قابل انتشار دسترسی دارد، نه ادعاهای خام.</p></div>
+    <div class="card"><h4>پژوهشگر/تصمیم‌ساز</h4><p>به تحلیل ساختاریافته برای تصمیم‌گیری یا نقد سیاست‌ها دسترسی پیدا می‌کند.</p></div>
+  </div>
+</section>
+
+<section id="governance">
+  <h2>حکمرانی ضدتصاحب: چرا کاویان خودش تبدیل به مسئله نمی‌شود؟</h2>
+  <p>پلتفرم نظارتی اگر سازوکار حکمرانی نداشته باشد، خودش می‌تواند دچار همان خطاهای قدرت شود. به همین دلیل، کاویان روی قفل‌های نهادی مشخص بنا می‌شود.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 240" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <rect x="18" y="80" width="704" height="84" rx="16" fill="#0f172a"/>
+      <text x="370" y="126" text-anchor="middle" font-family="Vazirmatn" font-size="13" font-weight="700" fill="#e2e8f0">لایه قفل‌های ضدتصاحب</text>
+
+      <g font-family="Vazirmatn" font-size="8" fill="#0b1220" text-anchor="middle">
+        <rect x="46" y="24" width="124" height="44" rx="10" fill="#ecfeff" stroke="#0f766e"/>
+        <text x="108" y="50">سقف نفوذ مالی</text>
+
+        <rect x="186" y="24" width="124" height="44" rx="10" fill="#eff6ff" stroke="#1d4ed8"/>
+        <text x="248" y="50">رای چندگروهی</text>
+
+        <rect x="326" y="24" width="124" height="44" rx="10" fill="#fef3c7" stroke="#b45309"/>
+        <text x="388" y="50">اعلام تضاد منافع</text>
+
+        <rect x="466" y="24" width="124" height="44" rx="10" fill="#fdf2f8" stroke="#be123c"/>
+        <text x="528" y="50">حق پاسخ عمومی</text>
+
+        <rect x="606" y="24" width="124" height="44" rx="10" fill="#f0fdf4" stroke="#16a34a"/>
+        <text x="668" y="50">Sunset بنیانگذار</text>
+      </g>
+
+      <line x1="108" y1="68" x2="108" y2="80" stroke="#94a3b8"/>
+      <line x1="248" y1="68" x2="248" y2="80" stroke="#94a3b8"/>
+      <line x1="388" y1="68" x2="388" y2="80" stroke="#94a3b8"/>
+      <line x1="528" y1="68" x2="528" y2="80" stroke="#94a3b8"/>
+      <line x1="668" y1="68" x2="668" y2="80" stroke="#94a3b8"/>
+
+      <g font-family="Vazirmatn" font-size="8" fill="#0b1220" text-anchor="middle">
+        <rect x="84" y="176" width="154" height="42" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+        <text x="161" y="201">هیچ حامی تنها غالب نمی‌شود</text>
+
+        <rect x="292" y="176" width="154" height="42" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+        <text x="369" y="201">هیچ فرد تنها تصمیم نهایی ندارد</text>
+
+        <rect x="500" y="176" width="154" height="42" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+        <text x="577" y="201">سیستم قابل اصلاح و قابل عزل است</text>
+      </g>
+    </svg>
+    <div class="caption">قفل‌های ضدتصاحب: استقلال مالی، استقلال تصمیم، و پاسخگویی ساختاری</div>
+  </div>
+
+  <ul>
+    <li>هیچ منبع مالی مجاز نیست سهم غالب بگیرد؛ استقلال مالی شرط بقاست.</li>
+    <li>تصمیم‌های راهبردی فقط با رای چندگروهی و ثبت عمومی گرفته می‌شود.</li>
+    <li>تضاد منافع باید اعلام شود؛ پنهان‌کاری در این بخش خط قرمز است.</li>
+    <li>نقش بنیانگذار زمان‌دار است و به‌صورت خودکار از اختیار محتوایی خارج می‌شود.</li>
+  </ul>
+</section>
+
+<section id="transparency">
+  <h2>حقیقت‌سنجی و شفافیت: ستون اعتماد عمومی</h2>
+  <p>اعتماد با شعار ساخته نمی‌شود. اعتماد زمانی ساخته می‌شود که مخاطب بتواند ادعا را ببیند، سند را چک کند، و مسیر استدلال را دنبال کند.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 180" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <rect x="22" y="30" width="166" height="120" rx="10" fill="#ecfeff" stroke="#0f766e"/>
+      <text x="105" y="58" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#0f172a">نوع گزاره</text>
+      <text x="105" y="81" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">واقعیت / برآورد</text>
+      <text x="105" y="98" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">تحلیل / پیشنهاد</text>
+
+      <rect x="204" y="30" width="166" height="120" rx="10" fill="#eff6ff" stroke="#1d4ed8"/>
+      <text x="287" y="58" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#0f172a">سند و منبع</text>
+      <text x="287" y="81" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">لینک مستقیم</text>
+      <text x="287" y="98" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">کیفیت منبع</text>
+
+      <rect x="386" y="30" width="166" height="120" rx="10" fill="#fff7ed" stroke="#d97706"/>
+      <text x="469" y="58" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#0f172a">سطح اطمینان</text>
+      <text x="469" y="81" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">کم / متوسط / بالا</text>
+      <text x="469" y="98" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">به همراه دلیل</text>
+
+      <rect x="568" y="30" width="150" height="120" rx="10" fill="#fdf2f8" stroke="#be123c"/>
+      <text x="643" y="58" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#0f172a">حق پاسخ</text>
+      <text x="643" y="81" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">ثبت پاسخ نهاد</text>
+      <text x="643" y="98" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#334155">و اصلاح نسخه</text>
+    </svg>
+    <div class="caption">چهار الزام اجباری انتشار: بدون این چهار مورد، خروجی منتشر نمی‌شود</div>
+  </div>
+
+  <table>
+    <thead><tr><th>لایه</th><th>برای عموم شفاف است؟</th><th>قاعده</th></tr></thead>
+    <tbody>
+      <tr><td>کد و روش تحلیل</td><td>بله</td><td>نسخه‌بندی عمومی</td></tr>
+      <tr><td>منابع و ارجاعات</td><td>بله</td><td>قابل راستی‌آزمایی</td></tr>
+      <tr><td>تصمیم‌های تحریریه/بازبینی</td><td>بله</td><td>ثبت علت تصمیم</td></tr>
+      <tr><td>هویت افراد در معرض خطر</td><td>خیر</td><td>محافظت امنیتی + رسید عمومی redaction</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout"><strong>توازن کلیدی:</strong> شفافیت کامل در عملکرد سیستم، و حفاظت کامل از انسان‌های در معرض خطر.</div>
+</section>
+
+<section id="safety">
+  <h2>ایمنی و ریسک: طراحی بر مبنای بدترین سناریو</h2>
+  <p>کاویان باید در شرایط فشار هم کار کند. بنابراین امنیت یک افزودنی نیست؛ بخشی از معماری پایه است.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 740 280" xmlns="http://www.w3.org/2000/svg" style="direction:ltr">
+      <text x="370" y="26" text-anchor="middle" font-family="Vazirmatn" font-size="11" font-weight="700" fill="#0b1220">ماتریس ریسک (شدت × احتمال)</text>
+      <rect x="120" y="50" width="500" height="200" fill="#fff" stroke="#cbd5e1"/>
+      <line x1="370" y1="50" x2="370" y2="250" stroke="#cbd5e1"/>
+      <line x1="120" y1="150" x2="620" y2="150" stroke="#cbd5e1"/>
+
+      <rect x="120" y="50" width="250" height="100" fill="#fef2f2"/>
+      <rect x="370" y="50" width="250" height="100" fill="#fee2e2"/>
+      <rect x="120" y="150" width="250" height="100" fill="#f0fdf4"/>
+      <rect x="370" y="150" width="250" height="100" fill="#fff7ed"/>
+
+      <text x="235" y="64" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#475569">شدت بالا / احتمال پایین</text>
+      <text x="495" y="64" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#475569">شدت بالا / احتمال بالا</text>
+      <text x="235" y="164" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#475569">شدت پایین / احتمال پایین</text>
+      <text x="495" y="164" text-anchor="middle" font-family="Vazirmatn" font-size="8" fill="#475569">شدت پایین / احتمال بالا</text>
+
+      <circle cx="510" cy="100" r="7" fill="#be123c"/><text x="525" y="104" font-family="Vazirmatn" font-size="8" fill="#0b1220">فشار امنیتی روی مشارکت‌کنندگان</text>
+      <circle cx="500" cy="185" r="7" fill="#b45309"/><text x="515" y="189" font-family="Vazirmatn" font-size="8" fill="#0b1220">کمپین تخریب رسانه‌ای</text>
+      <circle cx="285" cy="95" r="7" fill="#1d4ed8"/><text x="300" y="99" font-family="Vazirmatn" font-size="8" fill="#0b1220">اشتباه تحلیلی پرهزینه</text>
+      <circle cx="235" cy="205" r="7" fill="#047857"/><text x="250" y="209" font-family="Vazirmatn" font-size="8" fill="#0b1220">اختلال فنی محدود</text>
+    </svg>
+    <div class="caption">تمرکز مدیریت: ریسک‌های شدت بالا و احتمال بالا، با پروتکل‌های پیشگیرانه</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4>حفاظت انسان</h4><p>حداقل‌سازی داده، حذف متادیتا، دسترسی نیاز-به-دانستن، و آموزش عملیاتی امنیت.</p></div>
+    <div class="card"><h4>تاب‌آوری فنی</h4><p>زیرساخت توزیع‌شده، نسخه پشتیبان چندمکانه، و قابلیت تداوم در اختلال‌های طولانی.</p></div>
+    <div class="card"><h4>کنترل کیفیت</h4><p>بازبینی چندلایه قبل از انتشار، سیاست اصلاح عمومی، و ثبت شفاف خطاها.</p></div>
+    <div class="card"><h4>دفاع اعتباری</h4><p>شفافیت روش‌شناسی و منبع، پاسخ سریع به نقد، و تفکیک تحلیل از نظر شخصی.</p></div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <h2>نقشه راه پیشنهادی</h2>
+  <p>مسیر اجرا باید مرحله‌ای باشد تا هم اعتماد ساخته شود و هم زیرساخت واقعی شکل بگیرد.</p>
+
+  <div class="timeline">
+    <div class="step">
+      <div class="t">فاز ۱: ستون‌های پایه</div>
+      <div class="m">ماه ۱ تا ۳</div>
+      <p>نهایی‌سازی منشور حکمرانی، استاندارد حقیقت‌سنجی، و پروتکل امنیتی.</p>
+    </div>
+    <div class="step">
+      <div class="t">فاز ۲: موتور عملیاتی</div>
+      <div class="m">ماه ۳ تا ۶</div>
+      <p>راه‌اندازی خط تحلیل چندعاملی و انتشار اولین خروجی‌های عمومی با قالب ثابت.</p>
+    </div>
+    <div class="step">
+      <div class="t">فاز ۳: اجرای چندحوزه‌ای موازی</div>
+      <div class="m">ماه ۶ تا ۱۲</div>
+      <p>فعال‌سازی چند حوزه همزمان با تیم‌های مستقل و شاخص‌های عملکرد مشترک.</p>
+    </div>
+    <div class="step">
+      <div class="t">فاز ۴: تثبیت و مقیاس</div>
+      <div class="m">ماه ۱۲ به بعد</div>
+      <p>توسعه شبکه مشارکت، گسترش ظرفیت تحلیل، و تقویت حافظه عمومی بلندمدت.</p>
+    </div>
+  </div>
+</section>
+
+<section id="closing">
+  <h2>جمع‌بندی</h2>
+  <div class="callout-dark"><strong>کاویان یک ابزار عمومی برای پاسخگویی است:</strong> مسئله را روشن می‌کند، سند را قابل راستی‌آزمایی می‌کند، مسیر اقدام می‌دهد، و نتیجه را فراموش نمی‌کند.</div>
+  <p>اگر قرار است جامعه بتواند کیفیت تصمیم‌های عمومی را بالا ببرد، باید سه چیز را همزمان داشته باشد: حقیقت قابل اعتماد، زبان قابل فهم، و امکان پیگیری واقعی. کاویان دقیقا روی همین سه محور ساخته می‌شود و در حوزه‌های مختلف به شکل موازی کار می‌کند.</p>
+</section>
+
+<footer>
+  پلتفرم کاویان — سند راهبردی عمومی — نسخه ۱.۱ — فوریه ۲۰۲۶
+</footer>
+
+</main>
+
+<script>
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    links.forEach((link) => {
+      const target = link.getAttribute('href') === '#' + entry.target.id;
+      link.classList.toggle('active', target);
+    });
+  });
+}, { rootMargin: '-25% 0px -65% 0px' });
+sections.forEach((section) => observer.observe(section));
+</script>
+
+</body>
+</html>
