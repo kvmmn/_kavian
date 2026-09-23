@@ -2,7 +2,9 @@
 
 پروندهٔ کاری کاویان برای The New Centre for Research & Practice، برنامهٔ Information Architecture & Intelligence Design، پاییز و زمستان ۲۰۲۶–۲۷.
 
-ارائهٔ فعلی این است: [`tnc-kavian-presentation/proposal-deck.html`](tnc-kavian-presentation/proposal-deck.html). پانزده صفحه، فارسی، راست‌به‌چپ. نرم‌افزار نیست و ادعای سامانهٔ در حال اجرا هم نیست.
+ارائهٔ فعلی [`index.html`](index.html) است و روی [GitHub Pages](https://kvmmn.github.io/_kavian/) منتشر می‌شود. منبع همان مخزن است: [github.com/kvmmn/_kavian](https://github.com/kvmmn/_kavian). نرم‌افزار نیست و ادعای سامانهٔ در حال اجرا هم نیست.
+
+نسخهٔ پانزده‌صفحه‌ای فارسی، [`tnc-kavian-presentation/proposal-deck.html`](tnc-kavian-presentation/proposal-deck.html)، پیش از این دک مانده و با ارائهٔ انگلیسی یکی نیست.
 
 ## چیدمان
 
@@ -12,7 +14,7 @@
 | `concept/` | تعریف سرویس، جدا از اسکریپت اسلاید |
 | `tnc-scholarship/` | پروندهٔ اپلیکیشن، همان‌طور که فرستاده شد. با تغییر ارائه بازنویسی نمی‌شود |
 | `archive/2026-09-22/` | پیش‌نویس‌های قبلی، از جمله آزمون آب و کاوش Dreamprint |
-| `.agents/skills/typesafe-ai/` | یادداشت کاری مدل Jev |
+| `.agents/skills/typesafe-ai/` | یادداشت کاری مدل‌های تصمیم ساخت‌یافته؛ Jev یک نمونهٔ میزبانی‌شده است، نه خودِ توانایی |
 
 برای خواندن همراه ارائه: [`PROPOSAL-fa.md`](tnc-kavian-presentation/PROPOSAL-fa.md) و [`REFERENCE.md`](tnc-kavian-presentation/REFERENCE.md).
 

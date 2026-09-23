@@ -71,7 +71,7 @@ The public-interest reason for observability is especially important: a dossier 
 
 Kaveh sees open-source components as potential support for independence and inspectability in an academic setting. This is a **potential presentation argument**, not an established preference of the actual TNC interviewers. The distinction matters: [LangChain](https://github.com/langchain-ai/langchain) and [LangGraph](https://github.com/langchain-ai/langgraph) are open-source; [Langfuse's core](https://langfuse.com/handbook/chapters/open-source) is open-source and self-hostable, with some commercial features; the [LangSmith client SDK](https://github.com/langchain-ai/langsmith-sdk) is open-source, but the [LangSmith platform](https://smith.langchain.com/terms-of-service.pdf) should not be called open-source. Vercel and GitHub are external hosting and collaboration services. Open-source code, Kavian's own auditability, data control, and independence from providers are separate properties. An honest presentation can say the architecture is intended to remain inspectable and replaceable, then show what would actually secure those properties.
 
-Kaveh also introduced **Jev** from TypeSafe AI as a recently released, possibly efficient and inexpensive model to use where structured decisions are needed, alongside language models and a possible layer of open models. [TypeSafe's introduction](https://typesafe.ai/blog/introducing-system-one-models-and-jev) describes typed answers with probabilities and markets Jev for classification, routing, scoring, and decisions embedded in software; its public release was announced on 15 September 2026. Jev is not simply a general text-generating LLM, and its output should not be treated as a mathematical forecast of social consequences. [TypeSafe's service terms](https://typesafe.ai/legal/mca) describe a licensed hosted API, not an open-source model. Claims of exceptional speed, low cost, calibrated confidence, or reliability are vendor claims, not independently validated on Kavian's tasks, languages, data, or safety requirements. The most defensible role in the presentation is a **candidate component for bounded structured judgments**, not “the brain of Kavian” or an arbiter of truth. Its introduction creates a productive design question: which judgments can safely be typed and automated, which require explicit models and evidence, and which must remain with people?
+Kaveh introduced a class of small decision models for structured steps, beside language models. The ability is what matters: answer a fixed question and return a probability, without writing the public account. **Jev**, from TypeSafe, is a hosted example. [TypeSafe's introduction](https://typesafe.ai/blog/introducing-system-one-models-and-jev) describes typed answers with probabilities; its public release was announced on 15 September 2026, and the [service terms](https://typesafe.ai/legal/mca) describe a licensed hosted API. **Laya** ([convaiinnovations/laya](https://huggingface.co/convaiinnovations/laya)) is an open-weight model of the same kind, under Apache 2.0. Neither is a general text-generating model, and neither output is a forecast of social consequences or a verdict. Claims of speed, cost, calibration, or reliability, from either maker, are not validated on Kavian's tasks, languages, data, or safety requirements. The defensible role is a **replaceable component for bounded structured judgments**, not “the brain of Kavian.” Open weights are not an audit of the system around them. The design question stays: which judgments can be typed, which need evidence, and which must remain with people.
 
 Status distinctions to preserve in every presentation draft:
 
@@ -81,7 +81,7 @@ Status distinctions to preserve in every presentation draft:
 | Network of advisers and artifact circulation | Current design account from Kaveh | Recruitment, operating process, selection rules, or quality outcomes |
 | Delphi, multi-criteria analysis, sensitivity analysis | Candidate methods for design and testing | Implemented procedure or validated weights |
 | Multi-agent stack, Vercel, GitHub, observability | Kaveh's firsthand architectural report | Configuration, deployment state, tracing quality, or security audit |
-| Jev and open-model layer | Candidate model strategy described by Kaveh; TypeSafe's public description | Jev integration, task-specific performance, or provider independence |
+| Decision-model slot: Jev hosted, Laya open weights | The ability, as described by each maker | Either model on Kavian’s Persian civic text, or provider independence |
 
 The newer concept explicitly permits Kavian to analyze, propose, and advocate. The TNC presentation should explain how this can be done responsibly: show the basis of a proposal, disclose the human owner of an advocacy decision, assess possible harm, allow replies and correction, and avoid claiming to speak for all people. The earlier [Dreamprint exploration](../archive/2026-09-22/dreamprint/kavian-e0-p3.md) tested a narrower memory-only mandate, but Kaveh confirmed that it was an exploration, not the final boundary of Kavian.
 
@@ -107,7 +107,7 @@ This is a candidate narrative for discussion, not a locked slide order. It creat
 
 Theoretical links must remain disciplined. For example, Ashby's requisite variety may motivate plural sources and perspectives, but it does not prove that a diverse panel is correct. Beer's emphasis on what a system does can motivate outcome measurement, but it does not supply the measures. The human ability to refuse or reframe a question is a design requirement to specify and test, not an automatic property of having a review queue. Likewise, open-source components do not prove institutional independence; model confidence does not prove factual accuracy; and a many-sided presentation does not require treating unsupported claims as equal to well-supported ones.
 
-The technical layer belongs in this story only where it explains a civic capability. Multi-agent orchestration could route a claim, preserve provenance, ask for the right kind of review, and incorporate corrections. Observability could show how an account changed. A structured-decision model such as Jev could make a bounded routing or classification step faster, subject to review. None of these brand names is the human reason for Kavian to exist. The presentation should show what a person can understand, contest, and choose because of the architecture.
+The technical layer belongs in this story only where it explains a civic capability. Multi-agent orchestration could route a claim, preserve provenance, ask for the right kind of review, and incorporate corrections. Observability could show how an account changed. A small decision model, hosted like Jev or open-weight like Laya, could make a bounded routing or classification step faster, subject to review. None of these brand names is the human reason for Kavian to exist. The presentation should show what a person can understand, contest, and choose because of the architecture.
 
 ## 5. Presentation constraints and unresolved decisions
 
@@ -124,7 +124,7 @@ Questions to resolve during the presentation process:
 - Which disagreements should be preserved as distinct positions, and which factual disputes can be resolved by further evidence?
 - Where would Policy Delphi, structured elicitation, multi-criteria analysis, and sensitivity analysis genuinely help rather than add procedural theater?
 - Which parts of the reported technical stack are running today, and what evidence can safely be shown? What must remain confidential?
-- Can Jev handle the actual Persian-language and civic tasks proposed for it, with acceptable error, latency, cost, data handling, and escalation behavior? What open or local alternative would preserve replaceability?
+- Can a decision model, Jev or an open-weight model such as Laya, handle the actual Persian-language and civic tasks, with acceptable error, latency, cost, data handling, and escalation? The slot has to stay replaceable either way.
 - At what point can Kavian make a recommendation or support advocacy, and who is accountable for that step?
 - What is the smallest honest prototype or research study that could test a pivotal assumption?
 
@@ -150,12 +150,12 @@ Present Kavian as a serious, revisable design inquiry with a compelling human re
 
 ## 8. Working proposal
 
-The current proposal text, including the personal stake, the Derafsh-e Kaviani naming ethic, and Jev as the brain of structured judgments, is in:
+The current proposal text, including the personal stake, the Derafsh-e Kaviani naming ethic, and decision models as a replaceable slot rather than the brain of the system, is in:
 
 - [Persian proposal](./PROPOSAL-fa.md)
 - [English proposal](./PROPOSAL-en.md)
 
-Software implementation of the gate was started and then removed. Kaveh asked to work on the proposal rather than build the project. The proposal states the rule that limits Jev. It does not contain running code, tuned thresholds, or an inspected deployment.
+Software implementation of the gate was started and then removed. Kaveh asked to work on the proposal rather than build the project. The proposal states the rule that limits any decision model in that slot. It does not contain running code, tuned thresholds, or an inspected deployment.
 
 ## 9. Next working layer
 
@@ -168,9 +168,11 @@ The joint is a **question-type gate** in front of every model, adviser round, an
 
 This layer is a design proposal for the circulation. It does not upgrade founder-reported tools into inspected implementation, and it does not settle adviser selection, weights, or privacy rules. Further work stays on the proposal until a build is explicitly requested. The deck in section 10 is the current public telling. Still open: a fictional sample issue was not used; the session's length and form were never specified by the centre; the presentation language of the room was not confirmed, and the deck is Persian.
 
-## 10. The deck, 22 September 2026
+## 10. The deck
 
-[`proposal-deck.html`](./proposal-deck.html) is the presentation. Fifteen right-to-left slides, Rubik, black and white with gray tones. A loud red (`#ff1a1a`) fills slides 05, 08, and 15. Elsewhere red is an effect only: a bar on the opening slide, the redaction marks, and the edge of limit cards. Photographs and the opening drawing are shown in grayscale.
+The published presentation, as of 23 September 2026, is [`index.html`](../index.html) at the repository root, on [GitHub Pages](https://kvmmn.github.io/_kavian/). It is the English deck. Persian text in it uses Vazirmatn. The last slide uses `assets/kavian-tatoo.jpg`. The record below is the earlier fifteen-slide Persian deck and is not a description of the live file.
+
+[`proposal-deck.html`](./proposal-deck.html) was the presentation on 22 September 2026. Fifteen right-to-left slides, Rubik, black and white with gray tones. A loud red (`#ff1a1a`) fills slides 05, 08, and 15. Elsewhere red is an effect only: a bar on the opening slide, the redaction marks, and the edge of limit cards. Photographs and the opening drawing are shown in grayscale.
 
 Decisions now in the deck, and in [PROPOSAL-fa.md](./PROPOSAL-fa.md) and [PROPOSAL-en.md](./PROPOSAL-en.md):
 
@@ -181,6 +183,6 @@ Decisions now in the deck, and in [PROPOSAL-fa.md](./PROPOSAL-fa.md) and [PROPOS
 - Berlin sculptures, kept distinct from each other and from the Tehran scene: *Der seltene Fang*, Ernst Herter, 1896, Viktoriapark (a mermaid drawn from a net). *Der Fischer* (“Gerettet”), Adolf Brütt, modelled 1887, Gladenbeck bronze 1892, Nationalgalerie from 1894. Photographs: Axel Mauruszat, CC BY 2.0 Germany; Hajotthu, CC BY-SA 3.0. Captions use the dates of the works. The Berlin photograph's file note says the colonnade cast is a second cast; the deck does not claim the photograph is the 1892 bronze itself.
 - *Kāveh* (Berlin-Charlottenburg, 24 January 1916–30 March 1922). The deck shows the full first page, `assets/kaveh-cover.jpg`, from Wikimedia Commons `Kaveh_1_Titelblatt.jpg`, so the name is visible. Kavian is not a continuation of the newspaper. The first period was a wartime paper; from 1920 it turned toward culture and history. Source for that history: Encyclopaedia Iranica, “KĀVA NEWSPAPER,” Iraj Afshar. Taqizadeh’s Westernization slogan is not on the slides.
 - The New Centre page states the research question first, then says the seminars, classes, and faculty thinking are useful for that precision, then the small step toward understanding, growth, and participation in the development of Iran's civil society. It does not claim the centre has endorsed the project.
-- System claims stay at the abstraction already in the proposal. Jev labels structured judgments and does not choose truth, fairness, publication, or speaking for the people. Persian, thresholds, and real Kavian data are untested. The reported stack is founder-reported, not audited. No gate code is in this folder; an earlier start was deleted at Kaveh's request.
+- System claims stay at the abstraction already in the proposal. A decision model labels structured judgments and does not choose truth, fairness, publication, or speaking for the people. Jev is one hosted example. Laya is one open-weight example. Persian, thresholds, and real Kavian data are untested. The reported stack is founder-reported, not audited. No gate code is in this folder; an earlier start was deleted at Kaveh's request.
 
 Image files in `assets/`: `scene.png`, `derafsh.png`, `kaveh-cover.jpg` (full 1916 title page), `kaveh-berlin.jpg` (masthead crop, kept, not used on the current magazine slide), `herter-fang.jpg`, `bruett-gerettet.jpg`.

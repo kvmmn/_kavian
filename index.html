@@ -6,7 +6,7 @@
 <title>Kavian — a proposal to The New Centre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Tokens. The deck is its own fixed monochrome theme, so light and dark resolve to the same values. */
 :root {
@@ -19,7 +19,7 @@
   --soft: #d9d9d9;
   --red: #ff1a1a;
   --font: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --fa: "Vazirmatn", Tahoma, sans-serif;
+  --fa: "Vazirmatn", Tahoma, sans-serif; /* Persian, https://fonts.google.com/specimen/Vazirmatn */
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -67,6 +67,8 @@ h2 { text-wrap: balance; font-size: 58px; line-height: 1.04; font-weight: 800; l
 .cover .meta { margin-top: 72px; display: grid; grid-template-columns: auto auto; gap: 6px 48px; justify-content: start; font-size: 17px; }
 .cover .meta dt { color: var(--faint); }
 .cover .meta dd { color: var(--soft); }
+.cover .meta a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.cover .meta a:hover { color: var(--red); }
 
 /* Full image */
 .plate { background: #fff; padding: 0; align-items: center; justify-content: center; }
@@ -249,10 +251,12 @@ table.m { border-collapse: collapse; width: 100%; }
 .triad div { border-top: 1.5px solid var(--white); padding-top: 18px; }
 .triad h4 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
 .triad p { font-size: 19px; line-height: 1.45; color: var(--muted); }
-.last { display: grid; grid-template-columns: 1fr 190px; gap: 60px; align-items: end; }
+.last { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end; }
+.marks { display: flex; gap: 20px; align-items: flex-end; }
+.marks .tattoo { width: auto; height: 300px; object-fit: contain; display: block; }
 .last h2 { font-size: 76px; max-width: 16ch; }
 .last p { font-size: 26px; color: var(--muted); margin-top: 22px; }
-.last img { width: 190px; display: block; }
+.last img { width: auto; height: 300px; display: block; }
 
 
 /* Path section */
@@ -498,7 +502,137 @@ table.m { border-collapse: collapse; width: 100%; }
 button.nav { position: fixed; top: 0; bottom: 0; width: 18%; background: none; border: 0; z-index: 4; cursor: pointer; }
 button.nav.prev { left: 0; cursor: w-resize; } button.nav.next { right: 0; cursor: e-resize; }
 button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; }
+a.lang {
+  position: fixed; top: 16px; right: 18px; z-index: 8;
+  font-family: "Schibsted Grotesk", Rubik, sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: .14em;
+  color: #fff; background: #000; border: 1.5px solid #fff;
+  text-decoration: none; padding: 7px 12px; line-height: 1;
+}
+a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border-color: var(--red); outline: none; }
 
+/* Phone and small windows. The 1600×900 frame stays in charge until it would shrink below readable type. */
+@media screen {
+  html.mobile .slide {
+    padding: 58px 22px 78px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  html.mobile .sec { top: 14px; left: 22px; font-size: 13px; }
+  html.mobile .num { position: fixed; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); right: 16px; font-size: 12px; z-index: 6; }
+  html.mobile .foot { position: static; margin-top: 22px; max-width: none; font-size: 13px; line-height: 1.45; }
+  html.mobile h2 { font-size: 32px; line-height: 1.15; letter-spacing: -0.02em; max-width: none; }
+  html.mobile .lead { font-size: 17px; line-height: 1.45; max-width: none; }
+  html.mobile .body { font-size: 16px; }
+  html.mobile button.nav { width: 22px; }
+  html.mobile .cover .text { padding: 64px 22px 36px; }
+  html.mobile .cover h1 { font-size: 78px; }
+  html.mobile .cover .sub { font-size: 18px; max-width: 18ch; margin-top: 16px; }
+  html.mobile .cover .meta { margin-top: 28px; font-size: 14px; gap: 4px 16px; }
+  html.mobile .cover .meta a { overflow-wrap: anywhere; }
+  html.mobile .cover .art { height: 42vh; top: auto; bottom: 0; opacity: .4; }
+  html.mobile .cover .veil { background: linear-gradient(180deg, #000 0%, #000 58%, rgba(0,0,0,.35) 100%); }
+  html.mobile .opener { padding: 28px 22px 40px; }
+  html.mobile .opener .roman { font-size: 22px; }
+  html.mobile .opener h2 { font-size: 46px; line-height: 1.08; overflow-wrap: break-word; }
+  html.mobile .opener p { font-size: 20px; margin-top: 16px; }
+  html.mobile .omark { width: 240px; height: 240px; right: -70px; }
+  html.mobile .wire img { height: 100%; width: auto; max-width: 100%; }
+  html.mobile .slide.doc { flex-direction: column; }
+  html.mobile .docphoto, html.mobile .docphoto img { width: 100%; height: 38vh; }
+  html.mobile .docside { padding: 18px 22px 28px; }
+  html.mobile .docside .d { font-size: 34px; }
+  html.mobile .docside .w { font-size: 20px; }
+  html.mobile .facts { margin-top: 16px; }
+  html.mobile .facts p { font-size: 16px; }
+  html.mobile .exhibit { grid-template-columns: 72px 1fr; gap: 12px; }
+  html.mobile .exhibit img { width: 72px; }
+  html.mobile .exhibit p { font-size: 14px; }
+  html.mobile .toll { grid-template-columns: 1fr 1fr; gap: 14px 18px; margin-top: 22px; }
+  html.mobile .toll b { font-size: 26px; }
+  html.mobile .toll p { font-size: 14px; }
+  html.mobile .silence, html.mobile .silence.three { grid-template-columns: 1fr; gap: 14px; margin-top: 22px; }
+  html.mobile .tlgrid, html.mobile .night, html.mobile .twocol, html.mobile .kaveh,
+  html.mobile .pv, html.mobile .moved, html.mobile .jobs, html.mobile .jev, html.mobile .rcpt,
+  html.mobile .status, html.mobile .last, html.mobile .lifework { grid-template-columns: 1fr; gap: 22px; }
+  html.mobile .tlleft h2 { max-width: none; }
+  html.mobile .tlleft .lead { max-width: none; }
+  html.mobile .wallv p { font-size: 18px; max-width: none; }
+  html.mobile .svgwrap svg, html.mobile .tlright svg, html.mobile .jobs svg, html.mobile .moved svg {
+    width: 100%; height: auto; max-width: 100%;
+  }
+  html.mobile .jobs svg { width: 100%; }
+  html.mobile .bronzes, html.mobile .berlin, html.mobile .far, html.mobile .coa, html.mobile .triad,
+  html.mobile .horizon, html.mobile .fails { grid-template-columns: 1fr; gap: 16px; }
+  html.mobile .bronzes img { width: 100%; height: 240px; object-fit: cover; }
+  html.mobile .kaveh { display: flex; flex-direction: column; align-items: stretch; }
+  html.mobile .kaveh figure, html.mobile .kx { min-width: 0; max-width: 100%; width: 100%; }
+  html.mobile .kaveh figure img, html.mobile .kaveh img { width: 100% !important; max-width: 100%; height: auto !important; max-height: 52vh; }
+  html.mobile .brickh { width: 100%; max-width: 282px; height: 58px; }
+  html.mobile .brickh em { left: 0; top: 34px; white-space: normal; }
+  html.mobile .kaveh h2, html.mobile .kstory { font-size: 22px; }
+  html.mobile .statement { font-size: 26px; }
+  html.mobile .dossier { grid-template-columns: 1fr; }
+  html.mobile .dossier .link { display: none; }
+  html.mobile .stack3 { height: 140px; margin: 8px 0 16px; }
+  html.mobile .mock { grid-template-columns: 1fr; padding: 16px; }
+  html.mobile .success p { font-size: 20px; }
+  html.mobile .far { margin-top: 18px; }
+  html.mobile .fb { min-height: 0; padding: 18px; }
+  html.mobile .fb b { font-size: 26px; min-height: 0; }
+  html.mobile .fa { height: 22px; font-size: 22px; }
+  html.mobile .farnote { font-size: 17px; margin-top: 18px; }
+  html.mobile .split2 { grid-template-columns: 1fr; margin-top: 16px; }
+  html.mobile .split2 .mid { height: 28px; }
+  html.mobile .split2 .mid::before { left: 0; right: 0; top: 50%; bottom: auto; width: auto; height: 3px; }
+  html.mobile .split2 .mid span { top: 50%; transform: translate(-50%, -50%); }
+  html.mobile .split2 h4 { font-size: 22px; }
+  html.mobile .split2 p { font-size: 17px; }
+  html.mobile .journey { grid-template-columns: 1fr; margin-top: 16px; }
+  html.mobile .journey b { font-size: 18px; min-height: 0; }
+  html.mobile .journey p { font-size: 15px; }
+  html.mobile .kinds, html.mobile .map, html.mobile .uhh, html.mobile .uhr { grid-template-columns: 1fr; }
+  html.mobile .kinds .h, html.mobile .map .h, html.mobile .map .a, html.mobile .uhh { display: none; }
+  html.mobile .kinds > div { padding: 8px 0; }
+  html.mobile .kinds .k { font-size: 20px; padding-top: 16px; }
+  html.mobile .clerks { grid-template-columns: 1fr; margin-top: 12px; }
+  html.mobile .clerk { border-left: none; border-top: 1.5px solid var(--rule); padding: 14px 0; grid-template-rows: auto; }
+  html.mobile .stopline, html.mobile .stoplabel { display: none; }
+  html.mobile .clerk .stop { min-height: 0; padding: 8px 0 4px 12px; border-left: 3px solid var(--red); }
+  html.mobile .clerk b { font-size: 22px; }
+  html.mobile .shape { grid-template-columns: 1fr; gap: 4px; }
+  html.mobile .uhr { grid-template-columns: 22px 1fr; }
+  html.mobile .uhr .tl, html.mobile .uhr p, html.mobile .uhr .why { grid-column: 2; }
+  html.mobile .m td, html.mobile .m th { font-size: 13px; padding: 8px 4px; }
+  html.mobile .qs p { font-size: 16px; }
+  html.mobile .map .c { min-height: 0; font-size: 16px; }
+  html.mobile .horizon { margin-top: 16px; }
+  html.mobile .horizon::before { display: none; }
+  html.mobile .hz { padding: 0 0 8px; }
+  html.mobile .last h2 { font-size: 34px; max-width: none; }
+  html.mobile .last p { font-size: 18px; }
+  html.mobile .marks { width: 100%; }
+  html.mobile .marks .tattoo { width: auto; height: min(220px, 34vh); max-width: 46vw; object-fit: contain; }
+  html.mobile .marks .dmark.big { width: min(120px, 28vw); height: min(120px, 28vw); }
+  html.mobile .last img { width: auto; height: min(220px, 34vh); }
+  html.mobile .triad { gap: 16px; }
+  html.mobile .triad h4 { font-size: 18px; }
+  html.mobile .triad p { font-size: 15px; }
+  html.mobile .dip { flex-direction: column; }
+  html.mobile .dip .half, html.mobile .dip .half img { width: 100%; height: 36vh; }
+  html.mobile .dip .seam { left: 0; top: 36vh; width: 100%; height: 4px; }
+  html.mobile .dip .cap { padding: 36px 20px 24px; }
+  html.mobile .dip .cap h3 { font-size: 40px; }
+  html.mobile .nrow { grid-template-columns: 1fr; gap: 6px; }
+  html.mobile .nrow .fa { font-size: 40px; text-align: left; }
+  html.mobile .payoff, html.mobile .newpath { font-size: 22px; }
+  html.mobile .night .d { font-size: 40px; }
+  html.mobile .night .w { font-size: 22px; }
+  html.mobile .rhyme { grid-template-columns: 1fr; }
+  html.mobile .rhyme img { width: 100%; height: 180px; }
+  html.mobile .rhyme .rhl { padding-left: 0; font-size: 22px; }
+}
 @media print {
   @page { size: 1600px 900px; margin: 0; }
   html, body { overflow: visible; height: auto; }
@@ -532,6 +666,7 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
       <dt>For</dt><dd>The New Centre for Research &amp; Practice</dd>
       <dt>Program</dt><dd>Information Architecture &amp; Intelligence Design, Fall/Winter 2026–27</dd>
       <dt>Date</dt><dd>September 2026</dd>
+      <dt>Link</dt><dd><a href="https://github.com/kvmmn/_kavian">https://github.com/kvmmn/_kavian</a></dd>
     </dl>
   </div>
 </section>
@@ -888,7 +1023,7 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
       </g>
       <g font-size="14" fill="#a8a8a8">
         <rect x="325" y="160" width="130" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="390" y="179" text-anchor="middle">Scribe</text>
-        <rect x="605" y="160" width="110" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="660" y="179" text-anchor="middle">Jev</text>
+        <rect x="605" y="160" width="110" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="660" y="179" text-anchor="middle">Sort</text>
         <rect x="875" y="160" width="110" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="930" y="179" text-anchor="middle">Router</text>
         <rect x="1185" y="420" width="110" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="1240" y="439" text-anchor="middle">Mirror</text>
         <rect x="870" y="420" width="120" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="930" y="439" text-anchor="middle">Interpreter</text>
@@ -930,11 +1065,11 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
   </div>
 </section>
 
-<!-- 14 Jev -->
+<!-- 14 decision models -->
 <section class="slide" data-sec="Architecture">
   <div class="sec"><b>III</b>Architecture</div>
-  <h2>Jev sorts. A person chooses.</h2>
-  <p class="lead">Jev, from TypeSafe, is a small model that answers short, fixed questions and says how sure it is. It does not write, argue or decide.</p>
+  <h2>These models sort. A person chooses.</h2>
+  <p class="lead">A few small models answer only a fixed question, and they say how sure they are. Jev does this as a hosted service. Laya does it with open weights. Neither writes, argues, or decides.</p>
   <div class="jev">
     <div>
       <div class="shape"><b>Which one?</b><p>Picks one answer from a fixed list<span>Which kind of question is this: fact, estimate, value, action, mixed?</span></p></div>
@@ -963,7 +1098,7 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
           <text x="0" y="354" fill="#d9d9d9" font-size="16">It means the step belongs with a person.</text>
         </g>
       </svg>
-      <p class="limits">Licensed and hosted. English first; Persian is untested. Thresholds are precautions, not yet tuned on Kavian’s data. Never on the value row.</p>
+      <p class="limits">The ability is the slot, not one vendor. Persian civic text is untested. Thresholds are precautions, not tuned on Kavian’s data. Never on the value row.</p>
     </div>
   </div>
 </section>
@@ -1002,7 +1137,7 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
     <div class="uhh"><span></span><span>Layer</span><span>What it does</span><span>Tools</span><span>Why it matters to a reader</span></div>
     <div class="uhr surf"><i></i><b>What people see</b><p>The public view, the adviser desk, the steward’s queue.</p><div class="tl">Web interface<br><small>to be designed</small></div><p class="why">One record, shown at three levels of access.</p></div>
     <div class="uhr"><i></i><b>The conductor</b><p>Moves each piece of work from helper to helper, and pauses where a person must approve.</p><div class="tl">LangGraph, LangChain<br><em class="o">open source</em></div><p class="why">The human checkpoint is part of the flow. It cannot be skipped.</p></div>
-    <div class="uhr"><i></i><b>The models</b><p>Language models draft and translate. Open models run where data must stay inside. Jev sorts.</p><div class="tl">Language models, open models, Jev<br><em class="o">open</em><em>hosted</em></div><p class="why">Each model is a slot. No single vendor decides.</p></div>
+    <div class="uhr"><i></i><b>The models</b><p>Language models draft and translate. A decision model only sorts a fixed question and reports how sure it is.</p><div class="tl">Jev, hosted · Laya, open weights<br><em class="o">open</em><em>hosted</em></div><p class="why">Each model is a slot. No single vendor decides.</p></div>
     <div class="uhr"><i></i><b>The receipts</b><p>Records every input, step, model call and human edit.</p><div class="tl">Langfuse, LangSmith<br><em class="o">open core</em><em>hosted platform</em></div><p class="why">Any public claim can be traced to its sources and its edits.</p></div>
     <div class="uhr"><i></i><b>Where it lives</b><p>Runs online. Every change to the code is versioned.</p><div class="tl">Vercel, GitHub<br><em>hosted</em></div><p class="why">The history of the system itself can be inspected.</p></div>
   </div>
@@ -1044,7 +1179,7 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
         <tr><td>Network of advisers</td><td><span class="dot h"></span></td><td><span class="dot n"></span></td><td class="t"><span class="dot n tn"></span></td></tr>
         <tr><td>Multi-agent orchestration</td><td><span class="dot f"></span></td><td><span class="dot h"></span></td><td class="t"><span class="dot n tn"></span></td></tr>
         <tr><td>Observability and trace</td><td><span class="dot f"></span></td><td><span class="dot h"></span></td><td class="t"><span class="dot n tn"></span></td></tr>
-        <tr><td>Jev on Persian civic text</td><td><span class="dot h"></span></td><td><span class="dot n"></span></td><td class="t"><span class="dot n tn"></span></td></tr>
+        <tr><td>Decision model on Persian civic text</td><td><span class="dot h"></span></td><td><span class="dot n"></span></td><td class="t"><span class="dot n tn"></span></td></tr>
         <tr><td>Policy Delphi, sensitivity analysis</td><td><span class="dot h"></span></td><td><span class="dot n"></span></td><td class="t"><span class="dot n tn"></span></td></tr>
       </tbody>
     </table>
@@ -1105,7 +1240,7 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
       <h2>The banner exists so that life returns to people.</h2>
       <p>What is the smallest architecture of refusal?</p>
     </div>
-    <svg class="dmark big" aria-hidden="true"><use href="#derafsh"/></svg>
+    <div class="marks"><img class="tattoo" alt="Line drawing of the scene: a man carries a wounded woman while another woman steadies him and raises the Derafsh." src="assets/kavian-tatoo.jpg"><svg class="dmark big" aria-hidden="true"><use href="#derafsh"/></svg></div>
   </div>
 </section>
 
@@ -1125,11 +1260,28 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
   slides.forEach(function (s, k) { if (k === 0) return; var n = document.createElement('div'); n.className = 'num'; s.appendChild(n); n.textContent = pad(k) + ' / ' + (total - 1); });
   function fit() {
     var w = document.documentElement.clientWidth, h = document.documentElement.clientHeight;
-    stage.style.transform = 'scale(' + Math.min(w / 1600, h / 900) + ')';
+    var scale = Math.min(w / 1600, h / 900);
+    var mobile = scale < 0.72;
+    document.documentElement.classList.toggle('mobile', mobile);
+    if (mobile) {
+      stage.style.width = w + 'px';
+      stage.style.height = h + 'px';
+      stage.style.transform = 'none';
+    } else {
+      stage.style.width = '1600px';
+      stage.style.height = '900px';
+      stage.style.transform = 'scale(' + scale + ')';
+    }
+    var hint = document.getElementById('hint');
+    if (hint && hint.style.opacity !== '0') hint.textContent = mobile ? 'Swipe, or tap the edges' : 'Arrow keys or click the edges to move';
   }
   function go(n) {
     i = Math.max(0, Math.min(total - 1, n));
-    slides.forEach(function (s, k) { s.classList.toggle('on', k === i); s.setAttribute('aria-hidden', k === i ? 'false' : 'true'); });
+    slides.forEach(function (s, k) {
+      s.classList.toggle('on', k === i);
+      s.setAttribute('aria-hidden', k === i ? 'false' : 'true');
+      if (k === i) s.scrollTop = 0;
+    });
     document.getElementById('progress').style.width = ((i + 1) / total * 100) + '%';
     try { history.replaceState(null, '', '#' + (i + 1)); } catch (e) {}
   }
@@ -1139,11 +1291,21 @@ button.nav:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; 
     else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); go(i - 1); hideHint(); }
     else if (e.key === 'Home') go(0); else if (e.key === 'End') go(total - 1);
   });
+  var lang = document.querySelector('a.lang');
+  if (lang) lang.addEventListener('click', function () {
+    lang.href = lang.getAttribute('href').split('#')[0] + '#' + (i + 1);
+  });
   document.querySelector('.nav.next').addEventListener('click', function () { go(i + 1); hideHint(); });
   document.querySelector('.nav.prev').addEventListener('click', function () { go(i - 1); hideHint(); });
-  var x0 = null;
-  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-  document.addEventListener('touchend', function (e) { if (x0 === null) return; var d = e.changedTouches[0].clientX - x0; if (Math.abs(d) > 40) go(i + (d < 0 ? 1 : -1)); x0 = null; hideHint(); });
+  var x0 = null, y0 = null;
+  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var d = e.changedTouches[0].clientX - x0;
+    var dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(d) > 56 && Math.abs(d) > Math.abs(dy) * 1.2) go(i + (d < 0 ? 1 : -1));
+    x0 = null; y0 = null; hideHint();
+  });
   window.addEventListener('resize', fit);
   fit();
   var start = parseInt((location.hash || '').slice(1), 10);

@@ -64,7 +64,7 @@ Before an artifact is routed, scored, or placed in a Delphi round, the dossier n
 | Social or moral preference | Public participation, especially by people who live with the result | This is not an expert score. Advisers may clarify consequences. They do not cast the public’s values |
 | Proposed action | A named human owner, stated reasons, expected costs, and a correction path | Whether to support, refuse, or amend the action |
 
-This gate is the control plane for every tool named so far. Policy Delphi, multi-criteria comparison, and sensitivity analysis are procedures for when a dossier has reached estimates or options. They are a poor fit for a fresh news item that still lacks sources. Jev, if tested, sits inside predefined structured steps. It does not sit on the value row.
+This gate is the control plane for every tool named so far. Policy Delphi, multi-criteria comparison, and sensitivity analysis are procedures for when a dossier has reached estimates or options. They are a poor fit for a fresh news item that still lacks sources. A decision model of this kind, Jev or an open-weight peer such as Laya, if tested, sits inside predefined structured steps. It does not sit on the value row.
 
 ## 4. Artifacts
 
@@ -119,11 +119,11 @@ Proposed agent jobs, as clerks with narrow tasks:
 | Interpreter | Plain-language explanation, including Persian and later other languages | It does not replace the sourced artifact |
 | Keeper | Versions, traces, and redaction | It does not publish private material in the name of transparency |
 
-Language models, including open models where they fit, help search, extract, translate, compare, and explain. Jev, from TypeSafe AI, is a candidate for structured steps with a predefined answer type and a probability: classification, routing, scoring against stated criteria, or flagging an item for human review. Its maker’s claims about speed, cost, and calibration remain vendor claims until they are tested on Kavian’s languages, data, and questions. Jev is a licensed hosted service. A probability from Jev is a model output on a defined task. It is not a finding that a report is true, and it is not the best decision for a people.
+Language models, including open models where they fit, help search, extract, translate, compare, and explain. A different slot is a small model that only answers a fixed question and returns a probability: classification, routing, scoring against stated criteria, or flagging an item for human review. Jev, from TypeSafe, is a licensed hosted service with that ability. Laya is an open-weight model of the same kind. What matters is the ability, and the slot stays replaceable. Maker claims about speed, cost, and calibration remain untested on Kavian’s languages, data, and questions. A probability from either model is an output on a defined task. It is not a finding that a report is true, and it is not the best decision for a people.
 
 Observability, for this project, answers a civic question: which source version, which agent, which model, which human edit, which disagreement, and which later correction produced the account a person is reading. The same record can harm people if it exposes a vulnerable contributor, private evidence, or a security-sensitive detail. The public trace, the adviser trace, and the overseer trace are different views of one history. What each may see is still a design question. A useful default is to preserve the history of institutional claims and of substantive corrections, and to refuse permanence for personal detail that is not required for accountability.
 
-Open components support a hope of inspection and replacement. They do not, by themselves, make Kavian independent, neutral, or audited. LangChain and LangGraph are open-source. Langfuse’s core is open-source and self-hostable, with commercial features around it. LangSmith’s client SDK is open-source; the LangSmith platform should not be described as open-source. Vercel, GitHub, and Jev are external services. Independence has to be shown in replaceable parts, visible decisions, data governance, and a way to contest the operators.
+Open components support a hope of inspection and replacement. They do not, by themselves, make Kavian independent, neutral, or audited. LangChain and LangGraph are open-source. Langfuse’s core is open-source and self-hostable, with commercial features around it. LangSmith’s client SDK is open-source; the LangSmith platform should not be described as open-source. Vercel, GitHub, and Jev are external services. Laya’s weights can be run where the text must stay, and open weights are still not an audit of the system around them. Independence has to be shown in replaceable parts, visible decisions, data governance, and a way to contest the operators.
 
 ## 7. What the person receives
 
@@ -157,7 +157,7 @@ Artifacts: a claim card for the official justification, a comparison card for bu
 
 The comparison card goes to three advisers: someone who can read a public budget, someone who knows transport operations, and someone who can say whether the public language hides the cut. A rider from an affected district can submit the missing experience without joining that trio. The Mirror agent lays their responses side by side. If they disagree about the arithmetic, that is an evidence problem. If they disagree about whether a longer walk is an acceptable price, that is a value problem, and it stays labeled as one.
 
-Jev, in this miniature, may only help route the cards or flag that the budget and the timetable disagree on a predefined check. The Interpreter writes the public view in plain language. The Keeper stores the version the public saw, and the later version if the authority replies. A person reading the view can tell what is sourced, what is estimated, what is a value conflict, and how to add a correction.
+A decision model, in this miniature, may only help route the cards or flag that the budget and the timetable disagree on a predefined check. Jev or Laya could fill that step. Neither may score the value question. The Interpreter writes the public view in plain language. The Keeper stores the version the public saw, and the later version if the authority replies. A person reading the view can tell what is sourced, what is estimated, what is a value conflict, and how to add a correction.
 
 ## 9. Powers this design still has
 
@@ -182,7 +182,7 @@ Kavian should also be able to record repair: a promise kept, a correction accept
 | Kavian is a design for public understanding, oversight, and the capacity to choose | It is not yet shown here as a live service with measured public effect |
 | Advisers review artifacts and their disagreements stay visible | Recruitment, pay, selection, and appeal rules are undesigned |
 | The intended stack is multi-agent, observable, and meant to be replaceable | Repository, deployment, and trace quality have not been inspected in this folder |
-| Jev is a candidate for bounded structured steps, beside language models | It is not the brain of the system, and it is not an open model |
+| A decision model is a candidate for bounded structured steps, beside language models. Jev is hosted. Laya is open weights | It is not the brain of the system. Open weights are not an audit, and neither model has been tested on Kavian’s Persian text |
 | Policy Delphi, structured elicitation, multi-criteria comparison, and sensitivity analysis are methods worth testing | None of them is an implemented decision procedure |
 
 The audience for The New Centre, as inferred from the application, cares whether a system can be asked a better question than the one it was given. The stitched architecture is a proposal for where that interruption lives: at the question-type gate, in the artifact a person can challenge, in the preserved disagreement, and in the trace of how the account changed.
@@ -193,7 +193,7 @@ These are the next pieces of work in this folder. They are ordered so the presen
 
 1. **Choose the illustrative issue** for a public-view specimen. Criteria: one decision a non-specialist can feel; at least two conflicting records; a visible cost; a missing voice; a value question that must stay with people. The miniature in Section 8 can be replaced once the issue is chosen.
 2. **Freeze a first artifact schema** from the fields in Section 4, plus the adviser return: stance, reason, what would change the reviewer’s mind, conflict note, and whether the question itself is refused.
-3. **Write the question-type gate as rules** an agent and a human steward would both follow, including which question types Jev is forbidden to score.
+3. **Write the question-type gate as rules** an agent and a human steward would both follow, including which question types a decision model is forbidden to score.
 4. **Write the trace and redaction matrix:** public, adviser, and overseer views; what is kept forever; what can be withdrawn when a person would be harmed.
 5. **Only then draft the presentation narrative,** using the through-line already sketched in the [reference](./REFERENCE.md): lived problem, design question, this circulation, the powers it still holds, and the research question of whether the system can change its own frame.
 
