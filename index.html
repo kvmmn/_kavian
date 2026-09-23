@@ -229,8 +229,8 @@ table.m { border-collapse: collapse; width: 100%; }
 .dot.f { background: var(--white); }
 .dot.h { border: 2px solid var(--white); }
 .dot.n { width: 18px; height: 2px; border-radius: 0; background: var(--rule); vertical-align: middle; }
-.m td.t { background: rgba(255,255,255,.04); }
-.m .tn { background: #8c8c8c; }
+.m td.t { background: rgba(255,26,26,.07); }
+.m .tn { background: var(--red); }
 .qs { align-self: center; }
 .qs h4 { font-size: 16px; color: var(--faint); font-weight: 500; margin-bottom: 16px; }
 .qs p { font-size: 22px; line-height: 1.3; font-weight: 600; padding: 13px 0; border-top: 1.5px solid var(--rule); }
@@ -310,7 +310,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .journey b { display: block; font-size: 23px; font-weight: 800; line-height: 1.15; margin-top: 6px; min-height: 2.3em; }
 .journey p { font-size: 19px; color: var(--muted); line-height: 1.45; margin-top: 12px; }
 .journey .endj b { color: var(--white); }
-.journey .endj::before { background: var(--white); box-shadow: 0 0 0 4px var(--black), 0 0 0 5.5px var(--white); }
+.journey .endj::before { background: var(--red); }
 .kinds { margin-top: 40px; display: grid; grid-template-columns: 250px 1fr 1.25fr 230px; }
 .kinds > div { padding: 20px 24px 20px 0; border-top: 1.5px solid var(--rule); font-size: 19px; line-height: 1.4; color: var(--soft); }
 .kinds .h { border-top: none; font-size: 15px; color: var(--faint); padding: 0 0 12px; }
@@ -333,7 +333,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .fails { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px 48px; margin-top: 70px; }
 .fails div { border-top: 1.5px solid var(--rule); padding: 22px 0 30px; }
 .fails b { display: block; min-height: 2.5em; font-size: 26px; line-height: 1.25; font-weight: 700; }
-.fails p { font-size: 20px; line-height: 1.45; color: var(--soft); margin-top: 12px; padding-left: 16px; border-left: 3px solid var(--white); }
+.fails p { font-size: 20px; line-height: 1.45; color: var(--soft); margin-top: 12px; padding-left: 16px; border-left: 3px solid var(--red); }
 .shape { grid-template-columns: 190px 1fr; }
 .shape b { white-space: nowrap; }
 
@@ -354,7 +354,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .exhibit p { font-size: 16px; line-height: 1.5; color: var(--muted); }
 .exhibit b { color: var(--white); }
 .toll { display: grid; grid-template-columns: 1fr 1.25fr 1.25fr 1fr; gap: 36px; margin-top: 56px; }
-.toll div { border-top: 3px solid var(--white); padding-top: 16px; }
+.toll div { border-top: 3px solid var(--red); padding-top: 16px; }
 .toll b { display: block; font-size: 46px; font-weight: 800; letter-spacing: -0.025em; line-height: 1; }
 .toll p { font-size: 17px; line-height: 1.4; color: var(--muted); margin-top: 10px; }
 
@@ -429,7 +429,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .coa div { border-top: 1.5px solid var(--rule); padding-top: 18px; }
 .coa h4 { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
 .coa p { font-size: 20px; line-height: 1.45; color: var(--muted); margin-top: 10px; }
-.coa .won { border-top: 3px solid var(--white); }
+.coa .won { border-top: 3px solid var(--red); }
 .coa .won h4 { color: var(--white); }
 .coa .won p { color: var(--soft); }
 .newpath { margin-top: auto; font-size: 28px; line-height: 1.3; font-weight: 700; max-width: 52ch; }
@@ -475,20 +475,19 @@ table.m { border-collapse: collapse; width: 100%; }
 .tlright svg { display: block; }
 .wallv { margin-top: auto; margin-bottom: 40px; }
 .wallv p { font-size: 25px; line-height: 1.35; color: var(--muted); max-width: 24ch; }
-.wallv p.after { color: var(--soft); }
+.wallv p.after { color: var(--soft); margin-top: 18px; }
+.wallv p b { color: var(--white); font-weight: 800; }
+#tl-berlin { filter: drop-shadow(0 0 5px rgba(255,255,255,.55)); animation: door 4.2s ease-in-out infinite; }
+@keyframes door { 0%, 100% { filter: drop-shadow(0 0 3px rgba(255,255,255,.35)); } 50% { filter: drop-shadow(0 0 9px rgba(255,255,255,.75)); } }
+@media (prefers-reduced-motion: reduce) { #tl-berlin { animation: none; } }
 .wallv p.after b { color: var(--white); }
-.brickh { position: relative; height: 40px; width: 300px; margin: 22px 0 18px; }
-.brickh span { position: absolute; height: 12px; background: var(--white); }
-.brickh span:first-child { left: 0; width: 132px; top: 8px; }
-.brickh span:nth-child(2) { left: 150px; width: 150px; top: 18px; }
-.brickh em { position: absolute; left: 310px; top: 12px; font-style: normal; font-size: 13px; color: var(--faint); white-space: nowrap; }
 
 
 .horizon { display: grid; grid-template-columns: 1fr 1.2fr 1.2fr; margin-top: 56px; position: relative; }
 .horizon::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 2px; background: linear-gradient(90deg, #555, #fff); }
 .hz { position: relative; padding-right: 40px; }
 .hz i { display: block; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #fff; position: relative; }
-.hz.end i { background: var(--white); border-color: var(--white); }
+.hz.end i { background: var(--red); border-color: var(--red); }
 .hz b { display: block; font-size: 26px; font-weight: 800; margin-top: 18px; }
 .hz p { font-size: 19px; line-height: 1.45; color: var(--muted); margin-top: 8px; max-width: 30ch; }
 .lifework { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 52px; }
@@ -570,8 +569,6 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   html.mobile .kaveh { display: flex; flex-direction: column; align-items: stretch; }
   html.mobile .kaveh figure, html.mobile .kx { min-width: 0; max-width: 100%; width: 100%; }
   html.mobile .kaveh figure img, html.mobile .kaveh img { width: 100% !important; max-width: 100%; height: auto !important; max-height: 46vh; object-fit: contain; }
-  html.mobile .brickh { width: 100%; max-width: 282px; height: 58px; }
-  html.mobile .brickh em { left: 0; top: 34px; white-space: normal; }
   html.mobile .kaveh h2, html.mobile .kstory { font-size: 22px; }
   html.mobile .statement { font-size: 26px; }
   html.mobile .dossier { grid-template-columns: 1fr; }
@@ -729,8 +726,6 @@ html:not(.mobile) .hz p { font-size: 21px; }
 html:not(.mobile) .lifework p { font-size: 22px; }
 
 /* the Wall: bars and their caption read as one mark */
-html:not(.mobile) .brickh { height: 62px; }
-html:not(.mobile) .brickh em { left: 0; top: 40px; font-size: 16px; }
 
 /* close: the offer and the last line as one composition */
 html:not(.mobile) .close { justify-content: flex-start; }
@@ -789,102 +784,57 @@ html:not(.mobile) .farnote { font-size: 28px; }
   .hint, .progress, button.nav { display: none; }
 }
 
-/* Berlin, in pictures: two full-bleed spreads cut by 3px black seams. */
+/* Berlin, in pictures: all photographs whole, in justified rows; one opens when the pointer rests on it */
 .bslide { padding: 0; }
-.bslide .sec { top: 28px; left: 30px; z-index: 3; }
-.bslide .num { right: 0; bottom: 0; z-index: 3; background: #000; color: var(--muted); padding: 9px 14px 8px; }
-.bgrid { width: 100%; height: 100%; display: grid; gap: 3px; background: #000; }
-.bp { position: relative; margin: 0; overflow: hidden; background: #0a0a0a; grid-area: var(--a); opacity: 0;
-  transition: opacity .9s ease calc(var(--i, 0) * 55ms); }
-.bp::before { content: attr(data-file); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  border: 1px dashed #2a2a2a; color: #444; font-size: 12px; letter-spacing: .04em; }
-.bp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--p, 50% 50%); display: block;
-  transform: scale(1.06); transition: transform 1.8s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 55ms); }
-.bslide.on .bp { opacity: 1; }
-.bslide.on .bp img { transform: none; }
-@media (prefers-reduced-motion: reduce) { .bp, .bp img { transition: none; } }
-@media print { .bp { opacity: 1; } .bp img { transform: none; } }
-
-/* Spread 1: the city in stone and at night, around one large frame */
-.bcity { grid-template-columns: 1.15fr .85fr 1fr 1fr 1fr 1.05fr .95fr 1fr; grid-template-rows: 1.1fr .9fr 1fr 1fr .95fr 1.05fr;
-  grid-template-areas:
-    "t t h h h a a b"
-    "t t h h h a a b"
-    "c d h h h e e b"
-    "c d f f g e e i"
-    "j j f f g k l i"
-    "j j f f g k l i"; }
-.btitle { grid-area: t; background: #000; display: flex; align-items: flex-end; padding: 0 30px 26px; }
-.btitle h2 { font-size: 76px; line-height: .92; letter-spacing: -0.045em; font-weight: 900; max-width: 6ch; }
+.bslide .sec { z-index: 3; }
+.bslide .num { z-index: 3; right: 0; bottom: 0; background: #000; color: var(--muted); padding: 9px 14px 8px; }
+.btitle { position: absolute; left: 112px; top: 108px; }
+.btitle h2 { font-size: 66px; line-height: .94; letter-spacing: -0.04em; font-weight: 900; max-width: 6ch; }
 .btitle h2 i { font-style: normal; color: var(--red); }
-
-/* Spread 2: evenings. Five skies cut to horizon bands, pale to dusk, beside the people */
-.bdusk { grid-template-columns: 640fr 960fr; }
-.bdusk .bl { display: grid; gap: 3px; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1.46fr 1fr;
-  grid-template-areas: "p p p p" "q q r r" "s s u v"; }
-.bdusk .bands { display: grid; gap: 3px; grid-template-rows: repeat(5, 1fr); }
-
-/* End: the mark alone, centred */
-.slide.end { padding: 0; align-items: center; justify-content: center; }
-/* Berlin, scattered: the photographs as small objects on a white field */
-.bscatter { background: var(--white); padding: 0; }
-.bscatter .sec { color: #9a9a9a; }
-.bscatter .sec b { color: #6a6a6a; }
-.bscatter .num { color: #9a9a9a; }
-.field { position: absolute; inset: 0; }
-.sp { position: absolute; margin: 0; transform: translate(-50%, -50%); }
-.sp img { display: block; max-width: var(--s); max-height: var(--s); width: auto; height: auto; }
-.sp figcaption { position: absolute; left: 0; top: calc(100% + 6px); font-size: 10px; letter-spacing: .08em; color: #a8a8a8; font-variant-numeric: tabular-nums; }
+.bmos { position: absolute; right: 0; bottom: 0; width: 1216px; display: flex; flex-direction: column; gap: 3px; }
+.brow { display: flex; gap: 3px; flex: none; }
+.mt { position: relative; margin: 0; flex-basis: 0; min-width: 0; background: #0a0a0a; opacity: 0; transform-origin: var(--ox) var(--oy);
+  transition: opacity .8s ease calc(var(--i, 0) * 40ms), transform .5s cubic-bezier(.2,.7,.2,1) 0s, box-shadow .5s ease 0s; }
+.mt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bslide.on .mt { opacity: 1; }
+html:not(.mobile) .mt { cursor: zoom-in; }
+html:not(.mobile) .bslide.on .bmos:hover .mt:not(:hover) { opacity: .32; transition-delay: 0s; }
+html:not(.mobile) .mt:hover { transform: scale(2.4); z-index: 5; box-shadow: 0 24px 80px rgba(0,0,0,.85); }
+@media (prefers-reduced-motion: reduce) { .mt { transition: none; } }
+.bslide.instant .mt { transition: none; }
+@media print { .mt { opacity: 1 !important; transform: none !important; } }
+html.mobile .bslide { padding: 56px 0 72px; }
+html.mobile .bslide .sec { left: 28px; }
+html.mobile .btitle { position: static; padding: 0 28px 22px; }
+html.mobile .btitle h2 { font-size: 48px; max-width: none; }
+html.mobile .bmos { position: static; display: block; width: 100%; height: auto !important; column-count: 2; column-gap: 3px; }
+html.mobile .brow { display: contents; }
+html.mobile .mt { break-inside: avoid; margin-bottom: 3px; }
+html.mobile .mt img { height: auto; }
 
 /* Berlin, embedded */
 .blatent { padding: 0; }
 .blatent .sec { z-index: 2; }
 .latent { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
 .latent:active { cursor: grabbing; }
-html.mobile .bscatter, html.mobile .blatent { padding: 0; overflow: hidden; }
-html.mobile .sp img { max-width: calc(var(--s) * .42); max-height: calc(var(--s) * .42); }
-html.mobile .sp figcaption { font-size: 8px; top: calc(100% + 3px); }
+html.mobile .blatent { padding: 0; overflow: hidden; }
 
-/* The drawing's own lines carry the red; light moves through them like heat in a groove. */
+/* End: the mark alone. Its own lines carry the red, and the light in them beats like a pulse at rest. */
+.slide.end { padding: 0; align-items: center; justify-content: center; }
 .endmark { position: relative; height: 600px; aspect-ratio: 896 / 1195; display: block;
-  filter: drop-shadow(0 0 1.5px rgba(255,70,40,.95)) drop-shadow(0 0 12px rgba(255,26,26,.55)) drop-shadow(0 0 42px rgba(255,26,26,.28));
-  animation: ember 6.5s ease-in-out infinite; }
+  filter: drop-shadow(0 0 1.5px rgba(255,60,40,.85)) drop-shadow(0 0 10px rgba(255,26,26,.38)) drop-shadow(0 0 36px rgba(255,26,26,.16)); }
 .endmark span { position: absolute; inset: 0;
   -webkit-mask: url(assets/kavian-lines.png) center / contain no-repeat; mask: url(assets/kavian-lines.png) center / contain no-repeat; }
 .endmark .ink { background: var(--red); }
-.endmark .heat { mix-blend-mode: screen;
-  background:
-    radial-gradient(38% 22% at 30% 72%, rgba(255,150,60,.75), transparent 70%),
-    radial-gradient(30% 20% at 68% 38%, rgba(255,110,30,.6), transparent 70%),
-    radial-gradient(26% 16% at 45% 12%, rgba(255,190,120,.55), transparent 70%);
-  background-size: 180% 180%, 200% 200%, 220% 220%;
-  animation: flicker 11s ease-in-out infinite alternate; }
-.endmark .beam { mix-blend-mode: screen;
-  background: linear-gradient(170deg, transparent 38%, rgba(255,120,80,.35) 45%, rgba(255,235,210,.95) 50%, rgba(255,120,80,.35) 55%, transparent 62%) 50% 0 / 100% 320% no-repeat;
-  animation: beam 8s cubic-bezier(.45,0,.55,1) infinite; }
-@keyframes ember { 0%, 100% { opacity: .92; } 38% { opacity: 1; } 52% { opacity: .86; } 71% { opacity: .98; } }
-@keyframes flicker {
-  0% { background-position: 0% 100%, 100% 0%, 50% 0%; }
-  33% { background-position: 60% 40%, 20% 70%, 10% 60%; }
-  66% { background-position: 20% 10%, 80% 90%, 90% 30%; }
-  100% { background-position: 100% 60%, 40% 20%, 30% 100%; } }
-@keyframes beam { 0% { background-position: 50% 110%; } 70%, 100% { background-position: 50% -10%; } }
-@media (prefers-reduced-motion: reduce) { .endmark, .endmark span { animation: none; } }
+.endmark .pulse { mix-blend-mode: screen; opacity: 0;
+  background: radial-gradient(60% 45% at 50% 55%, rgba(255,150,110,.9), rgba(255,60,40,.35) 60%, transparent 85%);
+  animation: beat 1.9s cubic-bezier(.3,0,.3,1) infinite; }
+@keyframes beat { 0% { opacity: 0; } 7% { opacity: .5; } 15% { opacity: .08; } 23% { opacity: .32; } 40%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .endmark .pulse { animation: none; } }
 
 /* close slide without the tattoo */
 html:not(.mobile) .close .marks { gap: 0; }
 html:not(.mobile) .close .last h2 { max-width: 20ch; }
-
-html.mobile .bslide { padding: 0 0 56px; }
-html.mobile .bgrid, html.mobile .bdusk .bl, html.mobile .bdusk .bands { height: auto; grid-template-areas: none; grid-template-rows: none;
-  grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
-html.mobile .bdusk .bl, html.mobile .bdusk .bands { display: contents; }
-html.mobile .bp { grid-area: auto; height: 62vw; }
-html.mobile .bp.w { grid-column: span 2; height: 64vw; }
-html.mobile .bands .bp { grid-column: span 2; height: 26vw; }
-html.mobile .btitle { grid-area: auto; grid-column: span 2; padding: 64px 22px 22px; }
-html.mobile .btitle h2 { font-size: 52px; max-width: none; }
-html.mobile .bslide .sec { top: 16px; left: 22px; }
 html.mobile .slide.end { padding: 0; }
 html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
 </style>
@@ -976,84 +926,51 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
       <h2>Every day after, it got worse.</h2>
       <p class="lead">Ninety days, drawn to scale. The bars grow as the country closed in.</p>
       <div class="wallv">
-        <p>Just as everything was falling apart, I came to Berlin.</p>
-        <div class="brickh" aria-hidden="true"><span></span><span></span><em>The Wall, 1961–1989</em></div>
+        <p>Just as everything was falling apart, I came to <b>Berlin.</b></p>
         <p class="after">A city that once fell apart <b>and found itself again.</b></p>
       </div>
     </div>
-    <div class="tlright"><svg viewBox="0 0 730 735" width="730" height="735" role="img" aria-label="Timeline to scale, 11 December 2025 to 12 March 2026."><line x1="250" y1="22" x2="250" y2="60.0" stroke="#5a5a5a" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M242 64.0 l16 -6 M242 70.0 l16 -6" stroke="#8a8a8a" stroke-width="1.5"/><line x1="250" y1="78.0" x2="250" y2="605.0" stroke="#5a5a5a" stroke-width="1.5"/><line x1="244" y1="211.3" x2="250" y2="211.3" stroke="#5a5a5a"/><text x="236" y="216" text-anchor="end" font-size="15" fill="#8c8c8c">January</text><line x1="244" y1="408.2" x2="250" y2="408.2" stroke="#5a5a5a"/><text x="158" y="413" text-anchor="end" font-size="15" fill="#8c8c8c">February</text><line x1="244" y1="593" x2="250" y2="593" stroke="#5a5a5a"/><text x="236" y="599" text-anchor="end" font-size="15" fill="#8c8c8c">March</text><line x1="244" y1="268.5" x2="235.8" y2="268.5" stroke="#444444" stroke-width="2"/><line x1="244" y1="274.9" x2="236.4" y2="274.9" stroke="#474747" stroke-width="2"/><line x1="244" y1="281.2" x2="229.8" y2="281.2" stroke="#4a4a4a" stroke-width="2"/><line x1="244" y1="287.5" x2="233.7" y2="287.5" stroke="#4d4d4d" stroke-width="2"/><line x1="244" y1="293.9" x2="226.9" y2="293.9" stroke="#505050" stroke-width="2"/><line x1="244" y1="300.2" x2="226.4" y2="300.2" stroke="#535353" stroke-width="2"/><line x1="244" y1="306.6" x2="227.0" y2="306.6" stroke="#565656" stroke-width="2"/><line x1="244" y1="312.9" x2="220.0" y2="312.9" stroke="#595959" stroke-width="2"/><line x1="244" y1="319.3" x2="222.1" y2="319.3" stroke="#5c5c5c" stroke-width="2"/><line x1="244" y1="325.6" x2="215.4" y2="325.6" stroke="#5f5f5f" stroke-width="2"/><line x1="244" y1="332.0" x2="216.2" y2="332.0" stroke="#626262" stroke-width="2"/><line x1="244" y1="338.3" x2="213.1" y2="338.3" stroke="#656565" stroke-width="2"/><line x1="244" y1="344.7" x2="206.7" y2="344.7" stroke="#696969" stroke-width="2"/><line x1="244" y1="351.1" x2="199.6" y2="351.1" stroke="#6c6c6c" stroke-width="2"/><line x1="244" y1="357.4" x2="203.5" y2="357.4" stroke="#6f6f6f" stroke-width="2"/><line x1="244" y1="363.8" x2="199.3" y2="363.8" stroke="#727272" stroke-width="2"/><line x1="244" y1="370.1" x2="192.0" y2="370.1" stroke="#757575" stroke-width="2"/><line x1="244" y1="376.4" x2="185.4" y2="376.4" stroke="#787878" stroke-width="2"/><line x1="244" y1="382.8" x2="185.7" y2="382.8" stroke="#7b7b7b" stroke-width="2"/><line x1="244" y1="389.1" x2="184.1" y2="389.1" stroke="#7e7e7e" stroke-width="2"/><line x1="244" y1="395.5" x2="174.8" y2="395.5" stroke="#818181" stroke-width="2"/><line x1="244" y1="401.8" x2="180.5" y2="401.8" stroke="#848484" stroke-width="2"/><line x1="244" y1="408.2" x2="168.8" y2="408.2" stroke="#878787" stroke-width="2"/><line x1="244" y1="414.5" x2="170.8" y2="414.5" stroke="#8a8a8a" stroke-width="2"/><line x1="244" y1="420.9" x2="168.5" y2="420.9" stroke="#8e8e8e" stroke-width="2"/><line x1="244" y1="427.2" x2="165.0" y2="427.2" stroke="#919191" stroke-width="2"/><line x1="244" y1="433.6" x2="159.3" y2="433.6" stroke="#949494" stroke-width="2"/><line x1="244" y1="439.9" x2="150.4" y2="439.9" stroke="#979797" stroke-width="2"/><line x1="244" y1="446.3" x2="152.8" y2="446.3" stroke="#9a9a9a" stroke-width="2"/><line x1="244" y1="452.6" x2="144.9" y2="452.6" stroke="#9d9d9d" stroke-width="2"/><line x1="244" y1="459.0" x2="140.3" y2="459.0" stroke="#a0a0a0" stroke-width="2"/><line x1="244" y1="465.3" x2="139.0" y2="465.3" stroke="#a3a3a3" stroke-width="2"/><line x1="244" y1="471.7" x2="133.2" y2="471.7" stroke="#a6a6a6" stroke-width="2"/><line x1="244" y1="478.0" x2="133.9" y2="478.0" stroke="#a9a9a9" stroke-width="2"/><line x1="244" y1="484.4" x2="129.8" y2="484.4" stroke="#acacac" stroke-width="2"/><line x1="244" y1="490.8" x2="124.2" y2="490.8" stroke="#afafaf" stroke-width="2"/><line x1="244" y1="497.1" x2="115.2" y2="497.1" stroke="#b3b3b3" stroke-width="2"/><line x1="244" y1="503.4" x2="113.5" y2="503.4" stroke="#b6b6b6" stroke-width="2"/><line x1="244" y1="509.8" x2="110.4" y2="509.8" stroke="#b9b9b9" stroke-width="2"/><line x1="244" y1="516.1" x2="103.4" y2="516.1" stroke="#bcbcbc" stroke-width="2"/><line x1="244" y1="522.5" x2="100.3" y2="522.5" stroke="#bfbfbf" stroke-width="2"/><line x1="244" y1="528.8" x2="97.5" y2="528.8" stroke="#c2c2c2" stroke-width="2"/><line x1="244" y1="535.2" x2="88.1" y2="535.2" stroke="#c5c5c5" stroke-width="2"/><line x1="244" y1="541.5" x2="84.7" y2="541.5" stroke="#c8c8c8" stroke-width="2"/><line x1="244" y1="547.9" x2="84.7" y2="547.9" stroke="#cbcbcb" stroke-width="2"/><line x1="244" y1="554.2" x2="76.9" y2="554.2" stroke="#cecece" stroke-width="2"/><line x1="244" y1="560.6" x2="72.9" y2="560.6" stroke="#d1d1d1" stroke-width="2"/><line x1="244" y1="567.0" x2="64.8" y2="567.0" stroke="#d4d4d4" stroke-width="2"/><line x1="244" y1="573.3" x2="61.7" y2="573.3" stroke="#d8d8d8" stroke-width="2"/><line x1="56" y1="579.6" x2="256" y2="579.6" stroke="#fff" stroke-width="3"/><circle cx="250" cy="579.6" r="5" fill="#fff"/><line x1="250" y1="579.6" x2="250" y2="605.0" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4"/><rect x="244" y="605.0" width="12" height="50.89999999999998" fill="#fff"/><text x="234" y="635.45" text-anchor="end" font-size="15" font-weight="800" fill="#fff">Berlin</text><circle cx="250" cy="22" r="6" fill="#000" stroke="#fff" stroke-width="2"/><path d="M258 22 L272 22 L286 23" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="28" font-size="18" font-weight="700" fill="#fff">Admission</text><text x="294" y="49" font-size="15.5" fill="#c8c8c8">before it all</text><circle cx="250" cy="78.0" r="4" fill="#fff"/><path d="M258 78.0 L272 78.0 L286 79.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="84.0" font-size="18" font-weight="700" fill="#fff">11 December</text><text x="294" y="105.0" font-size="15.5" fill="#c8c8c8">my birthday</text><circle cx="250" cy="185.9" r="4" fill="#fff"/><path d="M258 185.9 L272 185.9 L286 186.9" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="191.9" font-size="18" font-weight="700" fill="#fff">28 December</text><text x="294" y="212.9" font-size="15.5" fill="#c8c8c8">the currency collapses; protests begin</text><rect x="243" y="254.8" width="14" height="8.3" fill="#fff"/><path d="M258 259.0 L272 259.0 L286 260.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="265.0" font-size="18" font-weight="800" fill="#fff">8 and 9 January</text><text x="294" y="286.0" font-size="15.5" fill="#c8c8c8">the night; the blackout</text><circle cx="250" cy="370.1" r="4" fill="#fff"/><path d="M258 370.1 L272 370.1 L286 371.1" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="376.1" font-size="18" font-weight="700" fill="#fff">26 January</text><text x="294" y="397.1" font-size="15.5" fill="#c8c8c8">over 40,000 arrested;</text><text x="294" y="416.1" font-size="15.5" fill="#c8c8c8">US forces mass in the region</text><circle cx="250" cy="560.6" r="4" fill="#fff"/><path d="M258 560.6 L268 560.6 L268 482 L286 482" fill="none" stroke="#555" stroke-width="1.2"/><text x="294" y="487" font-size="18" font-weight="700" fill="#fff">25 February</text><text x="294" y="508" font-size="15.5" fill="#c8c8c8">visa</text><path d="M258 579.6 L276 579.6 L276 552 L286 552" fill="none" stroke="#fff" stroke-width="1.2"/><text x="294" y="557" font-size="18" font-weight="800" fill="#fff">28 February</text><text x="294" y="578" font-size="15.5" fill="#e6e6e6">Iran’s Supreme Leader is killed;</text><text x="294" y="597" font-size="15.5" fill="#e6e6e6">the US and Israel go to war;</text><text x="294" y="616" font-size="15.5" fill="#e6e6e6">I leave for the Turkish border</text><circle cx="250" cy="605.0" r="5" fill="#fff"/><path d="M258 605.0 L268 605.0 L268 645 L286 645" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="650" font-size="18" font-weight="800" fill="#fff">4 March</text><text x="294" y="671" font-size="15.5" fill="#c8c8c8">I reach Berlin</text><circle cx="250" cy="655.9" r="4" fill="#fff"/><path d="M258 655.9 L276 655.9 L276 700 L286 700" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="705" font-size="18" font-weight="700" fill="#fff">12 March</text><text x="294" y="726" font-size="15.5" fill="#c8c8c8">university begins</text></svg></div>
+    <div class="tlright"><svg viewBox="0 0 730 735" width="730" height="735" role="img" aria-label="Timeline to scale, 11 December 2025 to 12 March 2026."><line x1="250" y1="22" x2="250" y2="60.0" stroke="#5a5a5a" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M242 64.0 l16 -6 M242 70.0 l16 -6" stroke="#8a8a8a" stroke-width="1.5"/><line x1="250" y1="78.0" x2="250" y2="605.0" stroke="#5a5a5a" stroke-width="1.5"/><line x1="244" y1="211.3" x2="250" y2="211.3" stroke="#5a5a5a"/><text x="236" y="216" text-anchor="end" font-size="15" fill="#8c8c8c">January</text><line x1="244" y1="408.2" x2="250" y2="408.2" stroke="#5a5a5a"/><text x="158" y="413" text-anchor="end" font-size="15" fill="#8c8c8c">February</text><line x1="244" y1="593" x2="250" y2="593" stroke="#5a5a5a"/><text x="236" y="599" text-anchor="end" font-size="15" fill="#8c8c8c">March</text><line x1="244" y1="268.5" x2="235.8" y2="268.5" stroke="#444444" stroke-width="2"/><line x1="244" y1="274.9" x2="236.4" y2="274.9" stroke="#474747" stroke-width="2"/><line x1="244" y1="281.2" x2="229.8" y2="281.2" stroke="#4a4a4a" stroke-width="2"/><line x1="244" y1="287.5" x2="233.7" y2="287.5" stroke="#4d4d4d" stroke-width="2"/><line x1="244" y1="293.9" x2="226.9" y2="293.9" stroke="#505050" stroke-width="2"/><line x1="244" y1="300.2" x2="226.4" y2="300.2" stroke="#535353" stroke-width="2"/><line x1="244" y1="306.6" x2="227.0" y2="306.6" stroke="#565656" stroke-width="2"/><line x1="244" y1="312.9" x2="220.0" y2="312.9" stroke="#595959" stroke-width="2"/><line x1="244" y1="319.3" x2="222.1" y2="319.3" stroke="#5c5c5c" stroke-width="2"/><line x1="244" y1="325.6" x2="215.4" y2="325.6" stroke="#5f5f5f" stroke-width="2"/><line x1="244" y1="332.0" x2="216.2" y2="332.0" stroke="#626262" stroke-width="2"/><line x1="244" y1="338.3" x2="213.1" y2="338.3" stroke="#656565" stroke-width="2"/><line x1="244" y1="344.7" x2="206.7" y2="344.7" stroke="#696969" stroke-width="2"/><line x1="244" y1="351.1" x2="199.6" y2="351.1" stroke="#6c6c6c" stroke-width="2"/><line x1="244" y1="357.4" x2="203.5" y2="357.4" stroke="#6f6f6f" stroke-width="2"/><line x1="244" y1="363.8" x2="199.3" y2="363.8" stroke="#727272" stroke-width="2"/><line x1="244" y1="370.1" x2="192.0" y2="370.1" stroke="#757575" stroke-width="2"/><line x1="244" y1="376.4" x2="185.4" y2="376.4" stroke="#787878" stroke-width="2"/><line x1="244" y1="382.8" x2="185.7" y2="382.8" stroke="#7b7b7b" stroke-width="2"/><line x1="244" y1="389.1" x2="184.1" y2="389.1" stroke="#7e7e7e" stroke-width="2"/><line x1="244" y1="395.5" x2="174.8" y2="395.5" stroke="#818181" stroke-width="2"/><line x1="244" y1="401.8" x2="180.5" y2="401.8" stroke="#848484" stroke-width="2"/><line x1="244" y1="408.2" x2="168.8" y2="408.2" stroke="#878787" stroke-width="2"/><line x1="244" y1="414.5" x2="170.8" y2="414.5" stroke="#8a8a8a" stroke-width="2"/><line x1="244" y1="420.9" x2="168.5" y2="420.9" stroke="#8e8e8e" stroke-width="2"/><line x1="244" y1="427.2" x2="165.0" y2="427.2" stroke="#919191" stroke-width="2"/><line x1="244" y1="433.6" x2="159.3" y2="433.6" stroke="#949494" stroke-width="2"/><line x1="244" y1="439.9" x2="150.4" y2="439.9" stroke="#979797" stroke-width="2"/><line x1="244" y1="446.3" x2="152.8" y2="446.3" stroke="#9a9a9a" stroke-width="2"/><line x1="244" y1="452.6" x2="144.9" y2="452.6" stroke="#9d9d9d" stroke-width="2"/><line x1="244" y1="459.0" x2="140.3" y2="459.0" stroke="#a0a0a0" stroke-width="2"/><line x1="244" y1="465.3" x2="139.0" y2="465.3" stroke="#a3a3a3" stroke-width="2"/><line x1="244" y1="471.7" x2="133.2" y2="471.7" stroke="#a6a6a6" stroke-width="2"/><line x1="244" y1="478.0" x2="133.9" y2="478.0" stroke="#a9a9a9" stroke-width="2"/><line x1="244" y1="484.4" x2="129.8" y2="484.4" stroke="#acacac" stroke-width="2"/><line x1="244" y1="490.8" x2="124.2" y2="490.8" stroke="#afafaf" stroke-width="2"/><line x1="244" y1="497.1" x2="115.2" y2="497.1" stroke="#b3b3b3" stroke-width="2"/><line x1="244" y1="503.4" x2="113.5" y2="503.4" stroke="#b6b6b6" stroke-width="2"/><line x1="244" y1="509.8" x2="110.4" y2="509.8" stroke="#b9b9b9" stroke-width="2"/><line x1="244" y1="516.1" x2="103.4" y2="516.1" stroke="#bcbcbc" stroke-width="2"/><line x1="244" y1="522.5" x2="100.3" y2="522.5" stroke="#bfbfbf" stroke-width="2"/><line x1="244" y1="528.8" x2="97.5" y2="528.8" stroke="#c2c2c2" stroke-width="2"/><line x1="244" y1="535.2" x2="88.1" y2="535.2" stroke="#c5c5c5" stroke-width="2"/><line x1="244" y1="541.5" x2="84.7" y2="541.5" stroke="#c8c8c8" stroke-width="2"/><line x1="244" y1="547.9" x2="84.7" y2="547.9" stroke="#cbcbcb" stroke-width="2"/><line x1="244" y1="554.2" x2="76.9" y2="554.2" stroke="#cecece" stroke-width="2"/><line x1="244" y1="560.6" x2="72.9" y2="560.6" stroke="#d1d1d1" stroke-width="2"/><line x1="244" y1="567.0" x2="64.8" y2="567.0" stroke="#d4d4d4" stroke-width="2"/><line x1="244" y1="573.3" x2="61.7" y2="573.3" stroke="#d8d8d8" stroke-width="2"/><line x1="56" y1="579.6" x2="256" y2="579.6" stroke="#ff1a1a" stroke-width="3"/><circle cx="250" cy="579.6" r="5" fill="#ff1a1a"/><line x1="250" y1="579.6" x2="250" y2="605.0" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4"/><rect id="tl-berlin" x="244" y="605.0" width="12" height="50.89999999999998" fill="#fff"/><text x="234" y="635.45" text-anchor="end" font-size="15" font-weight="800" fill="#fff">Berlin</text><circle cx="250" cy="22" r="6" fill="#000" stroke="#fff" stroke-width="2"/><path d="M258 22 L272 22 L286 23" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="28" font-size="18" font-weight="700" fill="#fff">Admission</text><text x="294" y="49" font-size="15.5" fill="#c8c8c8">before it all</text><circle cx="250" cy="78.0" r="4" fill="#fff"/><path d="M258 78.0 L272 78.0 L286 79.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="84.0" font-size="18" font-weight="700" fill="#fff">11 December</text><text x="294" y="105.0" font-size="15.5" fill="#c8c8c8">my birthday</text><circle cx="250" cy="185.9" r="4" fill="#fff"/><path d="M258 185.9 L272 185.9 L286 186.9" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="191.9" font-size="18" font-weight="700" fill="#fff">28 December</text><text x="294" y="212.9" font-size="15.5" fill="#c8c8c8">the currency collapses; protests begin</text><rect x="243" y="254.8" width="14" height="8.3" fill="#fff"/><path d="M258 259.0 L272 259.0 L286 260.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="265.0" font-size="18" font-weight="800" fill="#fff">8 and 9 January</text><text x="294" y="286.0" font-size="15.5" fill="#c8c8c8">the night; the blackout</text><circle cx="250" cy="370.1" r="4" fill="#fff"/><path d="M258 370.1 L272 370.1 L286 371.1" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="376.1" font-size="18" font-weight="700" fill="#fff">26 January</text><text x="294" y="397.1" font-size="15.5" fill="#c8c8c8">over 40,000 arrested;</text><text x="294" y="416.1" font-size="15.5" fill="#c8c8c8">US forces mass in the region</text><circle cx="250" cy="560.6" r="4" fill="#fff"/><path d="M258 560.6 L268 560.6 L268 482 L286 482" fill="none" stroke="#555" stroke-width="1.2"/><text x="294" y="487" font-size="18" font-weight="700" fill="#fff">25 February</text><text x="294" y="508" font-size="15.5" fill="#c8c8c8">visa</text><path d="M258 579.6 L276 579.6 L276 552 L286 552" fill="none" stroke="#ff1a1a" stroke-width="1.2"/><text x="294" y="557" font-size="18" font-weight="800" fill="#ff1a1a">28 February</text><text x="294" y="578" font-size="15.5" fill="#e6e6e6">Iran’s Supreme Leader is killed;</text><text x="294" y="597" font-size="15.5" fill="#e6e6e6">the US and Israel go to war;</text><text x="294" y="616" font-size="15.5" fill="#e6e6e6">I leave for the Turkish border</text><circle cx="250" cy="605.0" r="5" fill="#fff"/><path d="M258 605.0 L268 605.0 L268 645 L286 645" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="650" font-size="18" font-weight="800" fill="#fff">4 March</text><text x="294" y="671" font-size="15.5" fill="#c8c8c8">I reach Berlin</text><circle cx="250" cy="655.9" r="4" fill="#fff"/><path d="M258 655.9 L276 655.9 L276 700 L286 700" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="705" font-size="18" font-weight="700" fill="#fff">12 March</text><text x="294" y="726" font-size="15.5" fill="#c8c8c8">university begins</text></svg></div>
   </div>
   <div class="foot">Sources: Amnesty International; HRANA; Congressional Research Service; Encyclopaedia Britannica.</div>
 </section>
 
-<!-- 05z Berlin, in pictures (1/2): the city -->
+<!-- 05z Berlin, in pictures: all 23, whole, small; each opens on hover -->
 <section class="slide bslide" data-sec="The path">
   <div class="sec"><b>I</b>The path</div>
-  <div class="bgrid bcity">
-    <div class="btitle"><h2>Then, Berlin<i>.</i></h2></div>
-    <figure class="bp w" data-file="berlin-06.jpg" style="--a:h;--i:1;--p:50% 50%"><img src="assets/berlin/berlin-06.jpg" alt="Berliner Dom at night, a meteor crossing the sky" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-05.jpg" style="--a:b;--i:2;--p:50% 50%"><img src="assets/berlin/berlin-05.jpg" alt="The Fernsehturm between a dome and a column" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-09.jpg" style="--a:c;--i:3;--p:50% 50%"><img src="assets/berlin/berlin-09.jpg" alt="A white stairwell lettered with Berlin district names in red" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp w" data-file="berlin-08.jpg" style="--a:a;--i:4;--p:50% 50%"><img src="assets/berlin/berlin-08.jpg" alt="A lit section of the Berlin Wall at night" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-17.jpg" style="--a:d;--i:5;--p:55% 40%"><img src="assets/berlin/berlin-17.jpg" alt="A pale sculpted face against blue light" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-13.jpg" style="--a:g;--i:6;--p:30% 50%"><img src="assets/berlin/berlin-13.jpg" alt="Scaffolding below a bronze quadriga" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp w" data-file="berlin-04.jpg" style="--a:e;--i:7;--p:50% 50%"><img src="assets/berlin/berlin-04.jpg" alt="A dark cinema, a woman on the screen" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-14.jpg" style="--a:f;--i:8;--p:50% 60%"><img src="assets/berlin/berlin-14.jpg" alt="Schiller before the Konzerthaus at night" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-12.jpg" style="--a:i;--i:9;--p:40% 50%"><img src="assets/berlin/berlin-12.jpg" alt="Office towers lit over dark water" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp w" data-file="berlin-02.jpg" style="--a:j;--i:10;--p:50% 50%"><img src="assets/berlin/berlin-02.jpg" alt="The ICC building and traffic" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-21.jpg" style="--a:k;--i:11;--p:50% 40%"><img src="assets/berlin/berlin-21.jpg" alt="Frederick the Great on horseback" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-11.jpg" style="--a:l;--i:12;--p:76% 50%"><img src="assets/berlin/berlin-11.jpg" alt="A lone standing figure lit at night" loading="lazy" onerror="this.remove()"></figure>
-  </div>
-</section>
-
-<!-- 05z2 Berlin, in pictures (2/2): evenings -->
-<section class="slide bslide" data-sec="The path">
-  <div class="bgrid bdusk">
-   <div class="bl">
-    <figure class="bp w" data-file="berlin-16.jpg" style="--a:p;--i:1;--p:50% 45%"><img src="assets/berlin/berlin-16.jpg" alt="A crowd under a red stage" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-01.jpg" style="--a:q;--i:2;--p:50% 60%"><img src="assets/berlin/berlin-01.jpg" alt="A red evening sky over trees" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-22.jpg" style="--a:r;--i:3;--p:55% 60%"><img src="assets/berlin/berlin-22.jpg" alt="Two dancers under a rainbow" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp w" data-file="berlin-15.jpg" style="--a:s;--i:4;--p:68% 55%"><img src="assets/berlin/berlin-15.jpg" alt="The Spree and the Berliner Dom" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-19.jpg" style="--a:u;--i:5;--p:50% 50%"><img src="assets/berlin/berlin-19.jpg" alt="Sunset through a bridge fence" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-23.jpg" style="--a:v;--i:6;--p:50% 50%"><img src="assets/berlin/berlin-23.jpg" alt="Two passengers on an S-Bahn" loading="lazy" onerror="this.remove()"></figure>
-   </div>
-   <div class="bands">
-    <figure class="bp" data-file="berlin-20.jpg" style="--a:auto;--i:7;--p:50% 84%"><img src="assets/berlin/berlin-20.jpg" alt="A pale pink cloud" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-03.jpg" style="--a:auto;--i:8;--p:50% 64%"><img src="assets/berlin/berlin-03.jpg" alt="Pink clouds over the rooftops" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-07.jpg" style="--a:auto;--i:9;--p:50% 57%"><img src="assets/berlin/berlin-07.jpg" alt="An orange sun behind trees" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-10.jpg" style="--a:auto;--i:10;--p:50% 55%"><img src="assets/berlin/berlin-10.jpg" alt="A red sun on the skyline" loading="lazy" onerror="this.remove()"></figure>
-    <figure class="bp" data-file="berlin-18.jpg" style="--a:auto;--i:11;--p:50% 86%"><img src="assets/berlin/berlin-18.jpg" alt="Dusk over a church spire" loading="lazy" onerror="this.remove()"></figure>
-   </div>
-  </div>
-</section>
-
-<!-- 05z3 Berlin, scattered: every photograph, small and far apart -->
-<section class="slide bscatter" data-sec="The path">
-  <div class="sec"><b>I</b>The path</div>
-  <div class="field">
-    <figure class="sp" data-n="1" style="left:56.0%;top:72.0%;--s:72px"><img src="assets/berlin/berlin-01.jpg" alt="" onerror="this.remove()"><figcaption>01</figcaption></figure>
-    <figure class="sp" data-n="2" style="left:28.9%;top:50.2%;--s:64px"><img src="assets/berlin/berlin-02.jpg" alt="" onerror="this.remove()"><figcaption>02</figcaption></figure>
-    <figure class="sp" data-n="3" style="left:47.6%;top:42.0%;--s:112px"><img src="assets/berlin/berlin-03.jpg" alt="" onerror="this.remove()"><figcaption>03</figcaption></figure>
-    <figure class="sp" data-n="4" style="left:15.1%;top:17.0%;--s:80px"><img src="assets/berlin/berlin-04.jpg" alt="" onerror="this.remove()"><figcaption>04</figcaption></figure>
-    <figure class="sp" data-n="5" style="left:44.2%;top:69.1%;--s:104px"><img src="assets/berlin/berlin-05.jpg" alt="" onerror="this.remove()"><figcaption>05</figcaption></figure>
-    <figure class="sp" data-n="6" style="left:66.8%;top:33.9%;--s:58px"><img src="assets/berlin/berlin-06.jpg" alt="" onerror="this.remove()"><figcaption>06</figcaption></figure>
-    <figure class="sp" data-n="7" style="left:34.3%;top:16.6%;--s:80px"><img src="assets/berlin/berlin-07.jpg" alt="" onerror="this.remove()"><figcaption>07</figcaption></figure>
-    <figure class="sp" data-n="8" style="left:87.8%;top:42.1%;--s:58px"><img src="assets/berlin/berlin-08.jpg" alt="" onerror="this.remove()"><figcaption>08</figcaption></figure>
-    <figure class="sp" data-n="9" style="left:90.3%;top:66.5%;--s:80px"><img src="assets/berlin/berlin-09.jpg" alt="" onerror="this.remove()"><figcaption>09</figcaption></figure>
-    <figure class="sp" data-n="10" style="left:72.7%;top:81.7%;--s:80px"><img src="assets/berlin/berlin-10.jpg" alt="" onerror="this.remove()"><figcaption>10</figcaption></figure>
-    <figure class="sp" data-n="11" style="left:15.6%;top:59.7%;--s:80px"><img src="assets/berlin/berlin-11.jpg" alt="" onerror="this.remove()"><figcaption>11</figcaption></figure>
-    <figure class="sp" data-n="12" style="left:17.4%;top:38.6%;--s:88px"><img src="assets/berlin/berlin-12.jpg" alt="" onerror="this.remove()"><figcaption>12</figcaption></figure>
-    <figure class="sp" data-n="13" style="left:87.1%;top:17.3%;--s:104px"><img src="assets/berlin/berlin-13.jpg" alt="" onerror="this.remove()"><figcaption>13</figcaption></figure>
-    <figure class="sp" data-n="14" style="left:47.7%;top:16.7%;--s:64px"><img src="assets/berlin/berlin-14.jpg" alt="" onerror="this.remove()"><figcaption>14</figcaption></figure>
-    <figure class="sp" data-n="15" style="left:76.1%;top:61.8%;--s:104px"><img src="assets/berlin/berlin-15.jpg" alt="" onerror="this.remove()"><figcaption>15</figcaption></figure>
-    <figure class="sp" data-n="16" style="left:13.3%;top:76.5%;--s:104px"><img src="assets/berlin/berlin-16.jpg" alt="" onerror="this.remove()"><figcaption>16</figcaption></figure>
-    <figure class="sp" data-n="17" style="left:29.9%;top:78.2%;--s:72px"><img src="assets/berlin/berlin-17.jpg" alt="" onerror="this.remove()"><figcaption>17</figcaption></figure>
-    <figure class="sp" data-n="18" style="left:32.3%;top:33.0%;--s:64px"><img src="assets/berlin/berlin-18.jpg" alt="" onerror="this.remove()"><figcaption>18</figcaption></figure>
-    <figure class="sp" data-n="19" style="left:74.5%;top:15.1%;--s:112px"><img src="assets/berlin/berlin-19.jpg" alt="" onerror="this.remove()"><figcaption>19</figcaption></figure>
-    <figure class="sp" data-n="20" style="left:77.9%;top:44.2%;--s:58px"><img src="assets/berlin/berlin-20.jpg" alt="" onerror="this.remove()"><figcaption>20</figcaption></figure>
-    <figure class="sp" data-n="21" style="left:59.7%;top:16.6%;--s:58px"><img src="assets/berlin/berlin-21.jpg" alt="" onerror="this.remove()"><figcaption>21</figcaption></figure>
-    <figure class="sp" data-n="22" style="left:7.0%;top:36.9%;--s:112px"><img src="assets/berlin/berlin-22.jpg" alt="" onerror="this.remove()"><figcaption>22</figcaption></figure>
-    <figure class="sp" data-n="23" style="left:61.5%;top:52.7%;--s:72px"><img src="assets/berlin/berlin-23.jpg" alt="" onerror="this.remove()"><figcaption>23</figcaption></figure>
+  <div class="btitle"><h2>Then, Berlin<i>.</i></h2></div>
+  <div class="bmos" style="height:801px">
+    <div class="brow" style="height:209.1px;--r:5.8153">
+      <figure class="mt" data-n="6" style="flex-grow:1.3337;--i:0;--ox:11%;--oy:13%"><img src="assets/berlin/berlin-06.jpg" alt="Berliner Dom at night, a meteor crossing the sky" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="1" style="flex-grow:0.7500;--i:1;--ox:30%;--oy:13%"><img src="assets/berlin/berlin-01.jpg" alt="A red evening sky over trees" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="8" style="flex-grow:1.3333;--i:2;--ox:48%;--oy:13%"><img src="assets/berlin/berlin-08.jpg" alt="A lit section of the Berlin Wall at night" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="5" style="flex-grow:0.5631;--i:3;--ox:64%;--oy:13%"><img src="assets/berlin/berlin-05.jpg" alt="The Fernsehturm between a dome and a column" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="16" style="flex-grow:1.7778;--i:4;--ox:85%;--oy:13%"><img src="assets/berlin/berlin-16.jpg" alt="A crowd under a red stage" onerror="this.remove()"></figure>
+    </div>
+    <div class="brow" style="height:200.9px;--r:6.0521">
+      <figure class="mt" data-n="13" style="flex-grow:0.7500;--i:5;--ox:6%;--oy:39%"><img src="assets/berlin/berlin-13.jpg" alt="Scaffolding below a bronze quadriga" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="20" style="flex-grow:1.3333;--i:6;--ox:24%;--oy:39%"><img src="assets/berlin/berlin-20.jpg" alt="A pale pink cloud" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="12" style="flex-grow:0.7500;--i:7;--ox:41%;--oy:39%"><img src="assets/berlin/berlin-12.jpg" alt="Office towers lit over dark water" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="3" style="flex-grow:1.3333;--i:8;--ox:59%;--oy:39%"><img src="assets/berlin/berlin-03.jpg" alt="Pink clouds over the rooftops" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="17" style="flex-grow:1.0608;--i:9;--ox:79%;--oy:39%"><img src="assets/berlin/berlin-17.jpg" alt="A pale sculpted face against blue light" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="14" style="flex-grow:0.7500;--i:10;--ox:94%;--oy:39%"><img src="assets/berlin/berlin-14.jpg" alt="Schiller before the Konzerthaus at night" onerror="this.remove()"></figure>
+    </div>
+    <div class="brow" style="height:180.7px;--r:6.7295">
+      <figure class="mt" data-n="10" style="flex-grow:1.3333;--i:11;--ox:10%;--oy:63%"><img src="assets/berlin/berlin-10.jpg" alt="A red sun on the skyline" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="22" style="flex-grow:0.5631;--i:12;--ox:24%;--oy:63%"><img src="assets/berlin/berlin-22.jpg" alt="Two dancers under a rainbow" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="4" style="flex-grow:1.3333;--i:13;--ox:39%;--oy:63%"><img src="assets/berlin/berlin-04.jpg" alt="A dark cinema, a woman on the screen" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="19" style="flex-grow:0.7500;--i:14;--ox:54%;--oy:63%"><img src="assets/berlin/berlin-19.jpg" alt="Sunset through a bridge fence" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="2" style="flex-grow:1.3333;--i:15;--ox:70%;--oy:63%"><img src="assets/berlin/berlin-02.jpg" alt="The ICC building and traffic" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="11" style="flex-grow:1.3333;--i:16;--ox:90%;--oy:63%"><img src="assets/berlin/berlin-11.jpg" alt="A lone standing figure lit at night" onerror="this.remove()"></figure>
+    </div>
+    <div class="brow" style="height:201.5px;--r:6.0352">
+      <figure class="mt" data-n="7" style="flex-grow:1.3333;--i:17;--ox:11%;--oy:87%"><img src="assets/berlin/berlin-07.jpg" alt="An orange sun behind trees" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="21" style="flex-grow:0.7500;--i:18;--ox:29%;--oy:87%"><img src="assets/berlin/berlin-21.jpg" alt="Frederick the Great on horseback" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="15" style="flex-grow:1.3333;--i:19;--ox:46%;--oy:87%"><img src="assets/berlin/berlin-15.jpg" alt="The Spree and the Berliner Dom" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="23" style="flex-grow:0.4608;--i:20;--ox:61%;--oy:87%"><img src="assets/berlin/berlin-23.jpg" alt="Two passengers on an S-Bahn" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="18" style="flex-grow:1.3333;--i:21;--ox:76%;--oy:87%"><img src="assets/berlin/berlin-18.jpg" alt="Dusk over a church spire" onerror="this.remove()"></figure>
+      <figure class="mt" data-n="9" style="flex-grow:0.7500;--i:22;--ox:94%;--oy:87%"><img src="assets/berlin/berlin-09.jpg" alt="A white stairwell lettered with Berlin district names in red" onerror="this.remove()"></figure>
+    </div>
   </div>
 </section>
 
@@ -1104,7 +1021,7 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
   <div class="sec"><b>I</b>The path</div>
   <h2 style="max-width:none">Berlin: wonder, between chaos and order.</h2>
   <div class="svgwrap" style="margin-top:40px;flex:none">
-    <svg viewBox="0 0 1376 190" role="img" aria-label="A jagged line becomes calm at Berlin, then turns upward onto a new path."><polyline points="0,90.6 12,100.4 24,132.6 36,92.0 48,95.7 60,102.3 72,69.3 84,96.0 96,105.2 108,117.4 120,64.7 132,80.6 144,65.8 156,116.5 168,108.1 180,64.7 192,126.1 204,124.1 216,104.4 228,101.8 240,75.3 252,67.9 264,96.5 276,72.0 288,79.3 300,82.4 312,72.8 324,93.4 336,92.4 348,109.4 360,95.8 372,100.4 384,95.0 396,100.7 408,93.6 420,88.0 432,109.9 444,109.0 456,104.0 468,100.1 480,90.8 492,89.2 504,90.9 516,87.3 528,99.3 540,93.6 552,99.4 564,93.8 576,99.2 588,97.6 600,92.1 610,95" fill="none" stroke="#8a8a8a" stroke-width="2" stroke-linejoin="round"/><path d="M610 95 H900 C 1040 95, 1120 40, 1370 22" fill="none" stroke="#fff" stroke-width="3"/><line x1="650" y1="89" x2="650" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="690" y1="89" x2="690" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="730" y1="89" x2="730" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="770" y1="89" x2="770" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="810" y1="89" x2="810" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="850" y1="89" x2="850" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="890" y1="89" x2="890" y2="101" stroke="#fff" stroke-width="1.5"/><circle cx="610" cy="95" r="9" fill="#fff"/><text x="610" y="140" text-anchor="middle" font-size="19" fill="#fff" font-weight="700">4 March, Berlin</text><text x="1370" y="58" text-anchor="end" font-size="16" fill="#fff" font-weight="600">a new path</text></svg>
+    <svg viewBox="0 0 1376 190" role="img" aria-label="A jagged line becomes calm at Berlin, then turns upward onto a new path."><polyline points="0,90.6 12,100.4 24,132.6 36,92.0 48,95.7 60,102.3 72,69.3 84,96.0 96,105.2 108,117.4 120,64.7 132,80.6 144,65.8 156,116.5 168,108.1 180,64.7 192,126.1 204,124.1 216,104.4 228,101.8 240,75.3 252,67.9 264,96.5 276,72.0 288,79.3 300,82.4 312,72.8 324,93.4 336,92.4 348,109.4 360,95.8 372,100.4 384,95.0 396,100.7 408,93.6 420,88.0 432,109.9 444,109.0 456,104.0 468,100.1 480,90.8 492,89.2 504,90.9 516,87.3 528,99.3 540,93.6 552,99.4 564,93.8 576,99.2 588,97.6 600,92.1 610,95" fill="none" stroke="#8a8a8a" stroke-width="2" stroke-linejoin="round"/><path d="M610 95 H900 C 1040 95, 1120 40, 1370 22" fill="none" stroke="#fff" stroke-width="3"/><line x1="650" y1="89" x2="650" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="690" y1="89" x2="690" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="730" y1="89" x2="730" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="770" y1="89" x2="770" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="810" y1="89" x2="810" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="850" y1="89" x2="850" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="890" y1="89" x2="890" y2="101" stroke="#fff" stroke-width="1.5"/><circle cx="610" cy="95" r="9" fill="#ff1a1a"/><text x="610" y="140" text-anchor="middle" font-size="19" fill="#ff1a1a" font-weight="700">4 March, Berlin</text><text x="1370" y="58" text-anchor="end" font-size="16" fill="#fff" font-weight="600">a new path</text></svg>
   </div>
   <div class="coa">
     <div><h4>Chaos</h4><p>At home, a war. Every morning the news from the country I had left was worse than the night before.</p></div>
@@ -1142,8 +1059,8 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
 <circle cx="372" cy="478" r="4" fill="#a8a8a8"/>
 <path d="M376 478 C 700 478, 760 260, 1010 260" fill="none" stroke="#8a8a8a" stroke-width="1.5"/>
 <line x1="1010" y1="260" x2="1090" y2="260" stroke="#fff" stroke-width="2"/>
-<circle cx="1010" cy="260" r="10" fill="#fff"/>
-<text x="1010" y="304" text-anchor="middle" font-size="18" fill="#fff" font-weight="700">Berlin</text>
+<circle cx="1010" cy="260" r="10" fill="#ff1a1a"/>
+<text x="1010" y="304" text-anchor="middle" font-size="18" fill="#ff1a1a" font-weight="700">Berlin</text>
 <text x="1110" y="284" font-size="72" font-weight="900" fill="#fff" letter-spacing="-3">Kavian</text>
     </svg>
   </div>
@@ -1576,7 +1493,7 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
 
 <!-- end: the mark alone -->
 <section class="slide end" data-title="End">
-  <div class="endmark" role="img" aria-label="Line drawing of the scene: a man carries a wounded woman while another woman steadies him and raises the Derafsh."><span class="ink"></span><span class="heat"></span><span class="beam"></span></div>
+  <div class="endmark" role="img" aria-label="Line drawing of the scene: a man carries a wounded woman while another woman steadies him and raises the Derafsh."><span class="ink"></span><span class="pulse"></span></div>
 </section>
 
 
@@ -1612,8 +1529,20 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
     var hint = document.getElementById('hint');
     if (hint && hint.style.opacity !== '0') hint.textContent = mobile ? 'Swipe, or tap the edges' : 'Arrow keys or click the edges to move';
   }
+  var busy = false;
   function go(n) {
-    i = Math.max(0, Math.min(total - 1, n));
+    n = Math.max(0, Math.min(total - 1, n));
+    if (busy) return;
+    var cur = slides[i];
+    if (n === i + 1 && cur.classList.contains('on') && typeof cur.leaveForward === 'function') {
+      busy = true;
+      cur.leaveForward(function () { busy = false; show(n); });
+      return;
+    }
+    show(n);
+  }
+  function show(n) {
+    i = n;
     slides.forEach(function (s, k) {
       s.classList.toggle('on', k === i);
       s.setAttribute('aria-hidden', k === i ? 'false' : 'true');
@@ -1651,10 +1580,33 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
 })();
 </script>
 <script>
-/* Latent space: the scattered photographs fly to the tips of vectors, clustered by what they show. */
+/* Timeline to photographs: the Berlin bar on the timeline opens into the next slide. */
 (function () {
-  var slide = document.querySelector('.blatent'), scatter = document.querySelector('.bscatter');
-  if (!slide || !scatter) return;
+  var tl = document.querySelector('.tlslide'), pill = document.getElementById('tl-berlin');
+  var next = tl && tl.nextElementSibling;
+  if (!tl || !pill || !next) return;
+  tl.leaveForward = function (done) {
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var sr = next.getBoundingClientRect(), pr = pill.getBoundingClientRect(), k = sr.width / (next.offsetWidth || 1);
+    if (still || !pr.width || pr.bottom < sr.top || pr.top > sr.bottom) return done();
+    var t = (pr.top - sr.top) / k, l = (pr.left - sr.left) / k, r = (sr.right - pr.right) / k, b = (sr.bottom - pr.bottom) / k;
+    next.style.transition = 'none'; next.style.opacity = '1'; next.style.visibility = 'visible'; next.style.zIndex = '5';
+    next.style.clipPath = 'inset(' + t + 'px ' + r + 'px ' + b + 'px ' + l + 'px round 6px)';
+    next.classList.add('instant', 'on');
+    next.getBoundingClientRect();
+    next.style.transition = 'clip-path 1.25s cubic-bezier(.76,0,.24,1)';
+    next.style.clipPath = 'inset(0px 0px 0px 0px round 0px)';
+    setTimeout(function () { next.style.cssText = ''; next.classList.remove('instant'); done(); }, 1300);
+  };
+})();
+
+/* Latent space: the photographs fly from the mosaic to the tips of vectors, clustered by what they show.
+   Moving on, the view closes in on the two bronzes and lands them where the next slide holds them. */
+(function () {
+  var slide = document.querySelector('.blatent'), mosaic = document.querySelector('.bslide');
+  var bronzeImgs = document.querySelectorAll('.bronzes img');
+  if (!slide || !mosaic) return;
+  var target = bronzeImgs.length === 2 ? bronzeImgs[0].closest('.slide') : null;
   var canvas = slide.querySelector('.latent'), ctx = canvas.getContext('2d');
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var seed = 11;
@@ -1662,16 +1614,20 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
   function gauss() { var u = rnd() || 1e-9, v = rnd(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
   function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
   function ease(v) { v = clamp(v); return v < .5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2; }
+  function lerp(a, b, e) { return a + (b - a) * e; }
   var centres = { sky: [250, 150, -60], night: [-250, 30, 170], stone: [-80, -190, -190], life: [210, -150, 200] };
   var groupOf = { 1: 'sky', 3: 'sky', 7: 'sky', 10: 'sky', 18: 'sky', 19: 'sky', 20: 'sky',
     2: 'night', 4: 'night', 6: 'night', 8: 'night', 12: 'night',
     5: 'stone', 11: 'stone', 13: 'stone', 14: 'stone', 21: 'stone',
     9: 'life', 15: 'life', 16: 'life', 17: 'life', 22: 'life', 23: 'life' };
   var keys = Object.keys(centres);
-  var photos = Array.prototype.map.call(scatter.querySelectorAll('.sp'), function (f, i) {
+  var photos = Array.prototype.map.call(mosaic.querySelectorAll('.mt'), function (f) {
     var c = centres[groupOf[+f.getAttribute('data-n')]];
-    return { el: f, img: f.querySelector('img'), i: i, p: [c[0] + gauss() * 62, c[1] + gauss() * 62, c[2] + gauss() * 62] };
+    return { img: f.querySelector('img'), p: [c[0] + gauss() * 62, c[1] + gauss() * 62, c[2] + gauss() * 62] };
   });
+  photos.sort(function (a, b) { return +a.img.closest('.mt').style.getPropertyValue('--i') - +b.img.closest('.mt').style.getPropertyValue('--i'); });
+  var bronzes = target ? [{ img: bronzeImgs[0], p: [-55, -110, -40], bronze: true }, { img: bronzeImgs[1], p: [5, -135, -20], bronze: true }] : [];
+  var nodes = photos.concat(bronzes);
   var others = [];
   for (var k = 0; k < 170; k++) {
     var p;
@@ -1680,6 +1636,7 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
     others.push({ p: p, d: rnd() * .9 });
   }
   var yaw = -0.55, pitch = 0.32, W = 0, H = 0, S = 1, t0 = 0, last = 0, spin = 0, running = false, drag = null, from = [];
+  var leave = null;
   var F = 1150, D = 1150;
   function size() {
     W = canvas.clientWidth; H = canvas.clientHeight;
@@ -1695,59 +1652,99 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
   }
   function proj(p) { var q = rot(p), k = F / (D + q[2]); return { x: W / 2 + q[0] * k * S, y: H / 2 - q[1] * k * S, k: k, z: q[2] }; }
   function near(z) { return clamp((420 - z) / 840); }
-  function captureScatter() {
-    var sr = scatter.getBoundingClientRect();
-    from = photos.map(function (ph) {
-      var r = ph.img && ph.img.getBoundingClientRect();
-      if (!r || !sr.width) return null;
-      return { x: (r.left + r.width / 2 - sr.left) / sr.width * W, y: (r.top + r.height / 2 - sr.top) / sr.height * H, s: Math.max(r.width, r.height) / sr.width * W };
-    });
+  function rectIn(el, box) {
+    var r = el.getBoundingClientRect(), b = box.getBoundingClientRect();
+    return { x: (r.left + r.width / 2 - b.left) / b.width * W, y: (r.top + r.height / 2 - b.top) / b.height * H, w: r.width / b.width * W, h: r.height / b.height * H };
+  }
+  function captureMosaic() {
+    from = nodes.map(function (n) { if (n.bronze || !n.img) return null; var q = rectIn(n.img, mosaic); return q.w ? q : null; });
+  }
+  function fitBox(img, s) { var ar = img.naturalWidth / img.naturalHeight; return ar >= 1 ? { w: s, h: s / ar } : { w: s * ar, h: s }; }
+  function coverSrc(img, w, h) {
+    var iw = img.naturalWidth, ih = img.naturalHeight, ta = w / h;
+    if (iw / ih > ta) { var sw = ih * ta; return [(iw - sw) / 2, 0, sw, ih]; }
+    var sh = iw / ta; return [0, (ih - sh) / 2, iw, sh];
   }
   function line(a, b, style, w) { ctx.strokeStyle = style; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
-  function frame(now) {
-    if (!slide.classList.contains('on')) { running = false; return; }
-    var t = still ? 99 : (now - t0) / 1000, dt = Math.min(.05, (now - (last || now)) / 1000); last = now;
-    if (!drag && !still) { spin = Math.min(1, spin + dt / 1.5 * (t > 2.4 ? 1 : 0)); yaw += dt * .075 * spin; }
-    ctx.clearRect(0, 0, W, H);
-    var o = proj([0, 0, 0]), axes = ease((t - .5) / 1.1);
+  function draw(t, L) {
+    var e = L == null ? 0 : ease(L), Z = 1 + 7 * e * e, fade = 1 - clamp(e * 1.6);
+    var M = leave ? leave.m : { x: W / 2, y: H / 2 };
+    function z(P) { return { x: M.x + (P.x - M.x) * Z, y: M.y + (P.y - M.y) * Z, k: P.k, z: P.z }; }
+    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+    var o = z(proj([0, 0, 0])), axes = ease((t - .5) / 1.1) * fade;
+    ctx.font = '11px "Schibsted Grotesk", sans-serif';
     [[1, 0, 0], [0, 1, 0], [0, 0, 1]].forEach(function (a, n) {
-      var A = proj([a[0] * -400, a[1] * -400, a[2] * -400]), B = proj([a[0] * 400, a[1] * 400, a[2] * 400]);
+      var A = z(proj([a[0] * -400, a[1] * -400, a[2] * -400])), B = z(proj([a[0] * 400, a[1] * 400, a[2] * 400]));
       line(A, B, 'rgba(255,255,255,' + (.16 * axes) + ')', 1);
-      ctx.fillStyle = 'rgba(255,255,255,' + (.4 * axes) + ')'; ctx.font = '11px "Schibsted Grotesk", sans-serif';
+      ctx.fillStyle = 'rgba(255,255,255,' + (.4 * axes) + ')';
       ctx.fillText('z' + '₁₂₃'[n], B.x + 6, B.y - 6);
     });
     others.forEach(function (v) {
-      var g = ease((t - 1.1 - v.d) / 1.3); if (!g) return;
-      var P = proj(v.p), tip = { x: o.x + (P.x - o.x) * g, y: o.y + (P.y - o.y) * g }, n = near(P.z);
-      line(o, tip, 'rgba(255,255,255,' + ((.04 + .13 * n) * g) + ')', .8);
-      ctx.fillStyle = 'rgba(255,255,255,' + ((.2 + .55 * n) * g) + ')';
+      var g = ease((t - 1.1 - v.d) / 1.3) * fade; if (!g) return;
+      var P = z(proj(v.p)), tip = { x: o.x + (P.x - o.x) * g, y: o.y + (P.y - o.y) * g }, n = near(P.z);
+      line(o, tip, 'rgba(255,255,255,' + ((.04 + .12 * n) * g) + ')', .8);
+      ctx.fillStyle = 'rgba(255,255,255,' + ((.2 + .5 * n) * g) + ')';
       ctx.beginPath(); ctx.arc(tip.x, tip.y, 1.1 + 1.5 * n * P.k, 0, 6.2832); ctx.fill();
     });
-    var list = photos.map(function (ph, i) { return { ph: ph, P: proj(ph.p), i: i }; }).sort(function (a, b) { return b.P.z - a.P.z; });
+    var list = nodes.map(function (nd, i) { return { nd: nd, P: z(proj(nd.p)), i: i }; }).sort(function (a, b) { return b.P.z - a.P.z; });
     list.forEach(function (it) {
       var g = ease((t - 1.4 - it.i * .02) / 1.1); if (!g) return;
       var tip = { x: o.x + (it.P.x - o.x) * g, y: o.y + (it.P.y - o.y) * g };
-      line(o, tip, 'rgba(255,26,26,' + ((.35 + .5 * near(it.P.z)) * g) + ')', 1.1);
+      if (it.nd.bronze) line(o, tip, 'rgba(255,26,26,' + (.9 * g * fade) + ')', 1.6);
+      else line(o, tip, 'rgba(255,255,255,' + ((.22 + .3 * near(it.P.z)) * g * fade) + ')', 1);
     });
     list.forEach(function (it) {
-      var img = it.ph.img; if (!img || !img.naturalWidth) return;
-      var m = ease((t - it.i * .025) / 1.7), f = from[it.i] || { x: it.P.x, y: it.P.y, s: 0 };
-      var end = 74 * it.P.k * S, sz = f.s + (end - f.s) * m, x = f.x + (it.P.x - f.x) * m, y = f.y + (it.P.y - f.y) * m;
-      var ar = img.naturalWidth / img.naturalHeight, w = ar >= 1 ? sz : sz * ar, h = ar >= 1 ? sz / ar : sz;
-      ctx.globalAlpha = 1 - (1 - (.55 + .45 * near(it.P.z))) * m;
-      ctx.drawImage(img, x - w / 2, y - h / 2, w, h);
+      var img = it.nd.img; if (!img || !img.naturalWidth) return;
+      var end = 74 * it.P.k * S;
+      if (it.nd.bronze) {
+        var a = ease((t - 1.6 - (it.i - photos.length) * .15) / 1); if (!a) return;
+        var bx = fitBox(img, end), P = leave ? leave.start[it.i - photos.length] : it.P;
+        var T = leave ? leave.to[it.i - photos.length] : null;
+        var cx = T ? lerp(P.x, T.x, e) : it.P.x, cy = T ? lerp(P.y, T.y, e) : it.P.y;
+        var w = T ? lerp(bx.w, T.w, e) : bx.w, h = T ? lerp(bx.h, T.h, e) : bx.h;
+        var src = T ? coverSrc(img, T.w, T.h) : [0, 0, img.naturalWidth, img.naturalHeight];
+        var s0 = [0, 0, img.naturalWidth, img.naturalHeight];
+        ctx.globalAlpha = a;
+        ctx.drawImage(img, lerp(s0[0], src[0], e), lerp(s0[1], src[1], e), lerp(s0[2], src[2], e), lerp(s0[3], src[3], e), cx - w / 2, cy - h / 2, w, h);
+        ctx.globalAlpha = 1;
+        return;
+      }
+      var m = ease((t - it.i * .025) / 1.7), f = from[it.i] || { x: it.P.x, y: it.P.y, w: 0, h: 0 };
+      var b = fitBox(img, end), w2 = lerp(f.w, b.w, m), h2 = lerp(f.h, b.h, m);
+      ctx.globalAlpha = (1 - (1 - (.55 + .45 * near(it.P.z))) * m) * fade;
+      ctx.drawImage(img, lerp(f.x, it.P.x, m) - w2 / 2, lerp(f.y, it.P.y, m) - h2 / 2, w2, h2);
       ctx.globalAlpha = 1;
     });
+  }
+  function frame(now) {
+    if (!slide.classList.contains('on')) { running = false; return; }
+    var t = still ? 99 : (now - t0) / 1000, dt = Math.min(.05, (now - (last || now)) / 1000); last = now;
+    var L = null;
+    if (leave) {
+      L = clamp((now - leave.t) / 1600);
+      if (L >= 1 && !leave.fired) { leave.fired = true; draw(t, 1); leave.done(); return requestAnimationFrame(frame); }
+    } else if (!drag && !still) { spin = Math.min(1, spin + dt / 1.5 * (t > 2.4 ? 1 : 0)); yaw += dt * .075 * spin; }
+    draw(t, L);
     requestAnimationFrame(frame);
   }
   function start() {
     if (running) return;
-    size(); captureScatter(); t0 = performance.now(); last = 0; spin = 0; running = true;
+    size(); captureMosaic(); t0 = performance.now(); last = 0; spin = 0; leave = null; running = true;
     requestAnimationFrame(frame);
   }
+  slide.leaveForward = function (done) {
+    var mobile = document.documentElement.classList.contains('mobile');
+    if (!target || still || mobile || !running || !bronzes[0].img.naturalWidth) return done();
+    t0 = Math.min(t0, performance.now() - 4000);
+    var st = bronzes.map(function (b) { return proj(b.p); });
+    leave = { t: performance.now(), done: done, fired: false, start: st,
+      m: { x: (st[0].x + st[1].x) / 2, y: (st[0].y + st[1].y) / 2 },
+      to: bronzes.map(function (b) { return rectIn(b.img, target); }) };
+  };
   new MutationObserver(function () { if (slide.classList.contains('on')) start(); }).observe(slide, { attributes: true, attributeFilter: ['class'] });
-  window.addEventListener('resize', function () { if (running) { size(); captureScatter(); } });
-  canvas.addEventListener('pointerdown', function (e) { drag = { x: e.clientX, y: e.clientY }; canvas.setPointerCapture(e.pointerId); spin = 0; });
+  window.addEventListener('resize', function () { if (running) { size(); captureMosaic(); } });
+  window.addEventListener('beforeprint', function () { size(); leave = null; draw(99, null); });
+  canvas.addEventListener('pointerdown', function (e) { if (leave) return; drag = { x: e.clientX, y: e.clientY }; canvas.setPointerCapture(e.pointerId); spin = 0; });
   canvas.addEventListener('pointermove', function (e) {
     if (!drag) return;
     yaw += (e.clientX - drag.x) * .006; pitch = Math.max(-1.3, Math.min(1.3, pitch + (e.clientY - drag.y) * .005));
