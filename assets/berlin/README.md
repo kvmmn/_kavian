@@ -1,15 +1,20 @@
-# Berlin photos (slide 06, "Then, Berlin.")
+# Berlin Photo Gallery
 
-Drop six photos here with exactly these names:
+This folder contains 27 photographs from Berlin for the Kavian presentation.
 
-- berlin-01.jpg  large, top left (landscape)
-- berlin-02.jpg  small, top middle
-- berlin-03.jpg  wide, top right (landscape)
-- berlin-04.jpg  tall, centre (portrait)
-- berlin-05.jpg  small, bottom left
-- berlin-06.jpg  bottom right
+## Images
 
-Any aspect ratio works; each photo is cropped to fill its frame (object-fit: cover).
-Keep each file around 1600 px on the long side and under ~500 KB.
-A missing file just shows its empty frame with the file name.
-Optional caption: write text inside that frame's <figcaption></figcaption> in index.html.
+- `berlin-01.jpg` – berlin-27.jpg: A fullscreen gallery spread across two slides.
+
+The images are displayed in a minimal, fullscreen layout with no margins or padding. Each image covers its grid cell completely.
+
+## Layout
+
+- **Slide 1**: berlin-01.jpg through berlin-13.jpg (13 images)
+- **Slide 2**: berlin-14.jpg through berlin-27.jpg (14 images)
+
+## Notes
+
+- Images are optimized for web (JPEG, quality ~85)
+- Missing images display as empty frames with dashed borders
+- Aspect ratios are preserved with `object-fit: cover`
