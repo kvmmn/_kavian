@@ -1686,7 +1686,44 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
    To add photographs, put them in assets/berlin/more/ and list them in MORE with a group. */
 (function () {
   var MORE = [
-    // { src: 'assets/berlin/more/name.jpg', group: 'life' }
+    { src: 'assets/berlin/more/more-01.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-02.jpg', group: 'night' },
+    { src: 'assets/berlin/more/more-03.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-04.jpg', group: 'life' },
+    { src: 'assets/berlin/more/more-05.jpg', group: 'print' },
+    { src: 'assets/berlin/more/more-06.jpg', group: 'print' },
+    { src: 'assets/berlin/more/more-07.jpg', group: 'life' },
+    { src: 'assets/berlin/more/more-08.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-09.jpg', group: 'night' },
+    { src: 'assets/berlin/more/more-10.jpg', group: 'night' },
+    { src: 'assets/berlin/more/more-11.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-12.jpg', group: 'sky' },
+    { src: 'assets/berlin/more/more-13.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-14.jpg', group: 'life' },
+    { src: 'assets/berlin/more/more-15.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-16.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-17.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-18.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-19.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-20.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-21.jpg', group: 'sky' },
+    { src: 'assets/berlin/more/more-22.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-23.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-24.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-25.jpg', group: 'life' },
+    { src: 'assets/berlin/more/more-26.jpg', group: 'sky' },
+    { src: 'assets/berlin/more/more-27.jpg', group: 'print' },
+    { src: 'assets/berlin/more/more-28.jpg', group: 'print' },
+    { src: 'assets/berlin/more/more-29.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-30.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-31.jpg', group: 'stone' },
+    { src: 'assets/berlin/more/more-32.jpg', group: 'night' },
+    { src: 'assets/berlin/more/more-33.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-34.jpg', group: 'night' },
+    { src: 'assets/berlin/more/more-35.jpg', group: 'art' },
+    { src: 'assets/berlin/more/more-36.jpg', group: 'night' },
+    { src: 'assets/berlin/more/more-37.jpg', group: 'night' },
+    { src: 'assets/berlin/more/more-38.jpg', group: 'night' }
   ];
   var slide = document.querySelector('.blatent'), mosaic = document.querySelector('.bslide');
   var bronzeImgs = document.querySelectorAll('.bronzes img');
@@ -1704,11 +1741,13 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
   var groups = {
     sky: { label: 'skies', c: [250, 150, -60] },
     night: { label: 'night and light', c: [-250, 30, 170] },
-    stone: { label: 'bronze and stone', c: [-80, -190, -190] },
-    life: { label: 'people', c: [210, -150, 200] },
-    print: { label: 'print and archive', c: [-60, 250, 60] }
+    stone: { label: 'bronze, stone and glass', c: [-90, -200, -190] },
+    life: { label: 'people', c: [210, -160, 200] },
+    print: { label: 'words and print', c: [-60, 260, 60] },
+    art: { label: 'art and walls', c: [40, 60, -320] }
   };
   var keys = Object.keys(groups);
+  keys.forEach(function (k) { groups[k].c = groups[k].c.map(function (v) { return v * 1.15; }); });
   var groupOf = { 1: 'sky', 3: 'sky', 7: 'sky', 10: 'sky', 18: 'sky', 19: 'sky', 20: 'sky',
     2: 'night', 4: 'night', 6: 'night', 8: 'night', 12: 'night',
     5: 'stone', 11: 'stone', 13: 'stone', 14: 'stone', 21: 'stone',
@@ -1716,14 +1755,14 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
   function near(g, s) { var c = groups[g].c; return [c[0] + gauss() * s, c[1] + gauss() * s, c[2] + gauss() * s]; }
   var photos = Array.prototype.map.call(mosaic.querySelectorAll('.mt'), function (f) {
     var g = groupOf[+f.getAttribute('data-n')];
-    return { img: f.querySelector('img'), g: g, p: near(g, 62), i0: +f.style.getPropertyValue('--i') };
+    return { img: f.querySelector('img'), g: g, p: near(g, 75), i0: +f.style.getPropertyValue('--i') };
   });
   photos.sort(function (a, b) { return a.i0 - b.i0; });
   var bronzes = target ? [{ img: bronzeImgs[0], g: 'stone', p: [-40, -130, -110], bronze: true }, { img: bronzeImgs[1], g: 'stone', p: [20, -155, -140], bronze: true }] : [];
   var extras = [];
   if (kavehImg) extras.push({ img: kavehImg, g: 'print', p: near('print', 30) });
   MORE.forEach(function (m) {
-    var im = new Image(), g = groups[m.group] ? m.group : 'print', nd = { img: im, g: g, p: near(g, 62) };
+    var im = new Image(), g = groups[m.group] ? m.group : 'print', nd = { img: im, g: g, p: near(g, 75) };
     im.onerror = function () { nd.img = null; };
     im.src = m.src; extras.push(nd);
   });
@@ -1743,7 +1782,7 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
     var r = canvas.getBoundingClientRect(), ratio = (window.devicePixelRatio || 1) * (r.width / (W || 1));
     canvas.width = Math.round(W * ratio); canvas.height = Math.round(H * ratio);
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    S = Math.min(W / 820, H / 900);
+    S = Math.min(W / 900, H / 1020);
   }
   function rot(p) {
     var ca = Math.cos(yaw), sa = Math.sin(yaw), cb = Math.cos(pitch), sb = Math.sin(pitch);
@@ -1837,7 +1876,7 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
     list.forEach(function (it) {
       var nd = it.nd, img = nd.img; it.nd.box = null;
       if (!img || !img.naturalWidth) return;
-      var end = 74 * it.P.k * S * (it.i === hover ? 1.6 : 1);
+      var end = 60 * it.P.k * S * (it.i === hover ? 2 : 1);
       if (nd.bronze) {
         var bi = it.i - nb, a = ease((t - 1.6 - bi * .15) / 1); if (!a) return;
         var bx = fitBox(img, end), P = leave ? leave.start[bi] : it.P, T = leave ? leave.to[bi] : null;
@@ -1850,7 +1889,7 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
         nd.box = { x: cx - w / 2, y: cy - h / 2, w: w, h: h };
         return;
       }
-      var m = it.i < photos.length ? ease((t - it.i * .025) / 1.7) : ease((t - 1.8 - (it.i - photos.length) * .12) / 1);
+      var m = it.i < photos.length ? ease((t - it.i * .025) / 1.7) : ease((t - 1.8 - (it.i - photos.length) * .03) / 1);
       if (!m) return;
       var f = from[it.i] || { x: it.P.x, y: it.P.y, w: 0, h: 0 };
       var b = fitBox(img, end), w2 = lerp(f.w, b.w, m), h2 = lerp(f.h, b.h, m), x2 = lerp(f.x, it.P.x, m), y2 = lerp(f.y, it.P.y, m);

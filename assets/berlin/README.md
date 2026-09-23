@@ -10,20 +10,17 @@ They appear on two slides, between the timeline and "In Berlin, two bronzes.":
    mosaic stays as it is and every photograph is legible. On a phone the mosaic becomes two columns.
    Row order: 06 01 08 05 16 · 13 20 12 03 17 14 · 10 22 04 19 02 11 · 07 21 15 23 18 09.
 2. **Latent space.** Every Berlin picture in the deck sits at the tip of a vector among 170 grey ones:
-   the 23 (they fly in from the mosaic), the two bronzes, and the first page of *Kāveh*. They form five
-   clusters, each with a faint outline and a name. Hovering a picture turns its cluster's vectors red.
-   Otherwise only the bronzes' vectors are red; moving on, the view closes in on them and sets them down
-   where the next slide holds them.
-   - skies: 01, 03, 07, 10, 18, 19, 20
-   - night and light: 02, 04, 06, 08, 12
-   - bronze and stone: 05, 11, 13, 14, 21, and the two bronzes
-   - people: 09, 15, 16, 17, 22, 23
-   - print and archive: *Kāveh*, 1916
+   the 23 (they fly in from the mosaic), the two bronzes, the first page of *Kāveh*, and the 38 in `more/`,
+   which appear only here. They form six clusters, each with a faint outline and a name. Hovering a picture
+   turns its cluster's vectors red. Otherwise only the bronzes' vectors are red; moving on, the view closes
+   in on them and sets them down where the next slide holds them.
+   Clusters: skies · night and light · bronze, stone and glass · people · words and print · art and walls.
+   The mosaic photographs' clusters are in `groupOf`; the others are in the `MORE` list, both in the
+   latent-space script in `index.html`.
 
-To add photographs to the latent space only, put them in `assets/berlin/more/` (any names) and list each
-one in the `MORE` array at the top of the latent-space script in `index.html`, with its cluster:
-`{ src: 'assets/berlin/more/name.jpg', group: 'life' }`. The groups are `sky`, `night`, `stone`, `life`
-and `print`. Resize them to at most 1600px on the long side first.
+To add photographs to the latent space only, resize them to at most 800px on the long side, save them in
+`more/` as the next `more-NN.jpg`, and add a line to `MORE` with its cluster (`sky`, `night`, `stone`,
+`life`, `print` or `art`). The full-size originals are kept locally in `_originals/`, which is not published.
 
 To swap a photograph, replace the file and keep its name. The row layout and each photo's zoom origin are
 written into `index.html` for the current aspect ratios, so a replacement with a different shape needs the
