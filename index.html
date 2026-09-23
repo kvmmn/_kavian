@@ -789,29 +789,102 @@ html:not(.mobile) .farnote { font-size: 28px; }
   .hint, .progress, button.nav { display: none; }
 }
 
-/* Berlin, in pictures: fullscreen minimal gallery. */
+/* Berlin, in pictures: two full-bleed spreads cut by 3px black seams. */
 .bslide { padding: 0; }
-.bgrid { width: 100%; height: 100%; display: grid; gap: 0; margin: 0;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-auto-rows: 1fr; }
-.bp { position: relative; margin: 0; background: #000; overflow: hidden; }
+.bslide .sec { top: 28px; left: 30px; z-index: 3; }
+.bslide .num { right: 0; bottom: 0; z-index: 3; background: #000; color: var(--muted); padding: 9px 14px 8px; }
+.bgrid { width: 100%; height: 100%; display: grid; gap: 3px; background: #000; }
+.bp { position: relative; margin: 0; overflow: hidden; background: #0a0a0a; grid-area: var(--a); opacity: 0;
+  transition: opacity .9s ease calc(var(--i, 0) * 55ms); }
 .bp::before { content: attr(data-file); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  border: 2px dashed #1a1a1a; color: #333; font-size: 11px; letter-spacing: .05em; background: #0a0a0a; z-index: 0; }
-.bp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
-.bp figcaption { display: none; }
-.b1, .b2, .b3, .b4, .b5, .b6 { grid-column: auto; grid-row: auto; }
+  border: 1px dashed #2a2a2a; color: #444; font-size: 12px; letter-spacing: .04em; }
+.bp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--p, 50% 50%); display: block;
+  transform: scale(1.06); transition: transform 1.8s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 55ms); }
+.bslide.on .bp { opacity: 1; }
+.bslide.on .bp img { transform: none; }
+@media (prefers-reduced-motion: reduce) { .bp, .bp img { transition: none; } }
+@media print { .bp { opacity: 1; } .bp img { transform: none; } }
+
+/* Spread 1: the city in stone and at night, around one large frame */
+.bcity { grid-template-columns: 1.15fr .85fr 1fr 1fr 1fr 1.05fr .95fr 1fr; grid-template-rows: 1.1fr .9fr 1fr 1fr .95fr 1.05fr;
+  grid-template-areas:
+    "t t h h h a a b"
+    "t t h h h a a b"
+    "c d h h h e e b"
+    "c d f f g e e i"
+    "j j f f g k l i"
+    "j j f f g k l i"; }
+.btitle { grid-area: t; background: #000; display: flex; align-items: flex-end; padding: 0 30px 26px; }
+.btitle h2 { font-size: 76px; line-height: .92; letter-spacing: -0.045em; font-weight: 900; max-width: 6ch; }
+.btitle h2 i { font-style: normal; color: var(--red); }
+
+/* Spread 2: evenings. Five skies cut to horizon bands, pale to dusk, beside the people */
+.bdusk { grid-template-columns: 640fr 960fr; }
+.bdusk .bl { display: grid; gap: 3px; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1.46fr 1fr;
+  grid-template-areas: "p p p p" "q q r r" "s s u v"; }
+.bdusk .bands { display: grid; gap: 3px; grid-template-rows: repeat(5, 1fr); }
 
 /* End: the mark alone, centred */
 .slide.end { padding: 0; align-items: center; justify-content: center; }
-.endmark { height: 600px; width: auto; display: block; }
+/* Berlin, scattered: the photographs as small objects on a white field */
+.bscatter { background: var(--white); padding: 0; }
+.bscatter .sec { color: #9a9a9a; }
+.bscatter .sec b { color: #6a6a6a; }
+.bscatter .num { color: #9a9a9a; }
+.field { position: absolute; inset: 0; }
+.sp { position: absolute; margin: 0; transform: translate(-50%, -50%); }
+.sp img { display: block; max-width: var(--s); max-height: var(--s); width: auto; height: auto; }
+.sp figcaption { position: absolute; left: 0; top: calc(100% + 6px); font-size: 10px; letter-spacing: .08em; color: #a8a8a8; font-variant-numeric: tabular-nums; }
+
+/* Berlin, embedded */
+.blatent { padding: 0; }
+.blatent .sec { z-index: 2; }
+.latent { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+.latent:active { cursor: grabbing; }
+html.mobile .bscatter, html.mobile .blatent { padding: 0; overflow: hidden; }
+html.mobile .sp img { max-width: calc(var(--s) * .42); max-height: calc(var(--s) * .42); }
+html.mobile .sp figcaption { font-size: 8px; top: calc(100% + 3px); }
+
+/* The drawing's own lines carry the red; light moves through them like heat in a groove. */
+.endmark { position: relative; height: 600px; aspect-ratio: 896 / 1195; display: block;
+  filter: drop-shadow(0 0 1.5px rgba(255,70,40,.95)) drop-shadow(0 0 12px rgba(255,26,26,.55)) drop-shadow(0 0 42px rgba(255,26,26,.28));
+  animation: ember 6.5s ease-in-out infinite; }
+.endmark span { position: absolute; inset: 0;
+  -webkit-mask: url(assets/kavian-lines.png) center / contain no-repeat; mask: url(assets/kavian-lines.png) center / contain no-repeat; }
+.endmark .ink { background: var(--red); }
+.endmark .heat { mix-blend-mode: screen;
+  background:
+    radial-gradient(38% 22% at 30% 72%, rgba(255,150,60,.75), transparent 70%),
+    radial-gradient(30% 20% at 68% 38%, rgba(255,110,30,.6), transparent 70%),
+    radial-gradient(26% 16% at 45% 12%, rgba(255,190,120,.55), transparent 70%);
+  background-size: 180% 180%, 200% 200%, 220% 220%;
+  animation: flicker 11s ease-in-out infinite alternate; }
+.endmark .beam { mix-blend-mode: screen;
+  background: linear-gradient(170deg, transparent 38%, rgba(255,120,80,.35) 45%, rgba(255,235,210,.95) 50%, rgba(255,120,80,.35) 55%, transparent 62%) 50% 0 / 100% 320% no-repeat;
+  animation: beam 8s cubic-bezier(.45,0,.55,1) infinite; }
+@keyframes ember { 0%, 100% { opacity: .92; } 38% { opacity: 1; } 52% { opacity: .86; } 71% { opacity: .98; } }
+@keyframes flicker {
+  0% { background-position: 0% 100%, 100% 0%, 50% 0%; }
+  33% { background-position: 60% 40%, 20% 70%, 10% 60%; }
+  66% { background-position: 20% 10%, 80% 90%, 90% 30%; }
+  100% { background-position: 100% 60%, 40% 20%, 30% 100%; } }
+@keyframes beam { 0% { background-position: 50% 110%; } 70%, 100% { background-position: 50% -10%; } }
+@media (prefers-reduced-motion: reduce) { .endmark, .endmark span { animation: none; } }
 
 /* close slide without the tattoo */
 html:not(.mobile) .close .marks { gap: 0; }
 html:not(.mobile) .close .last h2 { max-width: 20ch; }
 
-html.mobile .bgrid { flex: none; grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 38vw; gap: 10px; margin-top: 20px; }
-html.mobile .bp { grid-column: auto; grid-row: auto; }
-html.mobile .b1, html.mobile .b4 { grid-column: 1 / 3; grid-row: span 1; }
-html.mobile .b1 { grid-auto-rows: auto; }
+html.mobile .bslide { padding: 0 0 56px; }
+html.mobile .bgrid, html.mobile .bdusk .bl, html.mobile .bdusk .bands { height: auto; grid-template-areas: none; grid-template-rows: none;
+  grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+html.mobile .bdusk .bl, html.mobile .bdusk .bands { display: contents; }
+html.mobile .bp { grid-area: auto; height: 62vw; }
+html.mobile .bp.w { grid-column: span 2; height: 64vw; }
+html.mobile .bands .bp { grid-column: span 2; height: 26vw; }
+html.mobile .btitle { grid-area: auto; grid-column: span 2; padding: 64px 22px 22px; }
+html.mobile .btitle h2 { font-size: 52px; max-width: none; }
+html.mobile .bslide .sec { top: 16px; left: 22px; }
 html.mobile .slide.end { padding: 0; }
 html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
 </style>
@@ -913,43 +986,81 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
   <div class="foot">Sources: Amnesty International; HRANA; Congressional Research Service; Encyclopaedia Britannica.</div>
 </section>
 
-<!-- 05z Berlin, in pictures (1/2) -->
+<!-- 05z Berlin, in pictures (1/2): the city -->
 <section class="slide bslide" data-sec="The path">
-  <div class="bgrid">
-    <figure class="bp" data-file="berlin-01.jpg"><img src="assets/berlin/berlin-01.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-02.jpg"><img src="assets/berlin/berlin-02.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-03.jpg"><img src="assets/berlin/berlin-03.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-04.jpg"><img src="assets/berlin/berlin-04.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-05.jpg"><img src="assets/berlin/berlin-05.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-06.jpg"><img src="assets/berlin/berlin-06.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-07.jpg"><img src="assets/berlin/berlin-07.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-08.jpg"><img src="assets/berlin/berlin-08.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-09.jpg"><img src="assets/berlin/berlin-09.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-10.jpg"><img src="assets/berlin/berlin-10.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-11.jpg"><img src="assets/berlin/berlin-11.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-12.jpg"><img src="assets/berlin/berlin-12.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-13.jpg"><img src="assets/berlin/berlin-13.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+  <div class="sec"><b>I</b>The path</div>
+  <div class="bgrid bcity">
+    <div class="btitle"><h2>Then, Berlin<i>.</i></h2></div>
+    <figure class="bp w" data-file="berlin-06.jpg" style="--a:h;--i:1;--p:50% 50%"><img src="assets/berlin/berlin-06.jpg" alt="Berliner Dom at night, a meteor crossing the sky" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-05.jpg" style="--a:b;--i:2;--p:50% 50%"><img src="assets/berlin/berlin-05.jpg" alt="The Fernsehturm between a dome and a column" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-09.jpg" style="--a:c;--i:3;--p:50% 50%"><img src="assets/berlin/berlin-09.jpg" alt="A white stairwell lettered with Berlin district names in red" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp w" data-file="berlin-08.jpg" style="--a:a;--i:4;--p:50% 50%"><img src="assets/berlin/berlin-08.jpg" alt="A lit section of the Berlin Wall at night" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-17.jpg" style="--a:d;--i:5;--p:55% 40%"><img src="assets/berlin/berlin-17.jpg" alt="A pale sculpted face against blue light" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-13.jpg" style="--a:g;--i:6;--p:30% 50%"><img src="assets/berlin/berlin-13.jpg" alt="Scaffolding below a bronze quadriga" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp w" data-file="berlin-04.jpg" style="--a:e;--i:7;--p:50% 50%"><img src="assets/berlin/berlin-04.jpg" alt="A dark cinema, a woman on the screen" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-14.jpg" style="--a:f;--i:8;--p:50% 60%"><img src="assets/berlin/berlin-14.jpg" alt="Schiller before the Konzerthaus at night" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-12.jpg" style="--a:i;--i:9;--p:40% 50%"><img src="assets/berlin/berlin-12.jpg" alt="Office towers lit over dark water" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp w" data-file="berlin-02.jpg" style="--a:j;--i:10;--p:50% 50%"><img src="assets/berlin/berlin-02.jpg" alt="The ICC building and traffic" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-21.jpg" style="--a:k;--i:11;--p:50% 40%"><img src="assets/berlin/berlin-21.jpg" alt="Frederick the Great on horseback" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-11.jpg" style="--a:l;--i:12;--p:76% 50%"><img src="assets/berlin/berlin-11.jpg" alt="A lone standing figure lit at night" loading="lazy" onerror="this.remove()"></figure>
   </div>
 </section>
 
-<!-- 05z2 Berlin, in pictures (2/2) -->
+<!-- 05z2 Berlin, in pictures (2/2): evenings -->
 <section class="slide bslide" data-sec="The path">
-  <div class="bgrid">
-    <figure class="bp" data-file="berlin-14.jpg"><img src="assets/berlin/berlin-14.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-15.jpg"><img src="assets/berlin/berlin-15.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-16.jpg"><img src="assets/berlin/berlin-16.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-17.jpg"><img src="assets/berlin/berlin-17.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-18.jpg"><img src="assets/berlin/berlin-18.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-19.jpg"><img src="assets/berlin/berlin-19.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-20.jpg"><img src="assets/berlin/berlin-20.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-21.jpg"><img src="assets/berlin/berlin-21.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-22.jpg"><img src="assets/berlin/berlin-22.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-23.jpg"><img src="assets/berlin/berlin-23.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-24.jpg"><img src="assets/berlin/berlin-24.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-25.jpg"><img src="assets/berlin/berlin-25.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-26.jpg"><img src="assets/berlin/berlin-26.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
-    <figure class="bp" data-file="berlin-27.jpg"><img src="assets/berlin/berlin-27.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+  <div class="bgrid bdusk">
+   <div class="bl">
+    <figure class="bp w" data-file="berlin-16.jpg" style="--a:p;--i:1;--p:50% 45%"><img src="assets/berlin/berlin-16.jpg" alt="A crowd under a red stage" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-01.jpg" style="--a:q;--i:2;--p:50% 60%"><img src="assets/berlin/berlin-01.jpg" alt="A red evening sky over trees" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-22.jpg" style="--a:r;--i:3;--p:55% 60%"><img src="assets/berlin/berlin-22.jpg" alt="Two dancers under a rainbow" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp w" data-file="berlin-15.jpg" style="--a:s;--i:4;--p:68% 55%"><img src="assets/berlin/berlin-15.jpg" alt="The Spree and the Berliner Dom" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-19.jpg" style="--a:u;--i:5;--p:50% 50%"><img src="assets/berlin/berlin-19.jpg" alt="Sunset through a bridge fence" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-23.jpg" style="--a:v;--i:6;--p:50% 50%"><img src="assets/berlin/berlin-23.jpg" alt="Two passengers on an S-Bahn" loading="lazy" onerror="this.remove()"></figure>
+   </div>
+   <div class="bands">
+    <figure class="bp" data-file="berlin-20.jpg" style="--a:auto;--i:7;--p:50% 84%"><img src="assets/berlin/berlin-20.jpg" alt="A pale pink cloud" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-03.jpg" style="--a:auto;--i:8;--p:50% 64%"><img src="assets/berlin/berlin-03.jpg" alt="Pink clouds over the rooftops" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-07.jpg" style="--a:auto;--i:9;--p:50% 57%"><img src="assets/berlin/berlin-07.jpg" alt="An orange sun behind trees" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-10.jpg" style="--a:auto;--i:10;--p:50% 55%"><img src="assets/berlin/berlin-10.jpg" alt="A red sun on the skyline" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="bp" data-file="berlin-18.jpg" style="--a:auto;--i:11;--p:50% 86%"><img src="assets/berlin/berlin-18.jpg" alt="Dusk over a church spire" loading="lazy" onerror="this.remove()"></figure>
+   </div>
   </div>
+</section>
+
+<!-- 05z3 Berlin, scattered: every photograph, small and far apart -->
+<section class="slide bscatter" data-sec="The path">
+  <div class="sec"><b>I</b>The path</div>
+  <div class="field">
+    <figure class="sp" data-n="1" style="left:56.0%;top:72.0%;--s:72px"><img src="assets/berlin/berlin-01.jpg" alt="" onerror="this.remove()"><figcaption>01</figcaption></figure>
+    <figure class="sp" data-n="2" style="left:28.9%;top:50.2%;--s:64px"><img src="assets/berlin/berlin-02.jpg" alt="" onerror="this.remove()"><figcaption>02</figcaption></figure>
+    <figure class="sp" data-n="3" style="left:47.6%;top:42.0%;--s:112px"><img src="assets/berlin/berlin-03.jpg" alt="" onerror="this.remove()"><figcaption>03</figcaption></figure>
+    <figure class="sp" data-n="4" style="left:15.1%;top:17.0%;--s:80px"><img src="assets/berlin/berlin-04.jpg" alt="" onerror="this.remove()"><figcaption>04</figcaption></figure>
+    <figure class="sp" data-n="5" style="left:44.2%;top:69.1%;--s:104px"><img src="assets/berlin/berlin-05.jpg" alt="" onerror="this.remove()"><figcaption>05</figcaption></figure>
+    <figure class="sp" data-n="6" style="left:66.8%;top:33.9%;--s:58px"><img src="assets/berlin/berlin-06.jpg" alt="" onerror="this.remove()"><figcaption>06</figcaption></figure>
+    <figure class="sp" data-n="7" style="left:34.3%;top:16.6%;--s:80px"><img src="assets/berlin/berlin-07.jpg" alt="" onerror="this.remove()"><figcaption>07</figcaption></figure>
+    <figure class="sp" data-n="8" style="left:87.8%;top:42.1%;--s:58px"><img src="assets/berlin/berlin-08.jpg" alt="" onerror="this.remove()"><figcaption>08</figcaption></figure>
+    <figure class="sp" data-n="9" style="left:90.3%;top:66.5%;--s:80px"><img src="assets/berlin/berlin-09.jpg" alt="" onerror="this.remove()"><figcaption>09</figcaption></figure>
+    <figure class="sp" data-n="10" style="left:72.7%;top:81.7%;--s:80px"><img src="assets/berlin/berlin-10.jpg" alt="" onerror="this.remove()"><figcaption>10</figcaption></figure>
+    <figure class="sp" data-n="11" style="left:15.6%;top:59.7%;--s:80px"><img src="assets/berlin/berlin-11.jpg" alt="" onerror="this.remove()"><figcaption>11</figcaption></figure>
+    <figure class="sp" data-n="12" style="left:17.4%;top:38.6%;--s:88px"><img src="assets/berlin/berlin-12.jpg" alt="" onerror="this.remove()"><figcaption>12</figcaption></figure>
+    <figure class="sp" data-n="13" style="left:87.1%;top:17.3%;--s:104px"><img src="assets/berlin/berlin-13.jpg" alt="" onerror="this.remove()"><figcaption>13</figcaption></figure>
+    <figure class="sp" data-n="14" style="left:47.7%;top:16.7%;--s:64px"><img src="assets/berlin/berlin-14.jpg" alt="" onerror="this.remove()"><figcaption>14</figcaption></figure>
+    <figure class="sp" data-n="15" style="left:76.1%;top:61.8%;--s:104px"><img src="assets/berlin/berlin-15.jpg" alt="" onerror="this.remove()"><figcaption>15</figcaption></figure>
+    <figure class="sp" data-n="16" style="left:13.3%;top:76.5%;--s:104px"><img src="assets/berlin/berlin-16.jpg" alt="" onerror="this.remove()"><figcaption>16</figcaption></figure>
+    <figure class="sp" data-n="17" style="left:29.9%;top:78.2%;--s:72px"><img src="assets/berlin/berlin-17.jpg" alt="" onerror="this.remove()"><figcaption>17</figcaption></figure>
+    <figure class="sp" data-n="18" style="left:32.3%;top:33.0%;--s:64px"><img src="assets/berlin/berlin-18.jpg" alt="" onerror="this.remove()"><figcaption>18</figcaption></figure>
+    <figure class="sp" data-n="19" style="left:74.5%;top:15.1%;--s:112px"><img src="assets/berlin/berlin-19.jpg" alt="" onerror="this.remove()"><figcaption>19</figcaption></figure>
+    <figure class="sp" data-n="20" style="left:77.9%;top:44.2%;--s:58px"><img src="assets/berlin/berlin-20.jpg" alt="" onerror="this.remove()"><figcaption>20</figcaption></figure>
+    <figure class="sp" data-n="21" style="left:59.7%;top:16.6%;--s:58px"><img src="assets/berlin/berlin-21.jpg" alt="" onerror="this.remove()"><figcaption>21</figcaption></figure>
+    <figure class="sp" data-n="22" style="left:7.0%;top:36.9%;--s:112px"><img src="assets/berlin/berlin-22.jpg" alt="" onerror="this.remove()"><figcaption>22</figcaption></figure>
+    <figure class="sp" data-n="23" style="left:61.5%;top:52.7%;--s:72px"><img src="assets/berlin/berlin-23.jpg" alt="" onerror="this.remove()"><figcaption>23</figcaption></figure>
+  </div>
+</section>
+
+<!-- 05z4 Berlin, embedded: the same photographs at the tips of vectors in a latent space -->
+<section class="slide blatent" data-sec="The path">
+  <div class="sec"><b>I</b>The path</div>
+  <canvas class="latent" aria-label="The Berlin photographs placed at the tips of vectors in a three-dimensional latent space, clustered by what they show, among many other vectors." role="img"></canvas>
 </section>
 
 <!-- 05a bronzes -->
@@ -1465,7 +1576,7 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
 
 <!-- end: the mark alone -->
 <section class="slide end" data-title="End">
-  <img class="endmark" alt="Line drawing of the scene: a man carries a wounded woman while another woman steadies him and raises the Derafsh." src="assets/kavian-tatoo.jpg">
+  <div class="endmark" role="img" aria-label="Line drawing of the scene: a man carries a wounded woman while another woman steadies him and raises the Derafsh."><span class="ink"></span><span class="heat"></span><span class="beam"></span></div>
 </section>
 
 
@@ -1524,7 +1635,7 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
   document.querySelector('.nav.next').addEventListener('click', function () { go(i + 1); hideHint(); });
   document.querySelector('.nav.prev').addEventListener('click', function () { go(i - 1); hideHint(); });
   var x0 = null, y0 = null;
-  document.addEventListener('touchstart', function (e) { if (e.target.closest && e.target.closest('.svgwrap, .tlright')) { x0 = null; return; } x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchstart', function (e) { if (e.target.closest && e.target.closest('.svgwrap, .tlright, .latent')) { x0 = null; return; } x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
   document.addEventListener('touchend', function (e) {
     if (x0 === null) return;
     var d = e.changedTouches[0].clientX - x0;
@@ -1537,6 +1648,114 @@ html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
   var start = parseInt((location.hash || '').slice(1), 10);
   go(isNaN(start) ? 0 : start - 1);
   setTimeout(hideHint, 5000);
+})();
+</script>
+<script>
+/* Latent space: the scattered photographs fly to the tips of vectors, clustered by what they show. */
+(function () {
+  var slide = document.querySelector('.blatent'), scatter = document.querySelector('.bscatter');
+  if (!slide || !scatter) return;
+  var canvas = slide.querySelector('.latent'), ctx = canvas.getContext('2d');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seed = 11;
+  function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function gauss() { var u = rnd() || 1e-9, v = rnd(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function ease(v) { v = clamp(v); return v < .5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2; }
+  var centres = { sky: [250, 150, -60], night: [-250, 30, 170], stone: [-80, -190, -190], life: [210, -150, 200] };
+  var groupOf = { 1: 'sky', 3: 'sky', 7: 'sky', 10: 'sky', 18: 'sky', 19: 'sky', 20: 'sky',
+    2: 'night', 4: 'night', 6: 'night', 8: 'night', 12: 'night',
+    5: 'stone', 11: 'stone', 13: 'stone', 14: 'stone', 21: 'stone',
+    9: 'life', 15: 'life', 16: 'life', 17: 'life', 22: 'life', 23: 'life' };
+  var keys = Object.keys(centres);
+  var photos = Array.prototype.map.call(scatter.querySelectorAll('.sp'), function (f, i) {
+    var c = centres[groupOf[+f.getAttribute('data-n')]];
+    return { el: f, img: f.querySelector('img'), i: i, p: [c[0] + gauss() * 62, c[1] + gauss() * 62, c[2] + gauss() * 62] };
+  });
+  var others = [];
+  for (var k = 0; k < 170; k++) {
+    var p;
+    if (rnd() < .6) { var c = centres[keys[Math.floor(rnd() * keys.length)]]; p = [c[0] + gauss() * 105, c[1] + gauss() * 105, c[2] + gauss() * 105]; }
+    else { var r = 380 * Math.cbrt(rnd()), th = rnd() * 2 * Math.PI, ph = Math.acos(2 * rnd() - 1); p = [r * Math.sin(ph) * Math.cos(th), r * Math.cos(ph), r * Math.sin(ph) * Math.sin(th)]; }
+    others.push({ p: p, d: rnd() * .9 });
+  }
+  var yaw = -0.55, pitch = 0.32, W = 0, H = 0, S = 1, t0 = 0, last = 0, spin = 0, running = false, drag = null, from = [];
+  var F = 1150, D = 1150;
+  function size() {
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    var r = canvas.getBoundingClientRect(), ratio = (window.devicePixelRatio || 1) * (r.width / (W || 1));
+    canvas.width = Math.round(W * ratio); canvas.height = Math.round(H * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    S = Math.min(W / 820, H / 900);
+  }
+  function rot(p) {
+    var ca = Math.cos(yaw), sa = Math.sin(yaw), cb = Math.cos(pitch), sb = Math.sin(pitch);
+    var x = p[0] * ca + p[2] * sa, z = -p[0] * sa + p[2] * ca;
+    return [x, p[1] * cb - z * sb, p[1] * sb + z * cb];
+  }
+  function proj(p) { var q = rot(p), k = F / (D + q[2]); return { x: W / 2 + q[0] * k * S, y: H / 2 - q[1] * k * S, k: k, z: q[2] }; }
+  function near(z) { return clamp((420 - z) / 840); }
+  function captureScatter() {
+    var sr = scatter.getBoundingClientRect();
+    from = photos.map(function (ph) {
+      var r = ph.img && ph.img.getBoundingClientRect();
+      if (!r || !sr.width) return null;
+      return { x: (r.left + r.width / 2 - sr.left) / sr.width * W, y: (r.top + r.height / 2 - sr.top) / sr.height * H, s: Math.max(r.width, r.height) / sr.width * W };
+    });
+  }
+  function line(a, b, style, w) { ctx.strokeStyle = style; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+  function frame(now) {
+    if (!slide.classList.contains('on')) { running = false; return; }
+    var t = still ? 99 : (now - t0) / 1000, dt = Math.min(.05, (now - (last || now)) / 1000); last = now;
+    if (!drag && !still) { spin = Math.min(1, spin + dt / 1.5 * (t > 2.4 ? 1 : 0)); yaw += dt * .075 * spin; }
+    ctx.clearRect(0, 0, W, H);
+    var o = proj([0, 0, 0]), axes = ease((t - .5) / 1.1);
+    [[1, 0, 0], [0, 1, 0], [0, 0, 1]].forEach(function (a, n) {
+      var A = proj([a[0] * -400, a[1] * -400, a[2] * -400]), B = proj([a[0] * 400, a[1] * 400, a[2] * 400]);
+      line(A, B, 'rgba(255,255,255,' + (.16 * axes) + ')', 1);
+      ctx.fillStyle = 'rgba(255,255,255,' + (.4 * axes) + ')'; ctx.font = '11px "Schibsted Grotesk", sans-serif';
+      ctx.fillText('z' + '₁₂₃'[n], B.x + 6, B.y - 6);
+    });
+    others.forEach(function (v) {
+      var g = ease((t - 1.1 - v.d) / 1.3); if (!g) return;
+      var P = proj(v.p), tip = { x: o.x + (P.x - o.x) * g, y: o.y + (P.y - o.y) * g }, n = near(P.z);
+      line(o, tip, 'rgba(255,255,255,' + ((.04 + .13 * n) * g) + ')', .8);
+      ctx.fillStyle = 'rgba(255,255,255,' + ((.2 + .55 * n) * g) + ')';
+      ctx.beginPath(); ctx.arc(tip.x, tip.y, 1.1 + 1.5 * n * P.k, 0, 6.2832); ctx.fill();
+    });
+    var list = photos.map(function (ph, i) { return { ph: ph, P: proj(ph.p), i: i }; }).sort(function (a, b) { return b.P.z - a.P.z; });
+    list.forEach(function (it) {
+      var g = ease((t - 1.4 - it.i * .02) / 1.1); if (!g) return;
+      var tip = { x: o.x + (it.P.x - o.x) * g, y: o.y + (it.P.y - o.y) * g };
+      line(o, tip, 'rgba(255,26,26,' + ((.35 + .5 * near(it.P.z)) * g) + ')', 1.1);
+    });
+    list.forEach(function (it) {
+      var img = it.ph.img; if (!img || !img.naturalWidth) return;
+      var m = ease((t - it.i * .025) / 1.7), f = from[it.i] || { x: it.P.x, y: it.P.y, s: 0 };
+      var end = 74 * it.P.k * S, sz = f.s + (end - f.s) * m, x = f.x + (it.P.x - f.x) * m, y = f.y + (it.P.y - f.y) * m;
+      var ar = img.naturalWidth / img.naturalHeight, w = ar >= 1 ? sz : sz * ar, h = ar >= 1 ? sz / ar : sz;
+      ctx.globalAlpha = 1 - (1 - (.55 + .45 * near(it.P.z))) * m;
+      ctx.drawImage(img, x - w / 2, y - h / 2, w, h);
+      ctx.globalAlpha = 1;
+    });
+    requestAnimationFrame(frame);
+  }
+  function start() {
+    if (running) return;
+    size(); captureScatter(); t0 = performance.now(); last = 0; spin = 0; running = true;
+    requestAnimationFrame(frame);
+  }
+  new MutationObserver(function () { if (slide.classList.contains('on')) start(); }).observe(slide, { attributes: true, attributeFilter: ['class'] });
+  window.addEventListener('resize', function () { if (running) { size(); captureScatter(); } });
+  canvas.addEventListener('pointerdown', function (e) { drag = { x: e.clientX, y: e.clientY }; canvas.setPointerCapture(e.pointerId); spin = 0; });
+  canvas.addEventListener('pointermove', function (e) {
+    if (!drag) return;
+    yaw += (e.clientX - drag.x) * .006; pitch = Math.max(-1.3, Math.min(1.3, pitch + (e.clientY - drag.y) * .005));
+    drag = { x: e.clientX, y: e.clientY };
+  });
+  canvas.addEventListener('pointerup', function () { drag = null; });
+  canvas.addEventListener('pointercancel', function () { drag = null; });
+  if (slide.classList.contains('on')) start();
 })();
 </script>
 </body>

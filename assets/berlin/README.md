@@ -1,20 +1,22 @@
-# Berlin Photo Gallery
+# Berlin photographs
 
-This folder contains 27 photographs from Berlin for the Kavian presentation.
+`berlin-01.jpg` … `berlin-23.jpg` are the photographs `kaweinberlin-1` … `kaweinberlin-23`, in the same order.
+Each is resized to at most 1600px on its long side, JPEG quality 82.
 
-## Images
+They appear on four slides after the timeline:
 
-- `berlin-01.jpg` – berlin-27.jpg: A fullscreen gallery spread across two slides.
+1. **Then, Berlin.** A full-bleed mosaic of the city at night and in stone:
+   02, 04, 05, 06 (large frame), 08, 09, 11, 12, 13, 14, 17, 21.
+2. **Evenings.** A cluster of people and river (01, 15, 16, 19, 22, 23) beside five skies cut into horizon bands,
+   pale to dusk: 20, 03, 07, 10, 18.
+3. **Scattered.** All 23, small and far apart on a white field, each with its number.
+4. **Latent space.** The same 23 fly to the tips of red vectors among grey ones and settle into four clusters:
+   - skies: 01, 03, 07, 10, 18, 19, 20
+   - night and light: 02, 04, 06, 08, 12
+   - monuments: 05, 11, 13, 14, 21
+   - people and life: 09, 15, 16, 17, 22, 23
 
-The images are displayed in a minimal, fullscreen layout with no margins or padding. Each image covers its grid cell completely.
+To swap a photograph, replace the file and keep its name. Crops on slides 1 and 2 are set per image with `--p` (object-position)
+in `index.html`; the clusters are set in the `groupOf` map in the latent-space script.
 
-## Layout
-
-- **Slide 1**: berlin-01.jpg through berlin-13.jpg (13 images)
-- **Slide 2**: berlin-14.jpg through berlin-27.jpg (14 images)
-
-## Notes
-
-- Images are optimized for web (JPEG, quality ~85)
-- Missing images display as empty frames with dashed borders
-- Aspect ratios are preserved with `object-fit: cover`
+`berlin-23.jpg` exists only at 282×612, so it is placed where it stays small.
