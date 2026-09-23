@@ -2,9 +2,9 @@
 
 پروندهٔ کاری کاویان برای The New Centre for Research & Practice، برنامهٔ Information Architecture & Intelligence Design، پاییز و زمستان ۲۰۲۶–۲۷.
 
-ارائهٔ فعلی [`index.html`](index.html) است و روی [GitHub Pages](https://kvmmn.github.io/_kavian/) منتشر می‌شود. منبع همان مخزن است: [github.com/kvmmn/_kavian](https://github.com/kvmmn/_kavian). نرم‌افزار نیست و ادعای سامانهٔ در حال اجرا هم نیست.
+ارائهٔ فعلی [`index.html`](index.html) است و روی [GitHub Pages](https://kvmmn.github.io/_kavian/) منتشر می‌شود. دکمهٔ FA همان صفحه را به نسخهٔ فارسی [`fa.html`](fa.html) می‌برد و دکمهٔ EN برمی‌گردد؛ گرافیک یکی است و متن فارسی است. منبع همان مخزن است: [github.com/kvmmn/_kavian](https://github.com/kvmmn/_kavian). نرم‌افزار نیست و ادعای سامانهٔ در حال اجرا هم نیست.
 
-نسخهٔ پانزده‌صفحه‌ای فارسی، [`tnc-kavian-presentation/proposal-deck.html`](tnc-kavian-presentation/proposal-deck.html)، پیش از این دک مانده و با ارائهٔ انگلیسی یکی نیست.
+نسخهٔ پانزده‌صفحه‌ای فارسی، [`tnc-kavian-presentation/proposal-deck.html`](tnc-kavian-presentation/proposal-deck.html)، از قبل جا مانده و با ارائهٔ زنده یکی نیست.
 
 ## چیدمان
 
