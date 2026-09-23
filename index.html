@@ -514,33 +514,34 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
 /* Phone and small windows. The 1600×900 frame stays in charge until it would shrink below readable type. */
 @media screen {
   html.mobile .slide {
-    padding: 58px 22px 78px;
+    padding: 56px 28px 96px;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-  html.mobile .sec { top: 14px; left: 22px; font-size: 13px; }
+  html.mobile .sec { top: 16px; left: 28px; font-size: 13px; }
   html.mobile .num { position: fixed; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); right: 16px; font-size: 12px; z-index: 6; }
   html.mobile .foot { position: static; margin-top: 22px; max-width: none; font-size: 13px; line-height: 1.45; }
-  html.mobile h2 { font-size: 32px; line-height: 1.15; letter-spacing: -0.02em; max-width: none; }
+  html.mobile h2 { font-size: 32px; line-height: 1.25; letter-spacing: -0.02em; max-width: none; }
   html.mobile .lead { font-size: 17px; line-height: 1.45; max-width: none; }
   html.mobile .body { font-size: 16px; }
-  html.mobile button.nav { width: 22px; }
-  html.mobile .cover .text { padding: 64px 22px 36px; }
-  html.mobile .cover h1 { font-size: 78px; }
+  html.mobile button.nav { width: 12px; }
+  html.mobile .cover .text { padding: 12px 0 32px; height: auto; }
+  html.mobile .cover h1 { font-size: clamp(56px, 16vw, 72px); line-height: 0.95; margin-top: 20px; letter-spacing: -0.04em; }
   html.mobile .cover .sub { font-size: 18px; max-width: 18ch; margin-top: 16px; }
   html.mobile .cover .meta { margin-top: 28px; font-size: 14px; gap: 4px 16px; }
   html.mobile .cover .meta a { overflow-wrap: anywhere; }
   html.mobile .cover .art { height: 42vh; top: auto; bottom: 0; opacity: .4; }
   html.mobile .cover .veil { background: linear-gradient(180deg, #000 0%, #000 58%, rgba(0,0,0,.35) 100%); }
-  html.mobile .opener { padding: 28px 22px 40px; }
+  html.mobile .opener { padding: 36px 28px 48px; justify-content: flex-start; }
   html.mobile .opener .roman { font-size: 22px; }
-  html.mobile .opener h2 { font-size: 46px; line-height: 1.08; overflow-wrap: break-word; }
+  html.mobile .opener h2 { font-size: 46px; line-height: 1.12; margin-top: 18px; overflow-wrap: break-word; }
   html.mobile .opener p { font-size: 20px; margin-top: 16px; }
   html.mobile .omark { width: 240px; height: 240px; right: -70px; }
-  html.mobile .wire img { height: 100%; width: auto; max-width: 100%; }
+  html.mobile .wire { align-items: center; justify-content: center; }
+  html.mobile .wire img { height: auto; width: auto; max-width: 100%; max-height: 78vh; object-fit: contain; }
   html.mobile .slide.doc { flex-direction: column; }
-  html.mobile .docphoto, html.mobile .docphoto img { width: 100%; height: 38vh; }
+  html.mobile .docphoto, html.mobile .docphoto img { width: 100%; height: auto; max-height: 62vh; object-fit: contain; }
   html.mobile .docside { padding: 18px 22px 28px; }
   html.mobile .docside .d { font-size: 34px; }
   html.mobile .docside .w { font-size: 20px; }
@@ -565,17 +566,20 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   html.mobile .jobs svg { width: 100%; }
   html.mobile .bronzes, html.mobile .berlin, html.mobile .far, html.mobile .coa, html.mobile .triad,
   html.mobile .horizon, html.mobile .fails { grid-template-columns: 1fr; gap: 16px; }
-  html.mobile .bronzes img { width: 100%; height: 240px; object-fit: cover; }
+  html.mobile .bronzes img { width: 100%; height: auto; max-height: 64vh; object-fit: contain; }
   html.mobile .kaveh { display: flex; flex-direction: column; align-items: stretch; }
   html.mobile .kaveh figure, html.mobile .kx { min-width: 0; max-width: 100%; width: 100%; }
-  html.mobile .kaveh figure img, html.mobile .kaveh img { width: 100% !important; max-width: 100%; height: auto !important; max-height: 52vh; }
+  html.mobile .kaveh figure img, html.mobile .kaveh img { width: 100% !important; max-width: 100%; height: auto !important; max-height: 46vh; object-fit: contain; }
   html.mobile .brickh { width: 100%; max-width: 282px; height: 58px; }
   html.mobile .brickh em { left: 0; top: 34px; white-space: normal; }
   html.mobile .kaveh h2, html.mobile .kstory { font-size: 22px; }
   html.mobile .statement { font-size: 26px; }
   html.mobile .dossier { grid-template-columns: 1fr; }
   html.mobile .dossier .link { display: none; }
-  html.mobile .stack3 { height: 140px; margin: 8px 0 16px; }
+  html.mobile .stack3 { height: 248px; margin: 12px 0 20px; }
+  html.mobile .stack3 .sheet { height: 168px; }
+  html.mobile .stack3 .sheet:nth-child(2) { top: 28px; }
+  html.mobile .stack3 .sheet:nth-child(3) { top: 52px; padding: 16px; }
   html.mobile .mock { grid-template-columns: 1fr; padding: 16px; }
   html.mobile .success p { font-size: 20px; }
   html.mobile .far { margin-top: 18px; }
@@ -604,7 +608,9 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   html.mobile .shape { grid-template-columns: 1fr; gap: 4px; }
   html.mobile .uhr { grid-template-columns: 22px 1fr; }
   html.mobile .uhr .tl, html.mobile .uhr p, html.mobile .uhr .why { grid-column: 2; }
-  html.mobile .m td, html.mobile .m th { font-size: 13px; padding: 8px 4px; }
+  html.mobile .rl { height: auto; padding: 12px 0; align-items: start; }
+  html.mobile .last { align-items: start; }
+  html.mobile .m td, html.mobile .m th { font-size: 14px; line-height: 1.35; padding: 12px 8px; }
   html.mobile .qs p { font-size: 16px; }
   html.mobile .map .c { min-height: 0; font-size: 16px; }
   html.mobile .horizon { margin-top: 16px; }
