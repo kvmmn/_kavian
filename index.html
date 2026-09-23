@@ -1785,7 +1785,7 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
     return { img: f.querySelector('img'), g: g, p: near(g, 75), i0: +f.style.getPropertyValue('--i') };
   });
   photos.sort(function (a, b) { return a.i0 - b.i0; });
-  var bronzes = target ? [{ img: bronzeImgs[0], g: 'stone', p: [-40, -130, -110], bronze: true }, { img: bronzeImgs[1], g: 'stone', p: [20, -155, -140], bronze: true }] : [];
+  var bronzes = target ? [{ img: bronzeImgs[0], g: 'stone', p: [-170, -270, -110], bronze: true }, { img: bronzeImgs[1], g: 'stone', p: [-10, -300, -210], bronze: true }] : [];
   var extras = [];
   if (kavehImg) extras.push({ img: kavehImg, g: 'print', p: near('print', 30) });
   MORE.forEach(function (m) {
@@ -1870,7 +1870,8 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
     ctx.textAlign = 'left';
   }
   function draw(t, L) {
-    var e = L == null ? 0 : ease(L), Z = 1 + 7 * e * e, fade = 1 - clamp(e * 1.6);
+    var p1 = L == null ? 0 : ease(L / .3), e = L == null ? 0 : ease((L - .25) / .75), Z = 1 + 7 * e * e;
+    var fade = (1 - .82 * p1) * (1 - clamp(e * 1.6));
     var M = leave ? leave.m : { x: W / 2, y: H / 2 };
     function z(P) { return { x: M.x + (P.x - M.x) * Z, y: M.y + (P.y - M.y) * Z, k: P.k, z: P.z }; }
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
@@ -1897,6 +1898,7 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
       var g = ease((t - 1.4 - it.i * .02) / 1.1); if (!g) return;
       var tip = { x: o.x + (it.P.x - o.x) * g, y: o.y + (it.P.y - o.y) * g };
       var red = hoverG ? it.nd.g === hoverG : it.nd.bronze;
+      if (it.nd.bronze && leave) return;
       if (red) line(o, tip, 'rgba(' + RED + ',' + (.9 * g * (it.nd.bronze ? 1 : fade)) + ')', it.nd.bronze || it.i === hover ? 1.8 : 1.3);
       else line(o, tip, 'rgba(255,255,255,' + ((.22 + .3 * depth(it.P.z)) * g * fade) + ')', 1);
     });
@@ -1904,6 +1906,7 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
       var nd = it.nd, img = nd.img; it.nd.box = null;
       if (!img || !img.naturalWidth) return;
       var end = 60 * it.P.k * S * (it.i === hover ? 2 : 1);
+      if (nd.bronze && leave) return;
       if (nd.bronze) {
         var bi = it.i - nb, a = ease((t - 1.6 - bi * .15) / 1); if (!a) return;
         var bx = fitBox(img, end), P = leave ? leave.start[bi] : it.P, T = leave ? leave.to[bi] : null;
@@ -1927,13 +1930,33 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
       ctx.globalAlpha = 1;
       nd.box = { x: x2 - w2 / 2, y: y2 - h2 / 2, w: w2, h: h2 };
     });
+    if (leave) drawBronzesLeaving(p1, e);
+  }
+  // Leaving: first the two red vectors thicken and everything else dims; then the view closes in,
+  // each vector draws back into its statue, and the statues land where the next slide holds them.
+  function drawBronzesLeaving(p1, e) {
+    var boxes = bronzes.map(function (b, bi) {
+      var img = b.img, S0 = leave.start[bi], T = leave.to[bi];
+      var bx = fitBox(img, 60 * S0.k * S * (1 + .45 * p1));
+      return { img: img, T: T, C: { x: lerp(S0.x, T.x, e), y: lerp(S0.y, T.y, e) }, w: lerp(bx.w, T.w, e), h: lerp(bx.h, T.h, e) };
+    });
+    var a = .95 * (1 - clamp((e - .7) / .3));
+    boxes.forEach(function (b) {
+      var A = { x: lerp(leave.o.x, b.C.x, e), y: lerp(leave.o.y, b.C.y, e) };
+      if (a > 0) line(A, b.C, 'rgba(' + RED + ',' + a + ')', 1.8 + 1.8 * p1 * (1 - e));
+    });
+    if (a > 0 && e < .98) { ctx.fillStyle = 'rgba(' + RED + ',' + a * (1 - e) + ')'; ctx.beginPath(); ctx.arc(leave.o.x, leave.o.y, 3 + 2 * p1, 0, 6.2832); ctx.fill(); }
+    boxes.forEach(function (b) {
+      var img = b.img, src = coverSrc(img, b.T.w, b.T.h), s0 = [0, 0, img.naturalWidth, img.naturalHeight];
+      ctx.drawImage(img, lerp(s0[0], src[0], e), lerp(s0[1], src[1], e), lerp(s0[2], src[2], e), lerp(s0[3], src[3], e), b.C.x - b.w / 2, b.C.y - b.h / 2, b.w, b.h);
+    });
   }
   function frame(now) {
     if (!slide.classList.contains('on')) { running = false; return; }
     var t = still ? 99 : (now - t0) / 1000, dt = Math.min(.05, (now - (last || now)) / 1000); last = now;
     var L = null;
     if (leave) {
-      L = clamp((now - leave.t) / 1600);
+      L = clamp((now - leave.t) / 1900);
       if (L >= 1 && !leave.fired) { leave.fired = true; draw(t, 1); leave.done(); return requestAnimationFrame(frame); }
     } else if (!drag && !still && hover < 0) { spin = Math.min(1, spin + dt / 1.5 * (t > 2.4 ? 1 : 0)); yaw += dt * .075 * spin; }
     draw(t, L);
@@ -1960,7 +1983,7 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
     if (!target || still || mobile || !running || !bronzes[0].img.naturalWidth) return done();
     t0 = Math.min(t0, performance.now() - 4000);
     var st = bronzes.map(function (b) { return proj(b.p); });
-    leave = { t: performance.now(), done: done, fired: false, start: st,
+    leave = { t: performance.now(), done: done, fired: false, start: st, o: proj([0, 0, 0]),
       m: { x: (st[0].x + st[1].x) / 2, y: (st[0].y + st[1].y) / 2 },
       to: bronzes.map(function (b) { return rectIn(b.img, target); }) };
   };
