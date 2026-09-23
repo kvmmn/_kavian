@@ -170,7 +170,7 @@ This layer is a design proposal for the circulation. It does not upgrade founder
 
 ## 10. The deck
 
-The published presentation, as of 23 September 2026, is [`index.html`](../index.html) at the repository root, on [GitHub Pages](https://kvmmn.github.io/_kavian/). It is the English deck. Persian text in it uses Vazirmatn. The last slide uses `assets/kavian-tatoo.jpg`. The record below is the earlier fifteen-slide Persian deck and is not a description of the live file.
+The published presentation, as of 23 September 2026, is [`index.html`](../index.html) at the repository root, on [GitHub Pages](https://kvmmn.github.io/_kavian/). It is the English deck only. The Persian file is [`fa.html`](../fa.html), kept separate and not linked from the site. Persian text uses Rubik, and the layout reads right to left. The last slide uses `assets/kavian-tatoo.jpg`. The record below is the earlier fifteen-slide Persian deck and is not a description of the live file.
 
 [`proposal-deck.html`](./proposal-deck.html) was the presentation on 22 September 2026. Fifteen right-to-left slides, Rubik, black and white with gray tones. A loud red (`#ff1a1a`) fills slides 05, 08, and 15. Elsewhere red is an effect only: a bar on the opening slide, the redaction marks, and the edge of limit cards. Photographs and the opening drawing are shown in grayscale.
 
