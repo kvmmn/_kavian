@@ -14,8 +14,8 @@
   --white: #ffffff;
   --panel: #161616;
   --rule: #383838;
-  --faint: #6e6e6e;
-  --muted: #a8a8a8;
+  --faint: #8c8c8c;
+  --muted: #bdbdbd;
   --soft: #d9d9d9;
   --red: #ff1a1a;
   --font: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -211,11 +211,11 @@ svg text { font-family: var(--font); }
 .trace .step::before { content: ""; width: 12px; height: 12px; border: 1.5px solid var(--white); border-radius: 50%; justify-self: center; }
 .trace .step:not(:last-child)::after { content: ""; position: absolute; left: 10px; top: 28px; height: 24px; width: 1.5px; background: var(--rule); }
 .trace .step.c::before { background: var(--white); }
-.views { margin-top: 26px; position: relative; height: 250px; }
+.views { margin-top: 26px; position: relative; height: 300px; }
 .views div { position: absolute; border: 1.5px solid var(--rule); padding: 10px 14px; font-size: 15px; color: var(--muted); }
 .views .o { inset: 0; }
-.views .a { left: 26px; right: 26px; top: 62px; bottom: 0; border-bottom: none; }
-.views .p { left: 52px; right: 52px; top: 124px; bottom: 0; border-color: var(--white); border-bottom: none; color: var(--white); }
+.views .a { left: 26px; right: 26px; top: 66px; bottom: 26px; color: var(--soft); }
+.views .p { left: 52px; right: 52px; top: 132px; bottom: 52px; border-color: var(--white); color: var(--white); }
 .views div b { display: block; font-size: 16px; color: inherit; font-weight: 700; }
 
 /* Slide 17: status */
@@ -229,8 +229,8 @@ table.m { border-collapse: collapse; width: 100%; }
 .dot.f { background: var(--white); }
 .dot.h { border: 2px solid var(--white); }
 .dot.n { width: 18px; height: 2px; border-radius: 0; background: var(--rule); vertical-align: middle; }
-.m td.t { background: rgba(255,26,26,.07); }
-.m .tn { background: var(--red); }
+.m td.t { background: rgba(255,255,255,.04); }
+.m .tn { background: #8c8c8c; }
 .qs { align-self: center; }
 .qs h4 { font-size: 16px; color: var(--faint); font-weight: 500; margin-bottom: 16px; }
 .qs p { font-size: 22px; line-height: 1.3; font-weight: 600; padding: 13px 0; border-top: 1.5px solid var(--rule); }
@@ -310,7 +310,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .journey b { display: block; font-size: 23px; font-weight: 800; line-height: 1.15; margin-top: 6px; min-height: 2.3em; }
 .journey p { font-size: 19px; color: var(--muted); line-height: 1.45; margin-top: 12px; }
 .journey .endj b { color: var(--white); }
-.journey .endj::before { background: var(--red); }
+.journey .endj::before { background: var(--white); box-shadow: 0 0 0 4px var(--black), 0 0 0 5.5px var(--white); }
 .kinds { margin-top: 40px; display: grid; grid-template-columns: 250px 1fr 1.25fr 230px; }
 .kinds > div { padding: 20px 24px 20px 0; border-top: 1.5px solid var(--rule); font-size: 19px; line-height: 1.4; color: var(--soft); }
 .kinds .h { border-top: none; font-size: 15px; color: var(--faint); padding: 0 0 12px; }
@@ -333,7 +333,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .fails { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px 48px; margin-top: 70px; }
 .fails div { border-top: 1.5px solid var(--rule); padding: 22px 0 30px; }
 .fails b { display: block; min-height: 2.5em; font-size: 26px; line-height: 1.25; font-weight: 700; }
-.fails p { font-size: 20px; line-height: 1.45; color: var(--muted); margin-top: 12px; padding-left: 16px; border-left: 3px solid var(--red); }
+.fails p { font-size: 20px; line-height: 1.45; color: var(--soft); margin-top: 12px; padding-left: 16px; border-left: 3px solid var(--white); }
 .shape { grid-template-columns: 190px 1fr; }
 .shape b { white-space: nowrap; }
 
@@ -354,7 +354,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .exhibit p { font-size: 16px; line-height: 1.5; color: var(--muted); }
 .exhibit b { color: var(--white); }
 .toll { display: grid; grid-template-columns: 1fr 1.25fr 1.25fr 1fr; gap: 36px; margin-top: 56px; }
-.toll div { border-top: 3px solid var(--red); padding-top: 16px; }
+.toll div { border-top: 3px solid var(--white); padding-top: 16px; }
 .toll b { display: block; font-size: 46px; font-weight: 800; letter-spacing: -0.025em; line-height: 1; }
 .toll p { font-size: 17px; line-height: 1.4; color: var(--muted); margin-top: 10px; }
 
@@ -429,7 +429,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .coa div { border-top: 1.5px solid var(--rule); padding-top: 18px; }
 .coa h4 { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
 .coa p { font-size: 20px; line-height: 1.45; color: var(--muted); margin-top: 10px; }
-.coa .won { border-top: 3px solid var(--red); }
+.coa .won { border-top: 3px solid var(--white); }
 .coa .won h4 { color: var(--white); }
 .coa .won p { color: var(--soft); }
 .newpath { margin-top: auto; font-size: 28px; line-height: 1.3; font-weight: 700; max-width: 52ch; }
@@ -488,7 +488,7 @@ table.m { border-collapse: collapse; width: 100%; }
 .horizon::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 2px; background: linear-gradient(90deg, #555, #fff); }
 .hz { position: relative; padding-right: 40px; }
 .hz i { display: block; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #fff; position: relative; }
-.hz.end i { background: var(--red); border-color: var(--red); }
+.hz.end i { background: var(--white); border-color: var(--white); }
 .hz b { display: block; font-size: 26px; font-weight: 800; margin-top: 18px; }
 .hz p { font-size: 19px; line-height: 1.45; color: var(--muted); margin-top: 8px; max-width: 30ch; }
 .lifework { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 52px; }
@@ -639,6 +639,147 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   html.mobile .rhyme img { width: 100%; height: 180px; }
   html.mobile .rhyme .rhl { padding-left: 0; font-size: 22px; }
 }
+/* Layout pass, 23 Sep: content fills the frame, smallest type lifted for projection. Desktop frame only. */
+html:not(.mobile) .sec { font-size: 16px; }
+html:not(.mobile) .num { font-size: 15px; }
+html:not(.mobile) .foot { font-size: 16px; line-height: 1.45; }
+
+/* vertical balance: the content group sits in the middle of the space under the title */
+html:not(.mobile) .dossier { margin-top: auto; }
+html:not(.mobile) .carries { margin-bottom: auto; }
+html:not(.mobile) .pv { margin: auto 0; grid-template-columns: 1.4fr .6fr; }
+html:not(.mobile) .far { margin-top: auto; }
+html:not(.mobile) .moved { margin-top: auto; }
+html:not(.mobile) .farnote { margin-bottom: auto; }
+html:not(.mobile) .split2 { flex: none; margin: auto 0; }
+html:not(.mobile) .journey { margin: auto 0; }
+html:not(.mobile) .svgwrap { flex: none; margin: auto 0 0; }
+html:not(.mobile) .svgwrap + .legend { margin: 30px 0 auto; }
+html:not(.mobile) .kinds { margin: auto 0; }
+html:not(.mobile) .clerks { margin: auto 0; }
+html:not(.mobile) .jev { margin-top: 40px; align-items: center; }
+html:not(.mobile) .rcpt { margin: auto 0; align-items: center; }
+html:not(.mobile) .uh { margin: 28px 0 0; }
+html:not(.mobile) .fails { margin: auto 0; }
+html:not(.mobile) .map { margin: 34px 0 0; }
+html:not(.mobile) .status { align-items: center; }
+html:not(.mobile) .twocol.top { flex: none; align-items: start; margin-top: 30px; }
+html:not(.mobile) .twocol.top .name { margin-top: 10px; }
+html:not(.mobile) .statement { font-size: 54px; line-height: 1.12; }
+html:not(.mobile) .nots { margin-top: 56px; }
+
+/* public view mock, larger */
+html:not(.mobile) .mock { padding: 32px 36px; gap: 26px 40px; }
+html:not(.mobile) .mock .top b { font-size: 26px; }
+html:not(.mobile) .mock .top span { font-size: 16px; }
+html:not(.mobile) .blk h4 { font-size: 21px; margin-bottom: 12px; }
+html:not(.mobile) .bar { height: 11px; margin-top: 9px; }
+html:not(.mobile) .tags i { font-size: 15px; padding: 3px 10px; }
+html:not(.mobile) .mock .owner p { font-size: 18px; }
+html:not(.mobile) .btn { font-size: 18px; padding: 11px 22px; }
+html:not(.mobile) .success p { font-size: 30px; }
+html:not(.mobile) .success li { font-size: 22px; }
+
+/* rows and tables breathe a little more */
+html:not(.mobile) .split2 p { padding: 18px 0; font-size: 26px; }
+html:not(.mobile) .kinds > div { padding: 26px 24px 26px 0; font-size: 21px; }
+html:not(.mobile) .kinds .h { font-size: 17px; padding: 0 0 12px; }
+html:not(.mobile) .meter + em { font-size: 16px; }
+html:not(.mobile) .uhr { padding: 16px 0; }
+html:not(.mobile) .uhh { font-size: 16px; }
+html:not(.mobile) .uhr p { font-size: 18px; }
+html:not(.mobile) .tl { font-size: 19px; }
+html:not(.mobile) .tl small { font-size: 16px; }
+html:not(.mobile) .tl em { font-size: 14px; padding: 2px 9px; }
+html:not(.mobile) .m th { font-size: 17px; }
+html:not(.mobile) .m td { font-size: 21px; padding: 16px 8px; }
+html:not(.mobile) .qs h4 { font-size: 18px; }
+html:not(.mobile) .qs p { font-size: 24px; }
+html:not(.mobile) .map .h { font-size: 17px; }
+html:not(.mobile) .map .c { font-size: 19px; min-height: 74px; padding: 12px 0; }
+html:not(.mobile) .map .c.s span { font-size: 17px; }
+
+/* smallest labels */
+html:not(.mobile) .carries { font-size: 19px; }
+html:not(.mobile) .col .box { font-size: 20px; }
+html:not(.mobile) .sheet .v { font-size: 17px; }
+html:not(.mobile) .legend { font-size: 17px; }
+html:not(.mobile) .journey i { font-size: 17px; }
+html:not(.mobile) .journey p { font-size: 21px; }
+html:not(.mobile) .journey b { font-size: 25px; }
+html:not(.mobile) .clerk .job { font-size: 21px; }
+html:not(.mobile) .clerk .stop { font-size: 20px; color: var(--soft); }
+html:not(.mobile) .stoplabel { top: 197px; right: 0; background: var(--black); padding: 0 0 0 12px; font-size: 16px; line-height: 22px; }
+html:not(.mobile) .shape p { font-size: 20px; }
+html:not(.mobile) .shape p span { font-size: 18px; }
+html:not(.mobile) .limits { font-size: 17px; color: var(--muted); }
+html:not(.mobile) .rl { height: 62px; }
+html:not(.mobile) .rl p { font-size: 21px; }
+html:not(.mobile) .rl span { font-size: 17px; }
+html:not(.mobile) .rl em { font-size: 15px; }
+html:not(.mobile) .views div { font-size: 17px; }
+html:not(.mobile) .views div b { font-size: 19px; }
+html:not(.mobile) .toll p { font-size: 19px; }
+html:not(.mobile) .silence p { font-size: 19px; }
+html:not(.mobile) .docphoto figcaption { font-size: 16px; }
+html:not(.mobile) .exhibit p { font-size: 17px; }
+html:not(.mobile) .bt .m { font-size: 16px; }
+html:not(.mobile) .kaveh figcaption { font-size: 16px; }
+html:not(.mobile) .hz p { font-size: 21px; }
+html:not(.mobile) .lifework p { font-size: 22px; }
+
+/* the Wall: bars and their caption read as one mark */
+html:not(.mobile) .brickh { height: 62px; }
+html:not(.mobile) .brickh em { left: 0; top: 40px; font-size: 16px; }
+
+/* close: the offer and the last line as one composition */
+html:not(.mobile) .close { justify-content: flex-start; }
+html:not(.mobile) .close .triad { margin-top: 30px; }
+html:not(.mobile) .triad h4 { font-size: 28px; }
+html:not(.mobile) .triad p { font-size: 22px; color: var(--soft); }
+html:not(.mobile) .close .last { margin-top: auto; align-items: end; border-top: 1.5px solid var(--rule); padding-top: 40px; }
+html:not(.mobile) .marks { align-items: flex-end; gap: 28px; }
+html:not(.mobile) .marks .tattoo { height: 330px; }
+html:not(.mobile) .marks .dmark.big { width: 150px; height: 150px; }
+
+html:not(.mobile) .toll { margin-top: auto; }
+html:not(.mobile) .silence.three { margin-bottom: auto; }
+html:not(.mobile) .silence strong { font-size: 24px; }
+html:not(.mobile) .silence p { font-size: 21px; }
+html:not(.mobile) .coa p { font-size: 21px; }
+html:not(.mobile) .twocol.top { flex: 1; align-items: stretch; }
+html:not(.mobile) .twocol.top > div:first-child { display: flex; flex-direction: column; }
+html:not(.mobile) .twocol.top .nots { margin-top: auto; }
+html:not(.mobile) .twocol.top .name { align-self: end; margin-top: 0; }
+html:not(.mobile) .name p { font-size: 21px; }
+html:not(.mobile) .nots div { font-size: 19px; }
+
+html:not(.mobile) .col { gap: 16px; }
+html:not(.mobile) .col .box { padding: 17px 20px; }
+html:not(.mobile) .stack3 { height: 340px; }
+html:not(.mobile) .stack3 .sheet { height: 250px; }
+html:not(.mobile) .stack3 .sheet:nth-child(2) { top: 44px; }
+html:not(.mobile) .stack3 .sheet:nth-child(3) { top: 88px; padding: 26px; }
+html:not(.mobile) .sheet b { font-size: 32px; }
+html:not(.mobile) .mock { padding: 38px 42px; gap: 34px 48px; }
+html:not(.mobile) .moved svg { max-height: 300px; }
+html:not(.mobile) .moved h4 { font-size: 28px; }
+html:not(.mobile) .moved p { font-size: 21px; }
+html:not(.mobile) .farnote { font-size: 28px; }
+
+/* Phone: wide diagrams keep a readable size and scroll sideways inside their own frame */
+@media screen {
+  html.mobile .svgwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-left: -28px; margin-right: -28px; padding: 0 28px; }
+  html.mobile .svgwrap { display: block; flex: none; margin-top: 20px; }
+  html.mobile .svgwrap + .legend { margin-top: 20px; flex-wrap: wrap; gap: 14px 24px; }
+  html.mobile .svgwrap svg { width: 900px; max-width: none; flex: none; }
+  html.mobile .tlright { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-right: -28px; padding-right: 28px; }
+  html.mobile .tlright svg { width: 520px; max-width: none; flex: none; }
+  html.mobile .svgwrap::after, html.mobile .tlright::after { content: ""; display: block; }
+  html.mobile .num { background: var(--black); padding: 3px 8px; }
+  html.mobile .opener .num { background: var(--red); }
+}
+
 @media print {
   @page { size: 1600px 900px; margin: 0; }
   html, body { overflow: visible; height: auto; }
@@ -647,6 +788,38 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   .slide { position: relative; opacity: 1; visibility: visible; height: 900px; page-break-after: always; break-after: page; transition: none; }
   .hint, .progress, button.nav { display: none; }
 }
+
+/* Berlin, in pictures: six frames, loose and asymmetric. Empty frames show their file name. */
+.bhead { display: flex; align-items: baseline; }
+.bgrid { flex: 1; min-height: 0; margin-top: 34px; display: grid;
+  grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(6, 1fr); gap: 18px; }
+.bp { position: relative; margin: 0; background: #0d0d0d; overflow: hidden; }
+.bp::before { content: attr(data-file); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  border: 1px dashed #3a3a3a; color: #5c5c5c; font-size: 14px; letter-spacing: .02em; }
+.bp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
+.bp figcaption { position: absolute; left: 12px; bottom: 10px; z-index: 2; font-size: 14px; color: #cfcfcf; background: rgba(0,0,0,.55); padding: 3px 8px; }
+.bp figcaption:empty { display: none; }
+.b1 { grid-column: 1 / 6;  grid-row: 1 / 5; }
+.b2 { grid-column: 6 / 8;  grid-row: 1 / 3; }
+.b3 { grid-column: 9 / 13; grid-row: 1 / 4; }
+.b4 { grid-column: 6 / 9;  grid-row: 3 / 7; }
+.b5 { grid-column: 2 / 5;  grid-row: 5 / 7; }
+.b6 { grid-column: 10 / 13; grid-row: 4 / 7; }
+
+/* End: the mark alone, centred */
+.slide.end { padding: 0; align-items: center; justify-content: center; }
+.endmark { height: 600px; width: auto; display: block; }
+
+/* close slide without the tattoo */
+html:not(.mobile) .close .marks { gap: 0; }
+html:not(.mobile) .close .last h2 { max-width: 20ch; }
+
+html.mobile .bgrid { flex: none; grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 38vw; gap: 10px; margin-top: 20px; }
+html.mobile .bp { grid-column: auto; grid-row: auto; }
+html.mobile .b1, html.mobile .b4 { grid-column: 1 / 3; grid-row: span 1; }
+html.mobile .b1 { grid-auto-rows: auto; }
+html.mobile .slide.end { padding: 0; }
+html.mobile .endmark { height: auto; width: min(78vw, 60vh); }
 </style>
 </head>
 <body>
@@ -675,6 +848,13 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
       <dt>Link</dt><dd><a href="https://github.com/kvmmn/_kavian">https://github.com/kvmmn/_kavian</a></dd>
     </dl>
   </div>
+</section>
+
+<!-- opener I -->
+<section class="slide opener" data-sec="The path">
+  <div class="roman">I</div>
+  <h2>The path</h2>
+  <p>From a night in Tehran to a desk in Berlin.</p>
 </section>
 
 <!-- 01 the drawing, white line on black -->
@@ -734,9 +914,23 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
         <p class="after">A city that once fell apart <b>and found itself again.</b></p>
       </div>
     </div>
-    <div class="tlright"><svg viewBox="0 0 730 735" width="730" height="735" role="img" aria-label="Timeline to scale, 11 December 2025 to 12 March 2026."><line x1="250" y1="22" x2="250" y2="60.0" stroke="#5a5a5a" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M242 64.0 l16 -6 M242 70.0 l16 -6" stroke="#8a8a8a" stroke-width="1.5"/><line x1="250" y1="78.0" x2="250" y2="605.0" stroke="#5a5a5a" stroke-width="1.5"/><line x1="244" y1="211.3" x2="250" y2="211.3" stroke="#5a5a5a"/><text x="0" y="215.3" font-size="12" fill="#6e6e6e">January</text><line x1="244" y1="408.2" x2="250" y2="408.2" stroke="#5a5a5a"/><text x="0" y="412.2" font-size="12" fill="#6e6e6e">February</text><line x1="244" y1="586.0" x2="250" y2="586.0" stroke="#5a5a5a"/><text x="0" y="590.0" font-size="12" fill="#6e6e6e">March</text><line x1="244" y1="268.5" x2="235.8" y2="268.5" stroke="#444444" stroke-width="2"/><line x1="244" y1="274.9" x2="236.4" y2="274.9" stroke="#474747" stroke-width="2"/><line x1="244" y1="281.2" x2="229.8" y2="281.2" stroke="#4a4a4a" stroke-width="2"/><line x1="244" y1="287.5" x2="233.7" y2="287.5" stroke="#4d4d4d" stroke-width="2"/><line x1="244" y1="293.9" x2="226.9" y2="293.9" stroke="#505050" stroke-width="2"/><line x1="244" y1="300.2" x2="226.4" y2="300.2" stroke="#535353" stroke-width="2"/><line x1="244" y1="306.6" x2="227.0" y2="306.6" stroke="#565656" stroke-width="2"/><line x1="244" y1="312.9" x2="220.0" y2="312.9" stroke="#595959" stroke-width="2"/><line x1="244" y1="319.3" x2="222.1" y2="319.3" stroke="#5c5c5c" stroke-width="2"/><line x1="244" y1="325.6" x2="215.4" y2="325.6" stroke="#5f5f5f" stroke-width="2"/><line x1="244" y1="332.0" x2="216.2" y2="332.0" stroke="#626262" stroke-width="2"/><line x1="244" y1="338.3" x2="213.1" y2="338.3" stroke="#656565" stroke-width="2"/><line x1="244" y1="344.7" x2="206.7" y2="344.7" stroke="#696969" stroke-width="2"/><line x1="244" y1="351.1" x2="199.6" y2="351.1" stroke="#6c6c6c" stroke-width="2"/><line x1="244" y1="357.4" x2="203.5" y2="357.4" stroke="#6f6f6f" stroke-width="2"/><line x1="244" y1="363.8" x2="199.3" y2="363.8" stroke="#727272" stroke-width="2"/><line x1="244" y1="370.1" x2="192.0" y2="370.1" stroke="#757575" stroke-width="2"/><line x1="244" y1="376.4" x2="185.4" y2="376.4" stroke="#787878" stroke-width="2"/><line x1="244" y1="382.8" x2="185.7" y2="382.8" stroke="#7b7b7b" stroke-width="2"/><line x1="244" y1="389.1" x2="184.1" y2="389.1" stroke="#7e7e7e" stroke-width="2"/><line x1="244" y1="395.5" x2="174.8" y2="395.5" stroke="#818181" stroke-width="2"/><line x1="244" y1="401.8" x2="180.5" y2="401.8" stroke="#848484" stroke-width="2"/><line x1="244" y1="408.2" x2="168.8" y2="408.2" stroke="#878787" stroke-width="2"/><line x1="244" y1="414.5" x2="170.8" y2="414.5" stroke="#8a8a8a" stroke-width="2"/><line x1="244" y1="420.9" x2="168.5" y2="420.9" stroke="#8e8e8e" stroke-width="2"/><line x1="244" y1="427.2" x2="165.0" y2="427.2" stroke="#919191" stroke-width="2"/><line x1="244" y1="433.6" x2="159.3" y2="433.6" stroke="#949494" stroke-width="2"/><line x1="244" y1="439.9" x2="150.4" y2="439.9" stroke="#979797" stroke-width="2"/><line x1="244" y1="446.3" x2="152.8" y2="446.3" stroke="#9a9a9a" stroke-width="2"/><line x1="244" y1="452.6" x2="144.9" y2="452.6" stroke="#9d9d9d" stroke-width="2"/><line x1="244" y1="459.0" x2="140.3" y2="459.0" stroke="#a0a0a0" stroke-width="2"/><line x1="244" y1="465.3" x2="139.0" y2="465.3" stroke="#a3a3a3" stroke-width="2"/><line x1="244" y1="471.7" x2="133.2" y2="471.7" stroke="#a6a6a6" stroke-width="2"/><line x1="244" y1="478.0" x2="133.9" y2="478.0" stroke="#a9a9a9" stroke-width="2"/><line x1="244" y1="484.4" x2="129.8" y2="484.4" stroke="#acacac" stroke-width="2"/><line x1="244" y1="490.8" x2="124.2" y2="490.8" stroke="#afafaf" stroke-width="2"/><line x1="244" y1="497.1" x2="115.2" y2="497.1" stroke="#b3b3b3" stroke-width="2"/><line x1="244" y1="503.4" x2="113.5" y2="503.4" stroke="#b6b6b6" stroke-width="2"/><line x1="244" y1="509.8" x2="110.4" y2="509.8" stroke="#b9b9b9" stroke-width="2"/><line x1="244" y1="516.1" x2="103.4" y2="516.1" stroke="#bcbcbc" stroke-width="2"/><line x1="244" y1="522.5" x2="100.3" y2="522.5" stroke="#bfbfbf" stroke-width="2"/><line x1="244" y1="528.8" x2="97.5" y2="528.8" stroke="#c2c2c2" stroke-width="2"/><line x1="244" y1="535.2" x2="88.1" y2="535.2" stroke="#c5c5c5" stroke-width="2"/><line x1="244" y1="541.5" x2="84.7" y2="541.5" stroke="#c8c8c8" stroke-width="2"/><line x1="244" y1="547.9" x2="84.7" y2="547.9" stroke="#cbcbcb" stroke-width="2"/><line x1="244" y1="554.2" x2="76.9" y2="554.2" stroke="#cecece" stroke-width="2"/><line x1="244" y1="560.6" x2="72.9" y2="560.6" stroke="#d1d1d1" stroke-width="2"/><line x1="244" y1="567.0" x2="64.8" y2="567.0" stroke="#d4d4d4" stroke-width="2"/><line x1="244" y1="573.3" x2="61.7" y2="573.3" stroke="#d8d8d8" stroke-width="2"/><line x1="40" y1="579.6" x2="256" y2="579.6" stroke="#ff1a1a" stroke-width="3"/><line x1="250" y1="579.6" x2="250" y2="605.0" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4"/><rect x="244" y="605.0" width="12" height="50.89999999999998" fill="#fff"/><text x="234" y="635.45" text-anchor="end" font-size="15" font-weight="800" fill="#fff">Berlin</text><circle cx="250" cy="22" r="6" fill="#000" stroke="#fff" stroke-width="2"/><path d="M258 22 L272 22 L286 23" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="28" font-size="18" font-weight="700" fill="#fff">Admission</text><text x="294" y="49" font-size="15.5" fill="#b8b8b8">before it all</text><circle cx="250" cy="78.0" r="4" fill="#fff"/><path d="M258 78.0 L272 78.0 L286 79.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="84.0" font-size="18" font-weight="700" fill="#fff">11 December</text><text x="294" y="105.0" font-size="15.5" fill="#b8b8b8">my birthday</text><circle cx="250" cy="185.9" r="4" fill="#fff"/><path d="M258 185.9 L272 185.9 L286 186.9" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="191.9" font-size="18" font-weight="700" fill="#fff">28 December</text><text x="294" y="212.9" font-size="15.5" fill="#b8b8b8">the currency collapses; protests begin</text><rect x="243" y="254.8" width="14" height="8.3" fill="#fff"/><path d="M258 259.0 L272 259.0 L286 260.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="265.0" font-size="18" font-weight="800" fill="#fff">8 and 9 January</text><text x="294" y="286.0" font-size="15.5" fill="#b8b8b8">the night; the blackout</text><circle cx="250" cy="370.1" r="4" fill="#fff"/><path d="M258 370.1 L272 370.1 L286 371.1" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="376.1" font-size="18" font-weight="700" fill="#fff">26 January</text><text x="294" y="397.1" font-size="15.5" fill="#b8b8b8">over 40,000 arrested;</text><text x="294" y="416.1" font-size="15.5" fill="#b8b8b8">US forces mass in the region</text><circle cx="250" cy="560.6" r="4" fill="#fff"/><path d="M258 560.6 L272 560.6 L286 497" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="502" font-size="18" font-weight="700" fill="#fff">25 February</text><text x="294" y="523" font-size="15.5" fill="#b8b8b8">visa</text><path d="M258 579.6 L272 579.6 L286 552" fill="none" stroke="#ff1a1a" stroke-width="1.2"/><text x="294" y="557" font-size="18" font-weight="800" fill="#ff1a1a">28 February</text><text x="294" y="578" font-size="15.5" fill="#ff6a6a">Iran’s Supreme Leader is killed;</text><text x="294" y="597" font-size="15.5" fill="#ff6a6a">the US and Israel go to war;</text><text x="294" y="616" font-size="15.5" fill="#ff6a6a">I leave for the Turkish border</text><circle cx="250" cy="605.0" r="5" fill="#fff"/><path d="M258 605.0 L272 605.0 L286 645" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="650" font-size="18" font-weight="800" fill="#fff">4 March</text><text x="294" y="671" font-size="15.5" fill="#b8b8b8">I reach Berlin</text><circle cx="250" cy="655.9" r="4" fill="#fff"/><path d="M258 655.9 L272 655.9 L286 700" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="705" font-size="18" font-weight="700" fill="#fff">12 March</text><text x="294" y="726" font-size="15.5" fill="#b8b8b8">university begins</text></svg></div>
+    <div class="tlright"><svg viewBox="0 0 730 735" width="730" height="735" role="img" aria-label="Timeline to scale, 11 December 2025 to 12 March 2026."><line x1="250" y1="22" x2="250" y2="60.0" stroke="#5a5a5a" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M242 64.0 l16 -6 M242 70.0 l16 -6" stroke="#8a8a8a" stroke-width="1.5"/><line x1="250" y1="78.0" x2="250" y2="605.0" stroke="#5a5a5a" stroke-width="1.5"/><line x1="244" y1="211.3" x2="250" y2="211.3" stroke="#5a5a5a"/><text x="236" y="216" text-anchor="end" font-size="15" fill="#8c8c8c">January</text><line x1="244" y1="408.2" x2="250" y2="408.2" stroke="#5a5a5a"/><text x="158" y="413" text-anchor="end" font-size="15" fill="#8c8c8c">February</text><line x1="244" y1="593" x2="250" y2="593" stroke="#5a5a5a"/><text x="236" y="599" text-anchor="end" font-size="15" fill="#8c8c8c">March</text><line x1="244" y1="268.5" x2="235.8" y2="268.5" stroke="#444444" stroke-width="2"/><line x1="244" y1="274.9" x2="236.4" y2="274.9" stroke="#474747" stroke-width="2"/><line x1="244" y1="281.2" x2="229.8" y2="281.2" stroke="#4a4a4a" stroke-width="2"/><line x1="244" y1="287.5" x2="233.7" y2="287.5" stroke="#4d4d4d" stroke-width="2"/><line x1="244" y1="293.9" x2="226.9" y2="293.9" stroke="#505050" stroke-width="2"/><line x1="244" y1="300.2" x2="226.4" y2="300.2" stroke="#535353" stroke-width="2"/><line x1="244" y1="306.6" x2="227.0" y2="306.6" stroke="#565656" stroke-width="2"/><line x1="244" y1="312.9" x2="220.0" y2="312.9" stroke="#595959" stroke-width="2"/><line x1="244" y1="319.3" x2="222.1" y2="319.3" stroke="#5c5c5c" stroke-width="2"/><line x1="244" y1="325.6" x2="215.4" y2="325.6" stroke="#5f5f5f" stroke-width="2"/><line x1="244" y1="332.0" x2="216.2" y2="332.0" stroke="#626262" stroke-width="2"/><line x1="244" y1="338.3" x2="213.1" y2="338.3" stroke="#656565" stroke-width="2"/><line x1="244" y1="344.7" x2="206.7" y2="344.7" stroke="#696969" stroke-width="2"/><line x1="244" y1="351.1" x2="199.6" y2="351.1" stroke="#6c6c6c" stroke-width="2"/><line x1="244" y1="357.4" x2="203.5" y2="357.4" stroke="#6f6f6f" stroke-width="2"/><line x1="244" y1="363.8" x2="199.3" y2="363.8" stroke="#727272" stroke-width="2"/><line x1="244" y1="370.1" x2="192.0" y2="370.1" stroke="#757575" stroke-width="2"/><line x1="244" y1="376.4" x2="185.4" y2="376.4" stroke="#787878" stroke-width="2"/><line x1="244" y1="382.8" x2="185.7" y2="382.8" stroke="#7b7b7b" stroke-width="2"/><line x1="244" y1="389.1" x2="184.1" y2="389.1" stroke="#7e7e7e" stroke-width="2"/><line x1="244" y1="395.5" x2="174.8" y2="395.5" stroke="#818181" stroke-width="2"/><line x1="244" y1="401.8" x2="180.5" y2="401.8" stroke="#848484" stroke-width="2"/><line x1="244" y1="408.2" x2="168.8" y2="408.2" stroke="#878787" stroke-width="2"/><line x1="244" y1="414.5" x2="170.8" y2="414.5" stroke="#8a8a8a" stroke-width="2"/><line x1="244" y1="420.9" x2="168.5" y2="420.9" stroke="#8e8e8e" stroke-width="2"/><line x1="244" y1="427.2" x2="165.0" y2="427.2" stroke="#919191" stroke-width="2"/><line x1="244" y1="433.6" x2="159.3" y2="433.6" stroke="#949494" stroke-width="2"/><line x1="244" y1="439.9" x2="150.4" y2="439.9" stroke="#979797" stroke-width="2"/><line x1="244" y1="446.3" x2="152.8" y2="446.3" stroke="#9a9a9a" stroke-width="2"/><line x1="244" y1="452.6" x2="144.9" y2="452.6" stroke="#9d9d9d" stroke-width="2"/><line x1="244" y1="459.0" x2="140.3" y2="459.0" stroke="#a0a0a0" stroke-width="2"/><line x1="244" y1="465.3" x2="139.0" y2="465.3" stroke="#a3a3a3" stroke-width="2"/><line x1="244" y1="471.7" x2="133.2" y2="471.7" stroke="#a6a6a6" stroke-width="2"/><line x1="244" y1="478.0" x2="133.9" y2="478.0" stroke="#a9a9a9" stroke-width="2"/><line x1="244" y1="484.4" x2="129.8" y2="484.4" stroke="#acacac" stroke-width="2"/><line x1="244" y1="490.8" x2="124.2" y2="490.8" stroke="#afafaf" stroke-width="2"/><line x1="244" y1="497.1" x2="115.2" y2="497.1" stroke="#b3b3b3" stroke-width="2"/><line x1="244" y1="503.4" x2="113.5" y2="503.4" stroke="#b6b6b6" stroke-width="2"/><line x1="244" y1="509.8" x2="110.4" y2="509.8" stroke="#b9b9b9" stroke-width="2"/><line x1="244" y1="516.1" x2="103.4" y2="516.1" stroke="#bcbcbc" stroke-width="2"/><line x1="244" y1="522.5" x2="100.3" y2="522.5" stroke="#bfbfbf" stroke-width="2"/><line x1="244" y1="528.8" x2="97.5" y2="528.8" stroke="#c2c2c2" stroke-width="2"/><line x1="244" y1="535.2" x2="88.1" y2="535.2" stroke="#c5c5c5" stroke-width="2"/><line x1="244" y1="541.5" x2="84.7" y2="541.5" stroke="#c8c8c8" stroke-width="2"/><line x1="244" y1="547.9" x2="84.7" y2="547.9" stroke="#cbcbcb" stroke-width="2"/><line x1="244" y1="554.2" x2="76.9" y2="554.2" stroke="#cecece" stroke-width="2"/><line x1="244" y1="560.6" x2="72.9" y2="560.6" stroke="#d1d1d1" stroke-width="2"/><line x1="244" y1="567.0" x2="64.8" y2="567.0" stroke="#d4d4d4" stroke-width="2"/><line x1="244" y1="573.3" x2="61.7" y2="573.3" stroke="#d8d8d8" stroke-width="2"/><line x1="56" y1="579.6" x2="256" y2="579.6" stroke="#fff" stroke-width="3"/><circle cx="250" cy="579.6" r="5" fill="#fff"/><line x1="250" y1="579.6" x2="250" y2="605.0" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4"/><rect x="244" y="605.0" width="12" height="50.89999999999998" fill="#fff"/><text x="234" y="635.45" text-anchor="end" font-size="15" font-weight="800" fill="#fff">Berlin</text><circle cx="250" cy="22" r="6" fill="#000" stroke="#fff" stroke-width="2"/><path d="M258 22 L272 22 L286 23" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="28" font-size="18" font-weight="700" fill="#fff">Admission</text><text x="294" y="49" font-size="15.5" fill="#c8c8c8">before it all</text><circle cx="250" cy="78.0" r="4" fill="#fff"/><path d="M258 78.0 L272 78.0 L286 79.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="84.0" font-size="18" font-weight="700" fill="#fff">11 December</text><text x="294" y="105.0" font-size="15.5" fill="#c8c8c8">my birthday</text><circle cx="250" cy="185.9" r="4" fill="#fff"/><path d="M258 185.9 L272 185.9 L286 186.9" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="191.9" font-size="18" font-weight="700" fill="#fff">28 December</text><text x="294" y="212.9" font-size="15.5" fill="#c8c8c8">the currency collapses; protests begin</text><rect x="243" y="254.8" width="14" height="8.3" fill="#fff"/><path d="M258 259.0 L272 259.0 L286 260.0" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="265.0" font-size="18" font-weight="800" fill="#fff">8 and 9 January</text><text x="294" y="286.0" font-size="15.5" fill="#c8c8c8">the night; the blackout</text><circle cx="250" cy="370.1" r="4" fill="#fff"/><path d="M258 370.1 L272 370.1 L286 371.1" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="376.1" font-size="18" font-weight="700" fill="#fff">26 January</text><text x="294" y="397.1" font-size="15.5" fill="#c8c8c8">over 40,000 arrested;</text><text x="294" y="416.1" font-size="15.5" fill="#c8c8c8">US forces mass in the region</text><circle cx="250" cy="560.6" r="4" fill="#fff"/><path d="M258 560.6 L268 560.6 L268 482 L286 482" fill="none" stroke="#555" stroke-width="1.2"/><text x="294" y="487" font-size="18" font-weight="700" fill="#fff">25 February</text><text x="294" y="508" font-size="15.5" fill="#c8c8c8">visa</text><path d="M258 579.6 L276 579.6 L276 552 L286 552" fill="none" stroke="#fff" stroke-width="1.2"/><text x="294" y="557" font-size="18" font-weight="800" fill="#fff">28 February</text><text x="294" y="578" font-size="15.5" fill="#e6e6e6">Iran’s Supreme Leader is killed;</text><text x="294" y="597" font-size="15.5" fill="#e6e6e6">the US and Israel go to war;</text><text x="294" y="616" font-size="15.5" fill="#e6e6e6">I leave for the Turkish border</text><circle cx="250" cy="605.0" r="5" fill="#fff"/><path d="M258 605.0 L268 605.0 L268 645 L286 645" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="650" font-size="18" font-weight="800" fill="#fff">4 March</text><text x="294" y="671" font-size="15.5" fill="#c8c8c8">I reach Berlin</text><circle cx="250" cy="655.9" r="4" fill="#fff"/><path d="M258 655.9 L276 655.9 L276 700 L286 700" fill="none" stroke="#444" stroke-width="1.2"/><text x="294" y="705" font-size="18" font-weight="700" fill="#fff">12 March</text><text x="294" y="726" font-size="15.5" fill="#c8c8c8">university begins</text></svg></div>
   </div>
   <div class="foot">Sources: Amnesty International; HRANA; Congressional Research Service; Encyclopaedia Britannica.</div>
+</section>
+
+<!-- 05z Berlin, in pictures. Drop photos into assets/berlin/ as berlin-01.jpg … berlin-06.jpg -->
+<section class="slide bslide" data-sec="The path">
+  <div class="sec"><b>I</b>The path</div>
+  <div class="bhead"><h2>Then, Berlin.</h2></div>
+  <div class="bgrid">
+    <figure class="bp b1" data-file="berlin-01.jpg"><img src="assets/berlin/berlin-01.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+    <figure class="bp b2" data-file="berlin-02.jpg"><img src="assets/berlin/berlin-02.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+    <figure class="bp b3" data-file="berlin-03.jpg"><img src="assets/berlin/berlin-03.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+    <figure class="bp b4" data-file="berlin-04.jpg"><img src="assets/berlin/berlin-04.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+    <figure class="bp b5" data-file="berlin-05.jpg"><img src="assets/berlin/berlin-05.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+    <figure class="bp b6" data-file="berlin-06.jpg"><img src="assets/berlin/berlin-06.jpg" alt="" onerror="this.remove()"><figcaption></figcaption></figure>
+  </div>
 </section>
 
 <!-- 05a bronzes -->
@@ -780,7 +974,7 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   <div class="sec"><b>I</b>The path</div>
   <h2 style="max-width:none">Berlin: wonder, between chaos and order.</h2>
   <div class="svgwrap" style="margin-top:40px;flex:none">
-    <svg viewBox="0 0 1376 190" role="img" aria-label="A jagged line becomes calm at Berlin, then turns upward onto a new path."><polyline points="0,90.6 12,100.4 24,132.6 36,92.0 48,95.7 60,102.3 72,69.3 84,96.0 96,105.2 108,117.4 120,64.7 132,80.6 144,65.8 156,116.5 168,108.1 180,64.7 192,126.1 204,124.1 216,104.4 228,101.8 240,75.3 252,67.9 264,96.5 276,72.0 288,79.3 300,82.4 312,72.8 324,93.4 336,92.4 348,109.4 360,95.8 372,100.4 384,95.0 396,100.7 408,93.6 420,88.0 432,109.9 444,109.0 456,104.0 468,100.1 480,90.8 492,89.2 504,90.9 516,87.3 528,99.3 540,93.6 552,99.4 564,93.8 576,99.2 588,97.6 600,92.1 610,95" fill="none" stroke="#8a8a8a" stroke-width="2" stroke-linejoin="round"/><path d="M610 95 H900 C 1040 95, 1120 40, 1370 22" fill="none" stroke="#fff" stroke-width="3"/><line x1="650" y1="89" x2="650" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="690" y1="89" x2="690" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="730" y1="89" x2="730" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="770" y1="89" x2="770" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="810" y1="89" x2="810" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="850" y1="89" x2="850" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="890" y1="89" x2="890" y2="101" stroke="#fff" stroke-width="1.5"/><circle cx="610" cy="95" r="9" fill="#ff1a1a"/><text x="610" y="140" text-anchor="middle" font-size="16" fill="#ff1a1a" font-weight="700">4 March, Berlin</text><text x="1370" y="58" text-anchor="end" font-size="16" fill="#fff" font-weight="600">a new path</text></svg>
+    <svg viewBox="0 0 1376 190" role="img" aria-label="A jagged line becomes calm at Berlin, then turns upward onto a new path."><polyline points="0,90.6 12,100.4 24,132.6 36,92.0 48,95.7 60,102.3 72,69.3 84,96.0 96,105.2 108,117.4 120,64.7 132,80.6 144,65.8 156,116.5 168,108.1 180,64.7 192,126.1 204,124.1 216,104.4 228,101.8 240,75.3 252,67.9 264,96.5 276,72.0 288,79.3 300,82.4 312,72.8 324,93.4 336,92.4 348,109.4 360,95.8 372,100.4 384,95.0 396,100.7 408,93.6 420,88.0 432,109.9 444,109.0 456,104.0 468,100.1 480,90.8 492,89.2 504,90.9 516,87.3 528,99.3 540,93.6 552,99.4 564,93.8 576,99.2 588,97.6 600,92.1 610,95" fill="none" stroke="#8a8a8a" stroke-width="2" stroke-linejoin="round"/><path d="M610 95 H900 C 1040 95, 1120 40, 1370 22" fill="none" stroke="#fff" stroke-width="3"/><line x1="650" y1="89" x2="650" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="690" y1="89" x2="690" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="730" y1="89" x2="730" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="770" y1="89" x2="770" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="810" y1="89" x2="810" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="850" y1="89" x2="850" y2="101" stroke="#fff" stroke-width="1.5"/><line x1="890" y1="89" x2="890" y2="101" stroke="#fff" stroke-width="1.5"/><circle cx="610" cy="95" r="9" fill="#fff"/><text x="610" y="140" text-anchor="middle" font-size="19" fill="#fff" font-weight="700">4 March, Berlin</text><text x="1370" y="58" text-anchor="end" font-size="16" fill="#fff" font-weight="600">a new path</text></svg>
   </div>
   <div class="coa">
     <div><h4>Chaos</h4><p>At home, a war. Every morning the news from the country I had left was worse than the night before.</p></div>
@@ -818,8 +1012,8 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
 <circle cx="372" cy="478" r="4" fill="#a8a8a8"/>
 <path d="M376 478 C 700 478, 760 260, 1010 260" fill="none" stroke="#8a8a8a" stroke-width="1.5"/>
 <line x1="1010" y1="260" x2="1090" y2="260" stroke="#fff" stroke-width="2"/>
-<circle cx="1010" cy="260" r="10" fill="#ff1a1a"/>
-<text x="1010" y="304" text-anchor="middle" font-size="16" fill="#ff1a1a" font-weight="600">Berlin</text>
+<circle cx="1010" cy="260" r="10" fill="#fff"/>
+<text x="1010" y="304" text-anchor="middle" font-size="18" fill="#fff" font-weight="700">Berlin</text>
 <text x="1110" y="284" font-size="72" font-weight="900" fill="#fff" letter-spacing="-3">Kavian</text>
     </svg>
   </div>
@@ -836,7 +1030,7 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
 <!-- 07 what it is -->
 <section class="slide" data-sec="Kavian">
   <div class="sec"><b>II</b>Kavian</div>
-  <div class="twocol">
+  <div class="twocol top">
     <div>
       <p class="statement">Kavian helps people, first in Iran, understand a collective problem, see how power acted, weigh what each option costs <span>and decide for themselves.</span></p>
       <div class="nots"><div>Not a verdict</div><div>Not the voice of “the people”</div><div>Not yet a running system</div></div>
@@ -988,7 +1182,7 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   <h2>The whole loop.</h2>
   <p class="lead" style="margin-top:12px">The same journey, drawn as one loop. It never closes: new evidence opens it again.</p>
   <div class="svgwrap">
-    <svg viewBox="0 0 1400 470" role="img" aria-label="Circulation: material enters a living dossier, passes the question-type gate, becomes artifacts reviewed by advisers and affected people, returns as attributed feedback, forms a public view, passes a human steward, and outcomes return to the dossier.">
+    <svg viewBox="16 10 1380 450" role="img" aria-label="Circulation: material enters a living dossier, passes the question-type gate, becomes artifacts reviewed by advisers and affected people, returns as attributed feedback, forms a public view, passes a human steward, and outcomes return to the dossier.">
       <defs>
         <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8a8a"/></marker>
       </defs>
@@ -1027,7 +1221,7 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
         <rect x="280" y="330" width="220" height="70" fill="none" stroke="#5a5a5a" stroke-width="1.5"/>
         <text x="390" y="360" text-anchor="middle" fill="#d9d9d9" font-weight="500">Outcomes and</text><text x="390" y="384" text-anchor="middle" fill="#d9d9d9" font-weight="500">later evidence</text>
       </g>
-      <g font-size="14" fill="#a8a8a8">
+      <g font-size="16" fill="#c8c8c8">
         <rect x="325" y="160" width="130" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="390" y="179" text-anchor="middle">Scribe</text>
         <rect x="605" y="160" width="110" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="660" y="179" text-anchor="middle">Sort</text>
         <rect x="875" y="160" width="110" height="28" rx="14" fill="none" stroke="#6e6e6e" stroke-dasharray="5 4"/><text x="930" y="179" text-anchor="middle">Router</text>
@@ -1084,7 +1278,7 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
     </div>
     <div>
       <svg viewBox="0 0 640 380" style="width:100%;height:auto" role="img" aria-label="Confidence bands: a low or middle probability sends the step to a steward; a high one lets the label guide. For exposure, a low threshold holds the text for redaction.">
-        <g font-size="15" fill="#a8a8a8">
+        <g font-size="17" fill="#c8c8c8">
           <text x="0" y="22" fill="#fff" font-size="18" font-weight="700">Any label</text>
           <rect x="0" y="40" width="200" height="54" fill="#1c1c1c"/>
           <rect x="200" y="40" width="240" height="54" fill="#2c2c2c"/>
@@ -1246,9 +1440,15 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
       <h2>The banner exists so that life returns to people.</h2>
       <p>What is the smallest architecture of refusal?</p>
     </div>
-    <div class="marks"><img class="tattoo" alt="Line drawing of the scene: a man carries a wounded woman while another woman steadies him and raises the Derafsh." src="assets/kavian-tatoo.jpg"><svg class="dmark big" aria-hidden="true"><use href="#derafsh"/></svg></div>
+    <div class="marks"><svg class="dmark big" aria-hidden="true"><use href="#derafsh"/></svg></div>
   </div>
 </section>
+
+<!-- end: the mark alone -->
+<section class="slide end" data-title="End">
+  <img class="endmark" alt="Line drawing of the scene: a man carries a wounded woman while another woman steadies him and raises the Derafsh." src="assets/kavian-tatoo.jpg">
+</section>
+
 
 </div></div>
 
@@ -1263,7 +1463,8 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
   var total = slides.length, i = 0;
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-  slides.forEach(function (s, k) { if (k === 0) return; var n = document.createElement('div'); n.className = 'num'; s.appendChild(n); n.textContent = pad(k) + ' / ' + (total - 1); });
+  var counted = slides.filter(function (s, k) { return k > 0 && !s.classList.contains('end'); }).length;
+  slides.forEach(function (s, k) { if (k === 0 || s.classList.contains('end')) return; var n = document.createElement('div'); n.className = 'num'; s.appendChild(n); n.textContent = pad(k) + ' / ' + counted; });
   function fit() {
     var w = document.documentElement.clientWidth, h = document.documentElement.clientHeight;
     var scale = Math.min(w / 1600, h / 900);
@@ -1304,7 +1505,7 @@ a.lang:hover, a.lang:focus-visible { background: var(--red); color: #000; border
   document.querySelector('.nav.next').addEventListener('click', function () { go(i + 1); hideHint(); });
   document.querySelector('.nav.prev').addEventListener('click', function () { go(i - 1); hideHint(); });
   var x0 = null, y0 = null;
-  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchstart', function (e) { if (e.target.closest && e.target.closest('.svgwrap, .tlright')) { x0 = null; return; } x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
   document.addEventListener('touchend', function (e) {
     if (x0 === null) return;
     var d = e.changedTouches[0].clientX - x0;
