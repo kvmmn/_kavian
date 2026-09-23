@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 .env
 .env.*
+
+# The rest of the project stays on this machine. GitHub only publishes the page.
+/local/
