@@ -1642,6 +1642,8 @@ html.mobile .berlinai { font-size: 16px; margin-top: 22px; }
   if (lang) lang.addEventListener('click', function () {
     lang.href = lang.getAttribute('href').split('#')[0] + '#' + (i + 1);
   });
+  /* A click on an edge must not leave the button focused, or the next arrow key draws its focus ring over every slide. */
+  document.querySelectorAll('button.nav').forEach(function (b) { b.addEventListener('mousedown', function (e) { e.preventDefault(); }); });
   document.querySelector('.nav.next').addEventListener('click', function () { go(i + 1); hideHint(); });
   document.querySelector('.nav.prev').addEventListener('click', function () { go(i - 1); hideHint(); });
   var x0 = null, y0 = null;
